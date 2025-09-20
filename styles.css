@@ -20,5 +20,23 @@
 
 
 /*Diseño de la pagina de servicios*/
+.containerServices {
+    display: flex;
 
+}
+
+.divServices {
+    background-color:#ee1010;
+    padding: 10px;
+}
+.block {
+    display: flex;
+    background-color: green;
+}
+.icon {
+    height: 100px;
+    width: 100px;
+
+    
+}
 /*-------------------------------------------*/
