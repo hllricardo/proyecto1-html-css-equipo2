@@ -26,24 +26,41 @@
 
 
 /*Diseño de la pagina de servicios*/
-.containerServices {
-    display: flex;
-
+/*El estilo del body es una sugerencia se puede eliminar si es necesario*/
+.bodyServicios{
+    background-color: whitesmoke;
 }
 
+.containerServices {
+    display: flex;
+    padding: 40px;
+}
+.divTituloServicios {
+    text-align: center;
+    margin-top: 20px;
+
+}
 .divServices {
-    background-color:#ee1010;
+    background-color:white;
     padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 100%;
+    border-radius: 5%;
 }
 .block {
     display: flex;
-    background-color: green;
+    justify-content: space-between;
 }
 .icon {
-    height: 100px;
-    width: 100px;
-
-    
+    height: 60px;
+    width: 60px;
+ 
+}
+.divEnlaceServ{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
 }
 
 /*-------------------------------------------*/
