@@ -15,6 +15,12 @@
 
 
 /*Diseño de la pagina de Sobre*/
+.imagen-reducida {
+  width: 60%;    
+  height: auto;   
+  display: block;
+  margin: 0 auto; 
+}
 /*-------------------------------------------*/
 
 
