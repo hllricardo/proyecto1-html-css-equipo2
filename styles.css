@@ -168,8 +168,12 @@ footer > img {
 }
 
 .containerServices {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto auto auto;
     padding: 40px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 .divTituloServicios {
     text-align: center;
@@ -179,10 +183,11 @@ footer > img {
 .divServices {
     background-color:white;
     padding: 10px;
+    margin-top: 20px;
     margin-left: 10px;
     margin-right: 10px;
-    width: 100%;
     border-radius: 5%;
+    
 }
 .block {
     display: flex;
@@ -194,9 +199,21 @@ footer > img {
  
 }
 .divEnlaceServ{
+    background-color: #0079ff;
     display: flex;
-    justify-content: center;
+    justify-content:center;
     margin-top: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+    .containerServices {
+        grid-template-columns: auto;       
+    }
+}
+@media only screen and (max-width: 1024px) and (min-width: 769px) {
+    .containerServices {
+        grid-template-columns: auto auto;        
+    }
 }
 
 /*-------------------------------------------*/
