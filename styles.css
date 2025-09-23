@@ -1,19 +1,157 @@
 /*Diseño comun de todas las paginas web*/
 /*-------------------------------------------*/
 
-
 /*Diseño de la pagina de Contacto*/
 /*-------------------------------------------*/
-
 
 /*Diseño de la pagina de Equipo*/
 /*-------------------------------------------*/
 
-
 /*Diseño de la pagina de Index*/
 /*-------------------------------------------*/
 
+body {
+  /*font-family: "Gill Sans MT", sans-serif;*/
+  font-family: "Inter";
+  margin: 0;
+  line-height: 1.5;
+}
 
+.nav_container {
+  background-color: #000000;
+  padding: 10px 30px;
+  position: sticky;
+  top: 0;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navigation img {
+  height: 45px;
+}
+
+.navigation a {
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+  padding: 12px 18px;
+}
+
+.navigation a:hover {
+  background-color: white;
+  color: black;
+}
+
+.main_title {
+  text-align: center;
+  font-weight: bold;
+  padding: 40px 20px;
+}
+
+.main_title h1 {
+  margin: 0 0 50px;
+}
+.main_title h2 {
+  margin: 0 0 60px;
+  font-weight: normal;
+}
+
+.course_button {
+  display: inline-block;
+  padding: 15px 20px;
+  border-radius: 40px;
+  background: #0079ff;
+  border: 2px solid black;
+  color: white;
+  text-decoration: none;
+}
+
+.course_button:hover {
+  background-color: grey;
+  color: black;
+}
+
+.row {
+  display: flex;
+  text-align: center;
+  gap: 50px;
+  justify-content: center;
+  flex-wrap: wrap;
+  overflow: hidden;
+  background-color: #f5faff;
+  padding: 40px 20px;
+}
+
+.row > h2 {
+  width: 100%;
+}
+
+.col,
+.col_sq,
+.col_trust {
+  flex: 1 1 250px;
+  max-width: 250px;
+}
+
+.col_trust {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(2, 6, 23, 0.04);
+}
+
+.col p,
+.col_sq p,
+.col_trust p {
+  margin: 0;
+  font-size: 20px;
+}
+
+.col img,
+.col_sq img,
+.col_trust img {
+  display: block;
+  height: auto;
+  margin: 0 auto 15px;
+}
+
+.col img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.col_sq img {
+  width: 80%;
+}
+
+.col_trust img {
+  width: 20%;
+}
+
+footer {
+  background-color: #000000;
+  text-align: center;
+  margin: 0px;
+}
+
+footer > p {
+  color: white;
+  font-size: 18px;
+  margin: 0px;
+  padding-bottom: 5px;
+}
+footer > img {
+  width: 200px;
+  display: block;
+  margin: 5px auto 0;
+}
 /*Diseño de la pagina de Sobre*/
 .imagen-reducida {
   width: 60%;    
@@ -22,8 +160,6 @@
   margin: 0 auto; 
 }
 /*-------------------------------------------*/
-
-
 
 /*Diseño de la pagina de servicios*/
 /*El estilo del body es una sugerencia se puede eliminar si es necesario*/
