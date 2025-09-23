@@ -15,6 +15,7 @@ body {
   font-family: "Inter";
   margin: 0;
   line-height: 1.5;
+  background-color: whitesmoke;
 }
 
 .nav_container {
@@ -52,10 +53,19 @@ body {
   padding: 40px 20px;
 }
 
-.main_title h1 {
+.main_title_other {
+  text-align: center;
+  font-weight: bold;
+  padding-top: 40px;
+  padding-bottom: 0px;
+}
+.main_title h1,
+.main_title_other h1 {
   margin: 0 0 50px;
 }
-.main_title h2 {
+
+.main_title h2,
+.main_title_other h2 {
   margin: 0 0 60px;
   font-weight: normal;
 }
@@ -82,7 +92,7 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   overflow: hidden;
-  background-color: #f5faff;
+  /*  background-color: #f5faff;*/
   padding: 40px 20px;
 }
 
@@ -152,73 +162,65 @@ footer > img {
   display: block;
   margin: 5px auto 0;
 }
+
 /*Diseño de la pagina de Sobre*/
 .imagen-reducida {
-  width: 60%;    
-  height: auto;   
+  width: 60%;
+  height: auto;
   display: block;
-  margin: 0 auto; 
+  margin: 0 auto;
 }
 /*-------------------------------------------*/
 
 /*Diseño de la pagina de servicios*/
 /*El estilo del body es una sugerencia se puede eliminar si es necesario*/
-.bodyServicios{
-    background-color: whitesmoke;
-}
+/*He puesto este mismo background arriba, queda más bien*/
+/*.bodyServicios {
+  background-color: whitesmoke;
+}*/
 
 .containerServices {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    padding: 40px;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 40px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
-.divTituloServicios {
-    text-align: center;
-    margin-top: 20px;
 
-}
 .divServices {
-    background-color:white;
-    padding: 10px;
-    margin-top: 20px;
-    margin-left: 10px;
-    margin-right: 10px;
-    border-radius: 5%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    
+  background-color: white;
+  padding: 10px;
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .block {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 .icon {
-    height: 60px;
-    width: 60px;
- 
+  height: 60px;
+  width: 60px;
 }
-.divEnlaceServ{
-    
-    display: flex;
-    justify-content:center;
-
-   
-
+.divEnlaceServ {
+  display: flex;
+  justify-content: center;
 }
 
 @media only screen and (max-width: 768px) {
-    .containerServices {
-        grid-template-columns: auto;       
-    }
+  .containerServices {
+    grid-template-columns: auto;
+  }
 }
 @media only screen and (max-width: 1024px) and (min-width: 769px) {
-    .containerServices {
-        grid-template-columns: auto auto;        
-    }
+  .containerServices {
+    grid-template-columns: auto auto;
+  }
 }
 
 /*-------------------------------------------*/
