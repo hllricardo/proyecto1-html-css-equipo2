@@ -1,6 +1,6 @@
 # CodeTrain Academy Website – Team Work
 
-## Who did what
+## Contributions
 - **O** → created the **home page** (`index.html`)  
 - **R** → worked on the **team page** (`equipo.html`) and the **services page** (`servicios.html`) 
 - **J** → built the **contact page** (`contacto.html`)  
