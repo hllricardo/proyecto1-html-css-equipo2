@@ -5,6 +5,44 @@
 /*-------------------------------------------*/
 
 /*Diseño de la pagina de Equipo*/
+
+.containerEquipo {
+  display: grid;
+  grid-template-columns: auto auto;
+  padding-bottom: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
+  justify-content: space-around;
+}
+
+.divEquipo{
+  background-color: white;
+  padding: 10px;
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 5%;
+  display: flex;
+
+
+}
+.blockEquipo {
+  display: flex;
+  gap: 30px;
+}
+.imagenEquipo {
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+}
+
+@media only screen and (max-width: 1168px) {
+  .containerEquipo {
+    grid-template-columns: auto;
+  }
+}
+
+
 /*-------------------------------------------*/
 
 /*Diseño de la pagina de Index*/
