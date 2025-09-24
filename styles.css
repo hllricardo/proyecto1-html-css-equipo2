@@ -3,6 +3,13 @@
 
 /*Diseño de la pagina de Contacto*/
 /*-------------------------------------------*/
+.col-contacto {
+  display: block;
+  height: auto;
+  margin: 0 auto 15px;
+  max-width: 250%px; 
+  width: 50%;     
+}
 
 /*Diseño de la pagina de Equipo*/
 
