@@ -10,6 +10,25 @@
   max-width: 250%px;
   width: 50%;
 }
+.container-contacto{
+ justify-content: center;
+ display:flex;
+ flex-wrap:wrap;
+ padding:40px;
+ }
+
+ .message-contacto{
+  width: 400px;
+  height: 20px;
+
+ }
+
+.yourmessage-contacto{
+  width: 400px;
+  height: 200px;
+
+ }
+ /*Diseño mensaje formulario: style="width: 400px; height: 200px;"*/
 
 /*Diseño de la pagina de Equipo*/
 
