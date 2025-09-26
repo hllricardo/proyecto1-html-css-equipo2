@@ -43,3 +43,9 @@ There’s also a picture that gives a modern and inspiring feel.
 
 ---
 
+## Image Sources
+- [Médicos y Pacientes – Fundación para la Formación de la OMC](https://www.medicosypacientes.com/articulo/la-fundacion-para-la-formacion-de-la-omc-organiza-el-seminario-derecho-y-medicina-desafios)  
+- [DeepAI](https://www.deepai.com) (AI-generated images)  
+- [Flaticon](https://www.flaticon.com) (icons and graphics)  
+- [Freepik – CDN Icons](https://www.freepik.com/icons/cdn)
+
