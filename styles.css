@@ -268,5 +268,15 @@ footer > img {
     grid-template-columns: auto auto;
   }
 }
+/*subido santos*/
+.div-show {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease-in-out;
+}
 
+.div-show.show {
+    opacity: 1;
+    transform: translateY(0);
+}
 /*-------------------------------------------*/
