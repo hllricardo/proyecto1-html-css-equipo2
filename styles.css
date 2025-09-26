@@ -1,4 +1,51 @@
 /*Diseño comun de todas las paginas web*/
+.themeBtn {
+  font-size: 20px;
+  background-color: #000000;
+  border: none;
+  border-radius: 40px;
+  color: white;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+body {
+  /*font-family: "Gill Sans MT", sans-serif;*/
+  font-family: "Inter";
+  margin: 0;
+  line-height: 1.5;
+  background-color: whitesmoke;
+}
+
+.nav_container {
+  background-color: #000000;
+  padding: 10px 30px;
+  position: sticky;
+  top: 0;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navigation img {
+  height: 45px;
+}
+
+.navigation a {
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+  padding: 12px 18px;
+}
+
+.navigation a:hover {
+  background-color: white;
+  color: black;
+}
+
 /*-------------------------------------------*/
 
 /*Diseño de la pagina de Contacto*/
@@ -51,44 +98,6 @@
 /*-------------------------------------------*/
 
 /*Diseño de la pagina de Index*/
-/*-------------------------------------------*/
-
-body {
-  /*font-family: "Gill Sans MT", sans-serif;*/
-  font-family: "Inter";
-  margin: 0;
-  line-height: 1.5;
-  background-color: whitesmoke;
-}
-
-.nav_container {
-  background-color: #000000;
-  padding: 10px 30px;
-  position: sticky;
-  top: 0;
-}
-
-.navigation {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.navigation img {
-  height: 45px;
-}
-
-.navigation a {
-  font-size: 20px;
-  color: white;
-  text-decoration: none;
-  padding: 12px 18px;
-}
-
-.navigation a:hover {
-  background-color: white;
-  color: black;
-}
 
 .main_title {
   text-align: center;
@@ -206,6 +215,8 @@ footer > img {
   display: block;
   margin: 5px auto 0;
 }
+
+/*-------------------------------------------*/
 
 /*Diseño de la pagina de Sobre*/
 .imagen-reducida {
