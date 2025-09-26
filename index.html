@@ -6,13 +6,17 @@
     <title>Home | CodeTrain Academy</title>
     <link href="styles.css" rel="stylesheet" />
   </head>
-  <body>
+  <body id="body">
     <div class="nav_container">
       <nav class="navigation">
         <img src="public/logo.png" alt="CodeTrain Academy logo">
         <div>
-        <a href="index.html"">Home</a><a href="servicios.html">Services</a><a href="equipo.html">Team</a><a href="sobre.html">About us</a><a href="contacto.html">Contact</a>
+          <a href="index.html">Home</a><a href="servicios.html">Services</a><a href="equipo.html">Team</a><a href="sobre.html">About us</a><a href="contacto.html">Contact</a>
+          <div class="switch-container">
+            <input type="checkbox" id="theme-switch">
+            <label for="theme-switch" class="switch"></label>
           </div>
+        </div>
       </nav>
     </div>
     <div class="main_title">
@@ -89,3 +93,4 @@
     </footer>
   </body>
 </html>
+<script src="javascript.js"></script>

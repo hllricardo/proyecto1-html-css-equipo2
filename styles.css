@@ -1,4 +1,101 @@
 /*Diseño comun de todas las paginas web*/
+/*estilos y cosas necesarias para que el boton para cambiar a un entorno oscuro o claro*/
+.dark-mode {
+  background-color: #111;
+  color: #fff;
+}
+
+.switch {
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  position: relative;
+  background-color: #ccc;
+  border-radius: 17px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.switch:before,
+.switch:after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.switch:before {
+  left: 2px;
+  background-color: #fff;
+}
+
+.switch:after {
+  right: 2px;
+  background-color: #000;
+}
+input[type="checkbox"] {
+  visibility: hidden;
+}
+
+input[type="checkbox"]:checked + .switch:before {
+  transform: translateX(26px);
+}
+
+input[type="checkbox"]:checked + .switch:after {
+  transform: translateX(-26px);
+}
+
+input[type="checkbox"]:checked + .switch {
+  background-color: #6e6e6e;
+}
+/*-------------------------------------------*/
+
+
+
+body {
+  /*font-family: "Gill Sans MT", sans-serif;*/
+  font-family: "Inter";
+  margin: 0;
+  line-height: 1.5;
+  background-color: whitesmoke;
+  transition: background-color 0.3s ease;
+  color: #000;
+}
+
+.nav_container {
+  background-color: #000000;
+  padding: 10px 30px;
+  position: sticky;
+  top: 0;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navigation img {
+  height: 45px;
+}
+
+.navigation a {
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+  padding: 12px 18px;
+}
+
+.navigation a:hover {
+  background-color: white;
+  color: black;
+}
+
+
+
 /*-------------------------------------------*/
 
 /*Diseño de la pagina de Contacto*/
@@ -70,44 +167,6 @@
 /*-------------------------------------------*/
 
 /*Diseño de la pagina de Index*/
-/*-------------------------------------------*/
-
-body {
-  /*font-family: "Gill Sans MT", sans-serif;*/
-  font-family: "Inter";
-  margin: 0;
-  line-height: 1.5;
-  background-color: whitesmoke;
-}
-
-.nav_container {
-  background-color: #000000;
-  padding: 10px 30px;
-  position: sticky;
-  top: 0;
-}
-
-.navigation {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.navigation img {
-  height: 45px;
-}
-
-.navigation a {
-  font-size: 20px;
-  color: white;
-  text-decoration: none;
-  padding: 12px 18px;
-}
-
-.navigation a:hover {
-  background-color: white;
-  color: black;
-}
 
 .main_title {
   text-align: center;
@@ -287,5 +346,15 @@ footer > img {
     grid-template-columns: auto auto;
   }
 }
+/*subido santos*/
+.div-show {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease-in-out;
+}
 
+.div-show.show {
+    opacity: 1;
+    transform: translateY(0);
+}
 /*-------------------------------------------*/
