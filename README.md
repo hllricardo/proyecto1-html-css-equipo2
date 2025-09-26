@@ -4,7 +4,7 @@
 
 - **O** → created the **home page** (`index.html`)
 - **R** → worked on the **team page** (`equipo.html`) and the **services page** (`servicios.html`)
-- **J** → built the **contact page** (`contacto.html`)
+- **Ju** and **Ja** → built the **contact page** (`contacto.html`)
 - **S** → designed the **about page** (`sobre.html`)
 
 We all worked together on the **styles.css** file, making styles that could be reused across different pages.
