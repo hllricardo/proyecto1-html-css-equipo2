@@ -1,7 +1,9 @@
 /*Diseño comun de todas las paginas web*/
-/*estilos y cosas necesarias para que el boton para cambiar a un entorno oscuro o claro*/
+/*estilos y cosas necesarias para que el boton cambie a un entorno oscuro o claro*/
 .dark-mode {
-  background-color: #111;
+  /*estoy entre estos dos colores para el fondo oscuro (acepto sugerencias)*/
+  background-color: #151b23;
+  /*background-color: #57606a;*/
   color: #fff;
 }
 
@@ -51,9 +53,17 @@ input[type="checkbox"]:checked + .switch:after {
 input[type="checkbox"]:checked + .switch {
   background-color: #6e6e6e;
 }
-/*-------------------------------------------*/
+/*fin de la hoja de estilos del boton para claro/oscuro*/
 
+/*Menu lateral*/
+.openSideNav {
+  display: none;
+}
+.closebtn {
+  display: none;
+}
 
+/*fin de los estilos del menu lateral*/
 
 body {
   /*font-family: "Gill Sans MT", sans-serif;*/
@@ -94,7 +104,54 @@ body {
   color: black;
 }
 
+.nav_links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
 
+@media screen and (max-width: 1168px) {
+  .openSideNav{
+    display:block;
+    font-size:30px;
+    cursor:pointer;
+    position: fixed;
+  }
+
+  .closebtn{
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+
+  .nav_container {
+  display: none;
+  height: 100%;
+  width: 150px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 60px;
+}
+
+.navigation{
+  flex-direction: column;
+}
+
+.nav_links{
+  flex-direction: column;
+  padding: 8px 8px 8px 32px;
+  font-size: 25px;
+  display: block;
+  transition: 0.3s;
+}
+
+}
 
 /*-------------------------------------------*/
 
