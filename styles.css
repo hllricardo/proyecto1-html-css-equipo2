@@ -164,6 +164,25 @@ body {
   max-width: 250%px;
   width: 50%;
 }
+.container-contacto{
+ justify-content: center;
+ display:flex;
+ flex-wrap:wrap;
+ padding:40px;
+ }
+
+ .message-contacto{
+  width: 400px;
+  height: 20px;
+
+ }
+
+.yourmessage-contacto{
+  width: 400px;
+  height: 200px;
+
+ }
+ /*Diseño mensaje formulario: style="width: 400px; height: 200px;"*/
 
 /*Diseño de la pagina de Equipo*/
 
@@ -341,48 +360,79 @@ footer > img {
   background-color: whitesmoke;
 }*/
 
+
 .containerServices {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: repeat(3, 1fr);  
+  grid-template-rows: repeat(2, 1fr);   
+  gap: 30px;
   padding: 40px;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  max-width: 1200px;  
+  margin: 0 auto;   
 }
 
 .divServices {
-  background-color: white;
-  padding: 10px;
-  margin-top: 20px;
-  margin-left: 10px;
-  margin-right: 10px;
-  border-radius: 5%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: transform 0.3s ease;
 }
+
+.divServices:hover {
+  transform: translateY(-5px);
+}
+
 .block {
   display: flex;
+  align-items: center;
   justify-content: space-between;
+  margin-bottom: 1rem;
 }
+
+.block h2 {
+  font-size: 1.2rem;
+  color: #004080;
+}
+
 .icon {
-  height: 60px;
   width: 60px;
+  height: 60px;
 }
+
 .divEnlaceServ {
   display: flex;
   justify-content: center;
+  margin-top: 1rem;
 }
+
+.divEnlaceServ a {
+  background-color: #004080;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.divEnlaceServ a:hover {
+  background-color: #0066cc;
+}
+
 
 @media only screen and (max-width: 768px) {
   .containerServices {
-    grid-template-columns: auto;
-  }
-}
-@media only screen and (max-width: 1024px) and (min-width: 769px) {
-  .containerServices {
-    grid-template-columns: auto auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto; 
   }
 }
 
-/*-------------------------------------------*/
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .containerServices {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr); 
+  }
+}
