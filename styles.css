@@ -36,21 +36,23 @@
   right: 2px;
   background-color: #000;
 }
+
 input[type="checkbox"] {
   visibility: hidden;
 }
 
-input[type="checkbox"]:checked + .switch:before {
+input[type="checkbox"]:checked+.switch:before {
   transform: translateX(26px);
 }
 
-input[type="checkbox"]:checked + .switch:after {
+input[type="checkbox"]:checked+.switch:after {
   transform: translateX(-26px);
 }
 
-input[type="checkbox"]:checked + .switch {
+input[type="checkbox"]:checked+.switch {
   background-color: #6e6e6e;
 }
+
 /*-------------------------------------------*/
 
 
@@ -107,25 +109,60 @@ body {
   max-width: 250%px;
   width: 50%;
 }
-.container-contacto{
- justify-content: center;
- display:flex;
- flex-wrap:wrap;
- padding:40px;
- }
 
- .message-contacto{
+.container-contacto {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  gap: 20px;
+  width: 600px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.form-div{
+  width: 400px; 
+  display: flex;
+  flex-direction: row;
+}
+
+form label {
+  width: 140px;
+  text-overflow: ellipsis;
+}
+
+.message-contacto {
   width: 400px;
   height: 20px;
 
- }
+}
 
-.yourmessage-contacto{
+.yourmessage-contacto {
   width: 400px;
   height: 200px;
+  
+}
+.form-message{
+  display: flex;
+  flex-direction: column;
+  width: 400px; 
+}
 
- }
- /*Diseño mensaje formulario: style="width: 400px; height: 200px;"*/
+
+.yourmessage-contacto::placeholder {
+ font-size: 14px;
+ font-family:"Inter";
+}
+
+.message-contacto::placeholder {
+ font-size: 14px;
+ font-family:"Inter";
+}
+
+
+/*Diseño mensaje formulario: style="width: 400px; height: 200px;"*/
 
 /*Diseño de la pagina de Equipo*/
 
@@ -152,6 +189,7 @@ body {
   display: flex;
   gap: 30px;
 }
+
 .imagenEquipo {
   height: 250px;
   width: 250px;
@@ -180,6 +218,7 @@ body {
   padding-top: 40px;
   padding-bottom: 0px;
 }
+
 .main_title h1,
 .main_title_other h1 {
   margin: 0 0 50px;
@@ -217,7 +256,7 @@ body {
   padding: 40px 20px;
 }
 
-.row > h2 {
+.row>h2 {
   width: 100%;
   margin-bottom: 0px;
 }
@@ -273,13 +312,14 @@ footer {
   margin: 0px;
 }
 
-footer > p {
+footer>p {
   color: white;
   font-size: 18px;
   margin: 0px;
   padding-bottom: 5px;
 }
-footer > img {
+
+footer>img {
   width: 200px;
   display: block;
   margin: 5px auto 0;
@@ -323,14 +363,17 @@ footer > img {
   flex-direction: column;
   justify-content: space-between;
 }
+
 .block {
   display: flex;
   justify-content: space-between;
 }
+
 .icon {
   height: 60px;
   width: 60px;
 }
+
 .divEnlaceServ {
   display: flex;
   justify-content: center;
@@ -341,20 +384,23 @@ footer > img {
     grid-template-columns: auto;
   }
 }
+
 @media only screen and (max-width: 1024px) and (min-width: 769px) {
   .containerServices {
     grid-template-columns: auto auto;
   }
 }
+
 /*subido santos*/
 .div-show {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.5s ease-in-out;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease-in-out;
 }
 
 .div-show.show {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
+
 /*-------------------------------------------*/
