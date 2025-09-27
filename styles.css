@@ -1,7 +1,9 @@
 /*Diseño comun de todas las paginas web*/
-/*estilos y cosas necesarias para que el boton para cambiar a un entorno oscuro o claro*/
+/*estilos y cosas necesarias para que el boton cambie a un entorno oscuro o claro*/
 .dark-mode {
-  background-color: #111;
+  /*estoy entre estos dos colores para el fondo oscuro (acepto sugerencias)*/
+  background-color: #151b23;
+  /*background-color: #57606a;*/
   color: #fff;
 }
 
@@ -36,24 +38,33 @@
   right: 2px;
   background-color: #000;
 }
+
 input[type="checkbox"] {
   visibility: hidden;
 }
 
-input[type="checkbox"]:checked + .switch:before {
+input[type="checkbox"]:checked+.switch:before {
   transform: translateX(26px);
 }
 
-input[type="checkbox"]:checked + .switch:after {
+input[type="checkbox"]:checked+.switch:after {
   transform: translateX(-26px);
 }
 
-input[type="checkbox"]:checked + .switch {
+input[type="checkbox"]:checked+.switch {
   background-color: #6e6e6e;
 }
-/*-------------------------------------------*/
+/*fin de la hoja de estilos del boton para claro/oscuro*/
 
+/*Menu lateral*/
+.openSideNav {
+  display: none;
+}
+.closebtn {
+  display: none;
+}
 
+/*fin de los estilos del menu lateral*/
 
 body {
   /*font-family: "Gill Sans MT", sans-serif;*/
@@ -94,7 +105,54 @@ body {
   color: black;
 }
 
+.nav_links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
 
+@media screen and (max-width: 1168px) {
+  .openSideNav{
+    display:block;
+    font-size:30px;
+    cursor:pointer;
+    position: fixed;
+  }
+
+  .closebtn{
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+
+  .nav_container {
+  display: none;
+  height: 100%;
+  width: 150px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 60px;
+}
+
+.navigation{
+  flex-direction: column;
+}
+
+.nav_links{
+  flex-direction: column;
+  padding: 8px 8px 8px 32px;
+  font-size: 25px;
+  display: block;
+  transition: 0.3s;
+}
+
+}
 
 /*-------------------------------------------*/
 
@@ -107,25 +165,70 @@ body {
   max-width: 250%px;
   width: 50%;
 }
-.container-contacto{
- justify-content: center;
- display:flex;
- flex-wrap:wrap;
- padding:40px;
- }
 
- .message-contacto{
+.container-contacto {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  gap: 20px;
+  width: 600px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.form-div{
+  width: 400px; 
+  display: flex;
+  flex-direction: row;
+}
+
+form label {
+  width: 140px;
+  text-overflow: ellipsis;
+}
+
+.message-contacto {
   width: 400px;
   height: 20px;
 
- }
+}
 
-.yourmessage-contacto{
+.yourmessage-contacto {
   width: 400px;
   height: 200px;
+  
+}
+.form-message{
+  display: flex;
+  flex-direction: column;
+  width: 400px; 
+}
 
+
+
+
+ .message-opinion {
+  width: 400px;
+  height: 200px;
  }
  /*Diseño mensaje formulario: style="width: 400px; height: 200px;"*/
+
+
+.yourmessage-contacto::placeholder {
+ font-size: 14px;
+ font-family:"Inter";
+}
+
+.message-contacto::placeholder {
+ font-size: 14px;
+ font-family:"Inter";
+}
+
+
+/*Diseño mensaje formulario: style="width: 400px; height: 200px;"*/
+
 
 /*Diseño de la pagina de Equipo*/
 
@@ -152,6 +255,7 @@ body {
   display: flex;
   gap: 30px;
 }
+
 .imagenEquipo {
   height: 250px;
   width: 250px;
@@ -180,6 +284,7 @@ body {
   padding-top: 40px;
   padding-bottom: 0px;
 }
+
 .main_title h1,
 .main_title_other h1 {
   margin: 0 0 50px;
@@ -217,7 +322,7 @@ body {
   padding: 40px 20px;
 }
 
-.row > h2 {
+.row>h2 {
   width: 100%;
   margin-bottom: 0px;
 }
@@ -273,13 +378,14 @@ footer {
   margin: 0px;
 }
 
-footer > p {
+footer>p {
   color: white;
   font-size: 18px;
   margin: 0px;
   padding-bottom: 5px;
 }
-footer > img {
+
+footer>img {
   width: 200px;
   display: block;
   margin: 5px auto 0;
@@ -329,6 +435,7 @@ footer > img {
   transform: translateY(-5px);
 }
 
+
 .block {
   display: flex;
   align-items: center;
@@ -345,6 +452,7 @@ footer > img {
   width: 60px;
   height: 60px;
 }
+
 
 .divEnlaceServ {
   display: flex;
@@ -374,11 +482,14 @@ footer > img {
 }
 
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
+
+@media only screen and (max-width: 1024px) and (min-width: 769px) {
   .containerServices {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr); 
   }
 }
+<<<<<<< HEAD
 
 .divServices {
     opacity: 0;
@@ -406,3 +517,24 @@ footer > img {
     background: #004080;
     color: white;
 }
+=======
+.container {
+   display: grid;
+   grid-template-columns: auto auto;
+  }
+
+
+/*subido santos*/
+.div-show {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease-in-out;
+}
+
+.div-show.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/*-------------------------------------------*/
+>>>>>>> af2508df6a144798f9e15ed2ba3a8715f20498b3
