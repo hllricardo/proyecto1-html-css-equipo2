@@ -158,12 +158,20 @@ body {
 
 /*Diseño de la pagina de Contacto*/
 /*-------------------------------------------*/
+.highlight-text {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+
 .col-contacto {
   display: block;
   height: auto;
   margin: 0 auto 15px;
-  max-width: 250%px;
-  width: 50%;
+  width: 40%;
 }
 
 .container-contacto {
@@ -171,52 +179,120 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px;
-  gap: 20px;
-  width: 600px;
+  padding: 20px;
+  gap: 10px;
+  max-width: 450px;
   margin-right: auto;
   margin-left: auto;
 }
 
-.form-div{
-  width: 400px; 
+.form-div {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 450px;
+  width: 100%;
 }
 
+.form-message {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
 form label {
-  width: 140px;
-  text-overflow: ellipsis;
+  min-width: 80px;
+  width: auto; /*check*/
+  text-align: left;
 }
 
-.message-contacto {
-  width: 400px;
-  height: 20px;
+.form-div input,
+.form-div textarea {
+  flex: 1;
+}
 
+.message-contacto,
+.yourmessage-contacto {
+  font-size: 14px;
+  font-family: "Inter";
+  border-radius: 5px;
+  background-color: transparent;
+  border: 2px solid black;
+  padding: 8px 4px;
+  box-sizing: border-box;
 }
 
 .yourmessage-contacto {
-  width: 400px;
+    flex: 1;              /* ocupa el espacio restante */
+  min-width: 250px;     /* evita que se haga demasiado pequeño */
   height: 200px;
-  
+  resize: vertical;
+  margin-top: 5px;
+  width: auto;
 }
-.form-message{
+
+
+.form-div p,
+.form-message p {
+  flex-basis: 100%;
+  font-size: 12px;
+  min-height: 18px; 
+  margin: 0 0 0 80px;
+}
+
+.form-button{
   display: flex;
-  flex-direction: column;
-  width: 400px; 
+  justify-content: center; 
+  margin-top: 10px;
+  margin-bottom: 40px;
 }
 
-
+.message-contacto::placeholder,
 .yourmessage-contacto::placeholder {
  font-size: 14px;
  font-family:"Inter";
 }
 
-.message-contacto::placeholder {
- font-size: 14px;
- font-family:"Inter";
+#send_button {
+  background: #0079ff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
+#send_button:hover {
+  background: #005fcc;
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+#send_button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.contactDetails {
+  text-align: left;
+  margin: 0 auto;
+  padding-bottom: 40px;
+  width: max-content;
+}
+
+.contactDetails p {
+  margin: 0;
+}
+
+
+.error {
+  color: red;
+  font-style: italic;
+}
 
 /*Diseño mensaje formulario: style="width: 400px; height: 200px;"*/
 
