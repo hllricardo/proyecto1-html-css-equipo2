@@ -21,6 +21,12 @@
   background-color: #343f4eff !important;
 }
 
+.switch-container {
+  display: flex;
+  justify-content: center;  /* horizontal centering */
+  align-items: center;      /* vertical centering */
+}
+
 .switch {
   display: inline-block;
   width: 60px;
@@ -53,8 +59,8 @@
   background-color: #000;
 }
 
-input[type="checkbox"] {
-  visibility: hidden;
+#theme-switch {
+  display: none;
 }
 
 input[type="checkbox"]:checked+.switch:before {
@@ -94,7 +100,6 @@ body {
   background-color: #000000;
   padding: 10px 30px;
   position: sticky;
-  top: 0;
 }
 
 .navigation {
@@ -112,6 +117,7 @@ body {
   color: white;
   text-decoration: none;
   padding: 12px 18px;
+  white-space: nowrap;
 }
 
 .navigation a:hover {
@@ -125,47 +131,55 @@ body {
   gap: 20px;
 }
 
+@media screen and (min-width: 1169px) {
+  .navigation {
+    margin-top: 0 !important;
+  }
+  .nav_container {
+    padding: 10px 30px !important;
+  }
+}
+
 @media screen and (max-width: 1168px) {
   .openSideNav{
     display:block;
     font-size:30px;
     cursor:pointer;
     position: fixed;
+    margin-left: 15px;
   }
 
   .closebtn{
     display: block;
-    position: absolute;
     top: 0;
     right: 25px;
     font-size: 36px;
-    margin-left: 50px;
   }
 
   .nav_container {
-  display: none;
-  height: 100%;
-  width: 150px;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  overflow-x: hidden;
-  padding-top: 60px;
-}
+    display: none;
+    height: 100%;
+    width: 150px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 60px;
+  }
 
-.navigation{
-  flex-direction: column;
-}
+  .navigation{
+    flex-direction: column;
+  }
 
-.nav_links{
-  flex-direction: column;
-  padding: 8px 8px 8px 32px;
-  font-size: 25px;
-  display: block;
-  transition: 0.3s;
-}
-
+  .nav_links{
+    display: flex;
+    flex-direction: column;
+    font-size: 25px;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+  }
 }
 
 /*-------------------------------------------*/
@@ -631,5 +645,3 @@ footer>img {
   }
 }
 
->>>>>>> 60e91e9 (corregido errores)
->>>>>>> 37ee8312ea866900cb70d6cd2543b23bc1d37c0f

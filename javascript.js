@@ -5,7 +5,7 @@ const textEquipo = document.getElementsByClassName("divEquipo");
 
 themeSwitch.addEventListener("change", () => {
   body.classList.toggle("dark-mode");
-  for(let i=0; i<textEquipo.length; i++){
+  for (let i = 0; i < textEquipo.length; i++) {
     /*textEquipo[i].style.backgroundColor = "red";*/
     textEquipo[i].classList.toggle("dark-mode-equipo");
   }
@@ -14,10 +14,12 @@ themeSwitch.addEventListener("change", () => {
 // Codigo para el menu lateral
 function openNav() {
   document.getElementById("id_navigation_container").style.display = "block";
+  document.querySelector(".nav_container").style.padding = "0 10px";
 }
 
 function closeNav() {
-  document.getElementById("id_navigation_container").style.display = "none";
+  document.getElementById("id_navigation_container").style.display = "";
+  document.querySelector(".nav_container").style.padding = "10px 30px";
 }
 //---------------------------------------------------
 
