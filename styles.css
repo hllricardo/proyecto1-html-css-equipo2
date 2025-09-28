@@ -6,6 +6,9 @@
   /*background-color: #57606a;*/
   color: #fff;
 }
+.dark-mode-equipo {
+  background-color: #343f4eff !important;
+}
 
 .switch {
   display: inline-block;
@@ -471,14 +474,14 @@ footer>img {
   }
 }
 
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
+
 
 @media only screen and (max-width: 1024px) and (min-width: 769px) {
   .containerServices {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr); 
-  }
-}
+  
+
     grid-template-columns: auto auto;
   }
 }
