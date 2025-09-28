@@ -501,8 +501,36 @@ footer>img {
 /* Santos, he eliminado las clases que había aquí porqué estaban duplicadas (footer y body). Cuando lo tengamos todo, intentaré ponerlo bien.
 /*-------------------------------------------*/
 
+/*-------------------------------------------*/
+/*Diseño de la página de sobre*/
+/*-------------------------------------------*/
+.containerSobre {
+  display: flex;
+  padding: 40px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
 
+.divSobre {
+  background-color: white;
+  padding: 10px;
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 5%;
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+}
+.blockSobre {
+  display: flex;
+  justify-content: space-between;
+}
 
+.blockSobre h3 {
+  margin: 0;
+}
 
 /*-------------------------------------------*/
 /*Diseño de la página de servicios*/
