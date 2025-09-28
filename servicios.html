@@ -12,7 +12,7 @@
   <header class="nav_container">
     <nav class="navigation">
       <img src="public/logo.png" alt="CodeTrain Academy logo" />
-      <div>
+      <div class="nav_links">
         <a href="index.html">Home</a>
         <a href="servicios.html">Services</a>
         <a href="equipo.html">Team</a>
@@ -28,73 +28,83 @@
       <h2>Choose the right path for your career with our specialized courses</h2>
     </section>
 
-    const filtersHTML = `
+    <!-- Category filters -->
     <div class="filter-container" style="text-align: center; margin-bottom: 30px;">
-      <button class="filter-btn active" onclick="filterServices('all')">Todos</button>
-      <button class="filter-btn" onclick="filterServices('development')">Desarrollo</button>
-      <button class="filter-btn" onclick="filterServices('security')">Seguridad</button>
-      <button class="filter-btn" onclick="filterServices('data')">Datos</button>
+      <button class="filter-btn active" onclick="filterServices('all')">All</button>
+      <button class="filter-btn" onclick="filterServices('development')">Development</button>
+      <button class="filter-btn" onclick="filterServices('security')">Security</button>
+      <button class="filter-btn" onclick="filterServices('data')">Data</button>
       <button class="filter-btn" onclick="filterServices('cloud')">Cloud</button>
     </div>
 
     <section class="containerServices">
-      <div class="divServices">
+      <div class="divServices div-show" data-category="development">
         <div class="block">
           <h2>Full-Stack Developer</h2>
           <img class="icon" src="public/full-stack-developer.png" alt="Full-Stack Developer icon" />
         </div>
         <p>Design and build complete websites using modern technologies and expert guidance.</p>
-        <div class="divEnlaceServ"><a href="# onclick=" openCoureModal('Full-Stack Developer')">Sign up</a></div>
+        <div class="divEnlaceServ">
+          <a href="#" onclick="openCourseModal('Full Stack Development')">Sign up</a>
+        </div>
       </div>
 
-      <div class="divServices">
+      <div class="divServices div-show" data-category="security">
         <div class="block">
           <h2>Cybersecurity</h2>
           <img class="icon" src="public/cyberseguridad.png" alt="Cybersecurity icon" />
         </div>
         <p>Identify and mitigate system vulnerabilities using global security standards.</p>
-        <div class="divEnlaceServ"><a href="# onclick=" openCoureModal('Cybersecurity')>Sign up</a></div>
+        <div class="divEnlaceServ">
+          <a href="#" onclick="openCourseModal('Cybersecurity')">Sign up</a>
+        </div>
       </div>
 
-      <div class="divServices">
+      <div class="divServices div-show" data-category="data">
         <div class="block">
           <h2>Artificial Intelligence</h2>
           <img class="icon" src="public/inteligencia-artificial.png" alt="AI icon" />
         </div>
         <p>Explore AI platforms and learn to build intelligent systems with real-world applications.</p>
-        <div class="divEnlaceServ"><a href="# onclick=" openCoureModal('Artificial Intelligence')>Sign up</a></div>
+        <div class="divEnlaceServ">
+          <a href="#" onclick="openCourseModal('Artificial Intelligence')">Sign up</a>
+        </div>
       </div>
 
-      <div class="divServices">
+      <div class="divServices div-show" data-category="data">
         <div class="block">
           <h2>Databases</h2>
           <img class="icon" src="public/databases.png" alt="Databases icon" />
         </div>
         <p>Master database systems from foundational concepts to advanced data management techniques.</p>
-        <div class="divEnlaceServ"><a href="# onclick=" openCoureModal('Databases')>Sign up</a></div>
+        <div class="divEnlaceServ">
+          <a href="#" onclick="openCourseModal('Databases')">Sign up</a>
+        </div>
       </div>
 
-      <div class="divServices">
+      <div class="divServices div-show" data-category="data">
         <div class="block">
           <h2>Data Science</h2>
           <img class="icon" src="public/datascience.png" alt="Data Science icon" />
         </div>
         <p>Develop skills in data analysis, visualization, and machine learning to unlock insights from data.</p>
-        <div class="divEnlaceServ"><a href="# onclick=" openCoureModal('Data Science')>Sign up</a></div>
+        <div class="divEnlaceServ">
+          <a href="#" onclick="openCourseModal('Data Science')">Sign up</a>
+        </div>
       </div>
 
-      <div class="divServices">
+      <div class="divServices div-show" data-category="cloud">
         <div class="block">
           <h2>Cloud Computing</h2>
           <img class="icon" src="public/cloud_computing.png" alt="Cloud Computing icon" />
         </div>
-        <p>Learn IT fundamentals and gain hands-on experience with cloud platforms, infrastructure as code, and
-          automation.</p>
-        <div class="divEnlaceServ"><a href="# onclick=" openCoureModal('Cloud Computing')>Sign up</a></div>
+        <p>Learn IT fundamentals and gain hands-on experience with cloud platforms, infrastructure as code, and automation.</p>
+        <div class="divEnlaceServ">
+          <a href="#" onclick="openCourseModal('Cloud Computing')">Sign up</a>
+        </div>
       </div>
     </section>
   </main>
-
 
   <footer>
     <img src="public/logo.png" alt="CodeTrain Academy logo" />
