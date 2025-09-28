@@ -6,6 +6,9 @@
   /*background-color: #57606a;*/
   color: #fff;
 }
+.dark-mode-equipo {
+  background-color: #343f4eff !important;
+}
 
 .switch {
   display: inline-block;
@@ -246,6 +249,10 @@ form label {
   margin-bottom: 40px;
 }
 
+ .message-opinion {
+  width: 400px;
+  height: 200px;
+ }
 .message-contacto::placeholder,
 .yourmessage-contacto::placeholder {
  font-size: 14px;
@@ -295,6 +302,7 @@ form label {
 }
 
 /*Diseño mensaje formulario: style="width: 400px; height: 200px;"*/
+
 
 /*Diseño de la pagina de Equipo*/
 
@@ -468,13 +476,12 @@ footer>img {
 /* Santos, he eliminado las clases que había aquí porqué estaban duplicadas (footer y body). Cuando lo tengamos todo, intentaré ponerlo bien.
 /*-------------------------------------------*/
 
-/*Diseño de la pagina de servicios*/
-/*El estilo del body es una sugerencia se puede eliminar si es necesario*/
-/*He puesto este mismo background arriba, queda más bien*/
-/*.bodyServicios {
-  background-color: whitesmoke;
-}*/
 
+
+
+/*-------------------------------------------*/
+/*Diseño de la página de servicios*/
+/*-------------------------------------------*/
 
 .containerServices {
   display: grid;
@@ -494,13 +501,20 @@ footer>img {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: transform 0.3s ease;
+  transition: all 0.6s ease;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.divServices.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .divServices:hover {
   transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
-
 
 .block {
   display: flex;
@@ -519,7 +533,6 @@ footer>img {
   height: 60px;
 }
 
-
 .divEnlaceServ {
   display: flex;
   justify-content: center;
@@ -533,6 +546,7 @@ footer>img {
   border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
 .divEnlaceServ a:hover {
@@ -540,26 +554,39 @@ footer>img {
 }
 
 
-@media only screen and (max-width: 768px) {
-  .containerServices {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto; 
-  }
+/* Estilos para los filtros */
+.filter-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+>>>>>>> 60e91e9 (corregido errores)
 }
 
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
-
-@media only screen and (max-width: 1024px) and (min-width: 769px) {
-  .containerServices {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr); 
-  }
+.filter-btn {
+  background: #f0f0f0;
+  border: 2px solid #004080;
+  padding: 8px 16px;
+  margin: 5px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "Inter", sans-serif;
 }
-    grid-template-columns: auto auto;
-  }
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: #004080;
+  color: white;
 }
 
-/*subido santos*/
+.container {
+   display: grid;
+   grid-template-columns: auto auto;
+  }
+
+/* Animaciones de entrada */
 .div-show {
   opacity: 0;
   transform: translateY(20px);
@@ -572,3 +599,26 @@ footer>img {
 }
 
 /*-------------------------------------------*/
+/*-------------------------------------------*/
+/* Media queries para responsive */
+@media only screen and (max-width: 768px) {
+  .containerServices {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto; 
+    padding: 20px;
+  }
+  
+  .filter-container {
+    padding: 0 20px;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .containerServices {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr); 
+  }
+}
+
+>>>>>>> 60e91e9 (corregido errores)
+>>>>>>> 37ee8312ea866900cb70d6cd2543b23bc1d37c0f

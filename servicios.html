@@ -1,93 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Services | CodeTrain Academy</title>
-    <link href="styles.css" rel="stylesheet" />
-  </head>
-  <body class="bodyServicios">
-    <header class="nav_container">
-      <nav class="navigation">
-        <img src="public/logo.png" alt="CodeTrain Academy logo" />
-        <div>
-          <a href="index.html">Home</a>
-          <a href="servicios.html">Services</a>
-          <a href="equipo.html">Team</a>
-          <a href="sobre.html">About us</a>
-          <a href="contacto.html">Contact</a>
-        </div>
-      </nav>
-    </header>
 
-    <main>
-      <section class="main_title_other">
-        <h1>Start your academic future</h1>
-        <h2>Choose the right path for your career with our specialized courses</h2>
-      </section>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Services | CodeTrain Academy</title>
+  <link href="styles.css" rel="stylesheet" />
+</head>
 
-      <section class="containerServices">
-        <div class="divServices">
-          <div class="block">
-            <h2>Full-Stack Developer</h2>
-            <img class="icon" src="public/full-stack-developer.png" alt="Full-Stack Developer icon" />
-          </div>
-          <p>Design and build complete websites using modern technologies and expert guidance.</p>
-          <div class="divEnlaceServ"><a href="contacto.html">Sign up</a></div>
-        </div>
-
-        <div class="divServices">
-          <div class="block">
-            <h2>Cybersecurity</h2>
-            <img class="icon" src="public/cyberseguridad.png" alt="Cybersecurity icon" />
-          </div>
-          <p>Identify and mitigate system vulnerabilities using global security standards.</p>
-          <div class="divEnlaceServ"><a href="contacto.html">Sign up</a></div>
-        </div>
-
-        <div class="divServices">
-          <div class="block">
-            <h2>Artificial Intelligence</h2>
-            <img class="icon" src="public/inteligencia-artificial.png" alt="AI icon" />
-          </div>
-          <p>Explore AI platforms and learn to build intelligent systems with real-world applications.</p>
-          <div class="divEnlaceServ"><a href="contacto.html">Sign up</a></div>
-        </div>
-
-        <div class="divServices">
-          <div class="block">
-            <h2>Databases</h2>
-            <img class="icon" src="public/databases.png" alt="Databases icon" />
-          </div>
-          <p>Master database systems from foundational concepts to advanced data management techniques.</p>
-          <div class="divEnlaceServ"><a href="contacto.html">Sign up</a></div>
-        </div>
-
-        <div class="divServices">
-          <div class="block">
-            <h2>Data Science</h2>
-            <img class="icon" src="public/datascience.png" alt="Data Science icon" />
-          </div>
-          <p>Develop skills in data analysis, visualization, and machine learning to unlock insights from data.</p>
-          <div class="divEnlaceServ"><a href="contacto.html">Sign up</a></div>
-        </div>
-
-        <div class="divServices">
-          <div class="block">
-            <h2>Cloud Computing</h2>
-            <img class="icon" src="public/cloud_computing.png" alt="Cloud Computing icon" />
-          </div>
-          <p>Learn IT fundamentals and gain hands-on experience with cloud platforms, infrastructure as code, and automation.</p>
-          <div class="divEnlaceServ"><a href="contacto.html">Sign up</a></div>
-        </div>
-      </section>
-    </main>
-    
-
-    <footer>
+<body class="bodyServicios">
+  <header class="nav_container">
+    <nav class="navigation">
       <img src="public/logo.png" alt="CodeTrain Academy logo" />
-      <p>© 2025 CodeTrain Academy. All rights reserved.</p>
-    </footer>
+      <div class="nav_links">
+        <a href="index.html">Home</a>
+        <a href="servicios.html">Services</a>
+        <a href="equipo.html">Team</a>
+        <a href="sobre.html">About us</a>
+        <a href="contacto.html">Contact</a>
+      </div>
+    </nav>
+  </header>
 
-  </body>
+  <main>
+    <section class="main_title_other">
+      <h1>Start your academic future</h1>
+      <h2>Choose the right path for your career with our specialized courses</h2>
+    </section>
+
+    <!-- Category filters -->
+    <div class="filter-container" style="text-align: center; margin-bottom: 30px;">
+      <button class="filter-btn active" onclick="filterServices('all')">All</button>
+      <button class="filter-btn" onclick="filterServices('development')">Development</button>
+      <button class="filter-btn" onclick="filterServices('security')">Security</button>
+      <button class="filter-btn" onclick="filterServices('data')">Data</button>
+      <button class="filter-btn" onclick="filterServices('cloud')">Cloud</button>
+    </div>
+
+    <section class="containerServices">
+      <div class="divServices div-show" data-category="development">
+        <div class="block">
+          <h2>Full-Stack Developer</h2>
+          <img class="icon" src="public/full-stack-developer.png" alt="Full-Stack Developer icon" />
+        </div>
+        <p>Design and build complete websites using modern technologies and expert guidance.</p>
+        <div class="divEnlaceServ">
+          <a href="#" onclick="openCourseModal('Full Stack Development')">Sign up</a>
+        </div>
+      </div>
+
+      <div class="divServices div-show" data-category="security">
+        <div class="block">
+          <h2>Cybersecurity</h2>
+          <img class="icon" src="public/cyberseguridad.png" alt="Cybersecurity icon" />
+        </div>
+        <p>Identify and mitigate system vulnerabilities using global security standards.</p>
+        <div class="divEnlaceServ">
+          <a href="#" onclick="openCourseModal('Cybersecurity')">Sign up</a>
+        </div>
+      </div>
+
+      <div class="divServices div-show" data-category="data">
+        <div class="block">
+          <h2>Artificial Intelligence</h2>
+          <img class="icon" src="public/inteligencia-artificial.png" alt="AI icon" />
+        </div>
+        <p>Explore AI platforms and learn to build intelligent systems with real-world applications.</p>
+        <div class="divEnlaceServ">
+          <a href="#" onclick="openCourseModal('Artificial Intelligence')">Sign up</a>
+        </div>
+      </div>
+
+      <div class="divServices div-show" data-category="data">
+        <div class="block">
+          <h2>Databases</h2>
+          <img class="icon" src="public/databases.png" alt="Databases icon" />
+        </div>
+        <p>Master database systems from foundational concepts to advanced data management techniques.</p>
+        <div class="divEnlaceServ">
+          <a href="#" onclick="openCourseModal('Databases')">Sign up</a>
+        </div>
+      </div>
+
+      <div class="divServices div-show" data-category="data">
+        <div class="block">
+          <h2>Data Science</h2>
+          <img class="icon" src="public/datascience.png" alt="Data Science icon" />
+        </div>
+        <p>Develop skills in data analysis, visualization, and machine learning to unlock insights from data.</p>
+        <div class="divEnlaceServ">
+          <a href="#" onclick="openCourseModal('Data Science')">Sign up</a>
+        </div>
+      </div>
+
+      <div class="divServices div-show" data-category="cloud">
+        <div class="block">
+          <h2>Cloud Computing</h2>
+          <img class="icon" src="public/cloud_computing.png" alt="Cloud Computing icon" />
+        </div>
+        <p>Learn IT fundamentals and gain hands-on experience with cloud platforms, infrastructure as code, and automation.</p>
+        <div class="divEnlaceServ">
+          <a href="#" onclick="openCourseModal('Cloud Computing')">Sign up</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <img src="public/logo.png" alt="CodeTrain Academy logo" />
+    <p>© 2025 CodeTrain Academy. All rights reserved.</p>
+  </footer>
+
+  <script src="servicios.js"></script>
+</body>
+
 </html>
