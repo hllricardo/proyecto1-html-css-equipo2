@@ -210,6 +210,15 @@ form label {
 }
 
 
+
+
+ .message-opinion {
+  width: 400px;
+  height: 200px;
+ }
+ /*Diseño mensaje formulario: style="width: 400px; height: 200px;"*/
+
+
 .yourmessage-contacto::placeholder {
  font-size: 14px;
  font-family:"Inter";
@@ -222,6 +231,7 @@ form label {
 
 
 /*Diseño mensaje formulario: style="width: 400px; height: 200px;"*/
+
 
 /*Diseño de la pagina de Equipo*/
 
@@ -482,9 +492,40 @@ footer>img {
     grid-template-rows: repeat(3, 1fr); 
   
 
-    grid-template-columns: auto auto;
-  }
+
+
+.divServices {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
 }
+
+.divServices.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.filter-btn {
+    background: #f0f0f0;
+    border: 2px solid #004080;
+    padding: 8px 16px;
+    margin: 5px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: #004080;
+    color: white;
+}
+
+.container {
+   display: grid;
+   grid-template-columns: auto auto;
+  }
+
 
 /*subido santos*/
 .div-show {
