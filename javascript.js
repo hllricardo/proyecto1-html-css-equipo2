@@ -2,14 +2,37 @@
 const themeSwitch = document.getElementById("theme-switch");
 const body = document.getElementById("body");
 const textEquipo = document.getElementsByClassName("divEquipo");
+const textSobre = document.getElementsByClassName("divSobre");
+const currentTheme = localStorage.getItem("theme");
+
+if (currentTheme === "dark-mode") {
+  body.classList.toggle("dark-mode");
+  for (let i = 0; i < textEquipo.length; i++) {
+    textEquipo[i].classList.toggle("dark-mode-subdiv");
+  }
+  for (let i = 0; i < textSobre.length; i++) {
+    textSobre[i].classList.toggle("dark-mode-subdiv");
+  }
+
+}
 
 themeSwitch.addEventListener("change", () => {
   body.classList.toggle("dark-mode");
   for (let i = 0; i < textEquipo.length; i++) {
-    /*textEquipo[i].style.backgroundColor = "red";*/
-    textEquipo[i].classList.toggle("dark-mode-equipo");
+    textEquipo[i].classList.toggle("dark-mode-subdiv");
+  }
+  for (let i = 0; i < textSobre.length; i++) {
+    textSobre[i].classList.toggle("dark-mode-subdiv");
+  }
+  if (body.classList.contains("dark-mode")){
+    localStorage.setItem("theme", "dark-mode");
+  } else {
+    localStorage.setItem("theme", "light-mode");
   }
 });
+
+
+
 //---------------------------------------------------
 // Codigo para el menu lateral
 function openNav() {
