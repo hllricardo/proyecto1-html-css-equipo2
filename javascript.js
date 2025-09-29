@@ -90,4 +90,10 @@ function button_activation() {
   );
 }
 
+function send_form_sim() {
+  alert(
+    "Button Test Successful. This alert confirms the button works. The final feature is still under development and will be released shortly.",
+  );
+}
+
 //---------------------------------------------------
