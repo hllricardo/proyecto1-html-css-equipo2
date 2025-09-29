@@ -8,18 +8,25 @@
   </head>
 
   <body class="bodyServicios">
-    <header class="nav_container">
+    <div id="id_navigation_container" class="nav_container">
       <nav class="navigation">
-        <img src="public/logo.png" alt="CodeTrain Academy logo" />
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <img src="public/logo.png" alt="CodeTrain Academy logo">
         <div class="nav_links">
           <a href="index.html">Home</a>
           <a href="servicios.html">Services</a>
           <a href="equipo.html">Team</a>
           <a href="sobre.html">About us</a>
           <a href="contacto.html">Contact</a>
+          <a href="reseñas.html">Reviews</a>
+          <div class="switch-container">
+            <input type="checkbox" id="theme-switch">
+            <label for="theme-switch" class="switch"></label>
+          </div>
         </div>
       </nav>
-    </header>
+    </div>
+    <span id="openNav" class="openSideNav" onclick="openNav()">&#9776;</span>
 
     <main>
       <div class="main_title_other">

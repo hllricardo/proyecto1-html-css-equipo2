@@ -2,12 +2,15 @@
 const themeSwitch = document.getElementById("theme-switch");
 const body = document.getElementById("body");
 const textEquipo = document.getElementsByClassName("divEquipo");
+const textSobre = document.getElementsByClassName("divSobre");
 
 themeSwitch.addEventListener("change", () => {
   body.classList.toggle("dark-mode");
   for (let i = 0; i < textEquipo.length; i++) {
-    /*textEquipo[i].style.backgroundColor = "red";*/
     textEquipo[i].classList.toggle("dark-mode-equipo");
+  }
+  for (let i = 0; i < textSobre.length; i++) {
+    textSobre[i].classList.toggle("dark-mode-equipo");
   }
 });
 //---------------------------------------------------
