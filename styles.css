@@ -502,7 +502,7 @@ ul.pagination li {display: inline;}
 
 ul.pagination li a {
   color: #000;
-  float: left;
+  float: center;
   padding: 9px 18px;
   text-decoration: none;
 }
