@@ -7,13 +7,23 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="nav_container">
-        <nav class="navigation">
-            <img src="public/logo.png" alt="CodeTrain Academy logo">
-            <div>
-                <a href="index.html">Home</a><a href="servicios.html">Services</a><a href="equipo.html">Team</a><a href="sobre.html">About us</a><a href="contacto.html">Contact</a>
-            </div>
-        </nav>
+    <div id="id_navigation_container" class="nav_container">
+      <nav class="navigation">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <img src="public/logo.png" alt="CodeTrain Academy logo">
+        <div class="nav_links">
+          <a href="index.html">Home</a>
+          <a href="servicios.html">Services</a>
+          <a href="equipo.html">Team</a>
+          <a href="sobre.html">About us</a>
+          <a href="contacto.html">Contact</a>
+          <a href="reseñas.html">Reviews</a>
+          <div class="switch-container">
+            <input type="checkbox" id="theme-switch">
+            <label for="theme-switch" class="switch"></label>
+          </div>
+        </div>
+      </nav>
     </div>
 
     <div class="main_title_other">
@@ -41,16 +51,16 @@
         <br>
         <br>
         <ul class="pagination">
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
-            <li><a href="#">6</a></li>
-            <li><a href="#">7</a></li>
-            <li><a href="#">8</a></li>
-            <li><a href="#">9</a></li>
-            <li><a href="#">10</a></li>
+            <li><button href="#">1</button></li>
+            <li><button href="#">2</button></li>
+            <li><button href="#">3</button></li>
+            <li><button href="#">4</button></li>
+            <li><button href="#">5</button></li>
+            <li><button href="#">6</button></li>
+            <li><button href="#">7</button></li>
+            <li><button href="#">8</button></li>
+            <li><button href="#">9</button></li>
+            <li><button href="#">10</button></li>
         </ul>
     </div>
     <br>

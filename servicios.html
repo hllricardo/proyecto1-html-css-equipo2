@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6,88 +6,536 @@
     <title>Services | CodeTrain Academy</title>
     <link href="styles.css" rel="stylesheet" />
   </head>
+
   <body class="bodyServicios">
-    <header class="nav_container">
+    <div id="id_navigation_container" class="nav_container">
       <nav class="navigation">
-        <img src="public/logo.png" alt="CodeTrain Academy logo" />
-        <div>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <img src="public/logo.png" alt="CodeTrain Academy logo">
+        <div class="nav_links">
           <a href="index.html">Home</a>
           <a href="servicios.html">Services</a>
           <a href="equipo.html">Team</a>
           <a href="sobre.html">About us</a>
           <a href="contacto.html">Contact</a>
+          <a href="reseñas.html">Reviews</a>
+          <div class="switch-container">
+            <input type="checkbox" id="theme-switch">
+            <label for="theme-switch" class="switch"></label>
+          </div>
         </div>
       </nav>
-    </header>
+    </div>
+    <span id="openNav" class="openSideNav" onclick="openNav()">&#9776;</span>
 
     <main>
-      <section class="main_title_other">
+      <div class="main_title_other">
         <h1>Start your academic future</h1>
-        <h2>Choose the right path for your career with our specialized courses</h2>
-      </section>
+        <h2>
+          Choose the right path for your career with our specialized courses
+        </h2>
+      </div>
+
+      <!-- Category filters -->
+      <div
+        class="filter-container"
+        style="text-align: center; margin-bottom: 30px"
+      >
+        <button class="filter-btn active" onclick="filterServices('all')">
+          All
+        </button>
+        <button class="filter-btn" onclick="filterServices('development')">
+          Development
+        </button>
+        <button class="filter-btn" onclick="filterServices('security')">
+          Security
+        </button>
+        <button class="filter-btn" onclick="filterServices('data')">
+          Data
+        </button>
+        <button class="filter-btn" onclick="filterServices('cloud')">
+          Cloud
+        </button>
+      </div>
 
       <section class="containerServices">
-        <div class="divServices">
+        <div class="divServices div-show" data-category="development">
           <div class="block">
             <h2>Full-Stack Developer</h2>
-            <img class="icon" src="public/full-stack-developer.png" alt="Full-Stack Developer icon" />
+            <img
+              class="icon"
+              src="public/full-stack-developer.png"
+              alt="Full-Stack Developer icon"
+            />
           </div>
-          <p>Design and build complete websites using modern technologies and expert guidance.</p>
-          <div class="divEnlaceServ"><a href="contacto.html">Sign up</a></div>
+          <p>
+            Design and build complete websites using modern technologies and
+            expert guidance.
+          </p>
+          <div class="divEnlaceServ">
+            <a href="#" onclick="openCourseModal('Full Stack Development')"
+              >Sign up</a
+            >
+          </div>
         </div>
 
-        <div class="divServices">
+        <div class="divServices div-show" data-category="security">
           <div class="block">
             <h2>Cybersecurity</h2>
-            <img class="icon" src="public/cyberseguridad.png" alt="Cybersecurity icon" />
+            <img
+              class="icon"
+              src="public/cyberseguridad.png"
+              alt="Cybersecurity icon"
+            />
           </div>
-          <p>Identify and mitigate system vulnerabilities using global security standards.</p>
-          <div class="divEnlaceServ"><a href="contacto.html">Sign up</a></div>
+          <p>
+            Identify and mitigate system vulnerabilities using global security
+            standards.
+          </p>
+          <div class="divEnlaceServ">
+            <a href="#" onclick="openCourseModal('Cybersecurity')">Sign up</a>
+          </div>
         </div>
 
-        <div class="divServices">
+        <div class="divServices div-show" data-category="data">
           <div class="block">
             <h2>Artificial Intelligence</h2>
-            <img class="icon" src="public/inteligencia-artificial.png" alt="AI icon" />
+            <img
+              class="icon"
+              src="public/inteligencia-artificial.png"
+              alt="AI icon"
+            />
           </div>
-          <p>Explore AI platforms and learn to build intelligent systems with real-world applications.</p>
-          <div class="divEnlaceServ"><a href="contacto.html">Sign up</a></div>
+          <p>
+            Explore AI platforms and learn to build intelligent systems with
+            real-world applications.
+          </p>
+          <div class="divEnlaceServ">
+            <a href="#" onclick="openCourseModal('Artificial Intelligence')"
+              >Sign up</a
+            >
+          </div>
         </div>
 
-        <div class="divServices">
+        <div class="divServices div-show" data-category="data">
           <div class="block">
             <h2>Databases</h2>
             <img class="icon" src="public/databases.png" alt="Databases icon" />
           </div>
-          <p>Master database systems from foundational concepts to advanced data management techniques.</p>
-          <div class="divEnlaceServ"><a href="contacto.html">Sign up</a></div>
+          <p>
+            Master database systems from foundational concepts to advanced data
+            management techniques.
+          </p>
+          <div class="divEnlaceServ">
+            <a href="#" onclick="openCourseModal('Databases')">Sign up</a>
+          </div>
         </div>
 
-        <div class="divServices">
+        <div class="divServices div-show" data-category="data">
           <div class="block">
             <h2>Data Science</h2>
-            <img class="icon" src="public/datascience.png" alt="Data Science icon" />
+            <img
+              class="icon"
+              src="public/datascience.png"
+              alt="Data Science icon"
+            />
           </div>
-          <p>Develop skills in data analysis, visualization, and machine learning to unlock insights from data.</p>
-          <div class="divEnlaceServ"><a href="contacto.html">Sign up</a></div>
+          <p>
+            Develop skills in data analysis, visualization, and machine learning
+            to unlock insights from data.
+          </p>
+          <div class="divEnlaceServ">
+            <a href="#" onclick="openCourseModal('Data Science')">Sign up</a>
+          </div>
         </div>
 
-        <div class="divServices">
+        <div class="divServices div-show" data-category="cloud">
           <div class="block">
             <h2>Cloud Computing</h2>
-            <img class="icon" src="public/cloud_computing.png" alt="Cloud Computing icon" />
+            <img
+              class="icon"
+              src="public/cloud_computing.png"
+              alt="Cloud Computing icon"
+            />
           </div>
-          <p>Learn IT fundamentals and gain hands-on experience with cloud platforms, infrastructure as code, and automation.</p>
-          <div class="divEnlaceServ"><a href="contacto.html">Sign up</a></div>
+          <p>
+            Learn IT fundamentals and gain hands-on experience with cloud
+            platforms, infrastructure as code, and automation.
+          </p>
+          <div class="divEnlaceServ">
+            <a href="#" onclick="openCourseModal('Cloud Computing')">Sign up</a>
+          </div>
+        </div>
+        <div class="divServices div-show" data-category="development">
+          <div class="block">
+            <h2>Frontend Development</h2>
+            <img
+              class="icon"
+              src="public/frontend.png"
+              alt="Frontend Development icon"
+            />
+          </div>
+          <p>
+            Learn HTML, CSS, JavaScript, and modern frameworks like React and
+            Angular.
+          </p>
+          <div class="divEnlaceServ">
+            <a href="#" onclick="openCourseModal('Frontend Development')"
+              >Sign up</a
+            >
+          </div>
+        </div>
+
+        <div class="divServices div-show" data-category="development">
+          <div class="block">
+            <h2>Backend Development</h2>
+            <img
+              class="icon"
+              src="public/backend.png"
+              alt="Backend Development icon"
+            />
+          </div>
+          <p>
+            Build scalable server-side applications with Node.js, Python, Java,
+            and databases.
+          </p>
+          <div class="divEnlaceServ">
+            <a href="#" onclick="openCourseModal('Backend Development')"
+              >Sign up</a
+            >
+          </div>
+        </div>
+
+        <div class="divServices div-show" data-category="development">
+          <div class="block">
+            <h2>Mobile App Development</h2>
+            <img
+              class="icon"
+              src="public/mobile.png"
+              alt="Mobile App Development icon"
+            />
+          </div>
+          <p>
+            Create cross-platform mobile apps using Flutter and React Native.
+          </p>
+          <div class="divEnlaceServ">
+            <a href="#" onclick="openCourseModal('Mobile App Development')"
+              >Sign up</a
+            >
+          </div>
+        </div>
+
+        <div class="divServices div-show" data-category="development">
+          <div class="block">
+            <h2>Game Development</h2>
+            <img
+              class="icon"
+              src="public/game_dev.png"
+              alt="Game Development icon"
+            />
+          </div>
+          <p>Learn Unity and Unreal Engine to design 2D and 3D games.</p>
+          <div class="divEnlaceServ">
+            <a href="#" onclick="openCourseModal('Game Development')"
+              >Sign up</a
+            >
+          </div>
+        </div>
+
+        <div class="divServices div-show" data-category="development">
+          <div class="block">
+            <h2>DevOps & CI/CD</h2>
+            <img class="icon" src="public/devops.png" alt="DevOps icon" />
+          </div>
+          <p>
+            Automate deployments and maintain CI/CD pipelines with Jenkins,
+            Docker, and Kubernetes.
+          </p>
+          <div class="divEnlaceServ">
+            <a href="#" onclick="openCourseModal('DevOps & CI/CD')">Sign up</a>
+          </div>
+        </div>
+
+        <!-- Security -->
+        <div class="divServices div-show" data-category="security">
+          <div class="block">
+            <h2>Ethical Hacking</h2>
+            <img
+              class="icon"
+              src="public/ethical_hacking.png"
+              alt="Ethical Hacking icon"
+            />
+          </div>
+          <p>
+            Learn penetration testing and vulnerability assessment techniques.
+          </p>
+          <div class="divEnlaceServ">
+            <a href="#" onclick="openCourseModal('Ethical Hacking')">Sign up</a>
+          </div>
+        </div>
+
+        <div class="divServices div-show" data-category="security">
+          <div class="block">
+            <h2>Network Security</h2>
+            <img
+              class="icon"
+              src="public/network_security.png"
+              alt="Network Security icon"
+            />
+          </div>
+          <p>
+            Secure networks using firewalls, VPNs, IDS/IPS, and best practices.
+          </p>
+          <div class="divEnlaceServ">
+            <a href="#" onclick="openCourseModal('Network Security')"
+              >Sign up</a
+            >
+          </div>
+        </div>
+
+        <div class="divServices div-show" data-category="security">
+          <div class="block">
+            <h2>Cloud Security</h2>
+            <img
+              class="icon"
+              src="public/cloud_security.png"
+              alt="Cloud Security icon"
+            />
+          </div>
+          <p>Protect cloud infrastructures on AWS, Azure, and GCP.</p>
+          <div class="divEnlaceServ">
+            <a href="#" onclick="openCourseModal('Cloud Security')">Sign up</a>
+          </div>
+        </div>
+
+        <div class="divServices div-show" data-category="security">
+          <div class="block">
+            <h2>Incident Response</h2>
+            <img
+              class="icon"
+              src="public/incident_response.png"
+              alt="Incident Response icon"
+            />
+          </div>
+          <p>
+            Respond to cyber incidents and learn forensic investigation
+            techniques.
+          </p>
+          <div class="divEnlaceServ">
+            <a href="#" onclick="openCourseModal('Incident Response')"
+              >Sign up</a
+            >
+          </div>
+        </div>
+
+        <div class="divServices div-show" data-category="security">
+          <div class="block">
+            <h2>Malware Analysis</h2>
+            <img
+              class="icon"
+              src="public/malware.png"
+              alt="Malware Analysis icon"
+            />
+          </div>
+          <p>Analyze malware behavior and develop mitigation strategies.</p>
+          <div class="divEnlaceServ">
+            <a href="#" onclick="openCourseModal('Malware Analysis')"
+              >Sign up</a
+            >
+          </div>
+        </div>
+
+        <!-- Data -->
+        <div class="divServices div-show" data-category="data">
+          <div class="block">
+            <h2>Big Data Analytics</h2>
+            <img class="icon" src="public/bigdata.png" alt="Big Data icon" />
+          </div>
+          <p>
+            Work with Hadoop, Spark, and data pipelines to extract insights from
+            large datasets.
+          </p>
+          <div class="divEnlaceServ">
+            <a href="#" onclick="openCourseModal('Big Data Analytics')"
+              >Sign up</a
+            >
+          </div>
+        </div>
+
+        <div class="divServices div-show" data-category="data">
+          <div class="block">
+            <h2>Machine Learning</h2>
+            <img
+              class="icon"
+              src="public/machine_learning.png"
+              alt="Machine Learning icon"
+            />
+          </div>
+          <p>
+            Build predictive models using Python, scikit-learn, and TensorFlow.
+          </p>
+          <div class="divEnlaceServ">
+            <a href="#" onclick="openCourseModal('Machine Learning')"
+              >Sign up</a
+            >
+          </div>
+        </div>
+
+        <div class="divServices div-show" data-category="data">
+          <div class="block">
+            <h2>Data Visualization</h2>
+            <img
+              class="icon"
+              src="public/data_viz.png"
+              alt="Data Visualization icon"
+            />
+          </div>
+          <p>
+            Create impactful dashboards and reports using Power BI, Tableau, and
+            Python.
+          </p>
+          <div class="divEnlaceServ">
+            <a href="#" onclick="openCourseModal('Data Visualization')"
+              >Sign up</a
+            >
+          </div>
+        </div>
+
+        <div class="divServices div-show" data-category="data">
+          <div class="block">
+            <h2>Statistics for Data Science</h2>
+            <img
+              class="icon"
+              src="public/statistics.png"
+              alt="Statistics icon"
+            />
+          </div>
+          <p>
+            Understand statistical methods for analyzing data and drawing
+            conclusions.
+          </p>
+          <div class="divEnlaceServ">
+            <a href="#" onclick="openCourseModal('Statistics for Data Science')"
+              >Sign up</a
+            >
+          </div>
+        </div>
+
+        <div class="divServices div-show" data-category="data">
+          <div class="block">
+            <h2>Business Intelligence</h2>
+            <img
+              class="icon"
+              src="public/bi.png"
+              alt="Business Intelligence icon"
+            />
+          </div>
+          <p>
+            Transform data into actionable insights to guide business decisions.
+          </p>
+          <div class="divEnlaceServ">
+            <a href="#" onclick="openCourseModal('Business Intelligence')"
+              >Sign up</a
+            >
+          </div>
+        </div>
+
+        <!-- Cloud -->
+        <div class="divServices div-show" data-category="cloud">
+          <div class="block">
+            <h2>AWS Fundamentals</h2>
+            <img class="icon" src="public/aws.png" alt="AWS icon" />
+          </div>
+          <p>
+            Get started with AWS core services and architecture best practices.
+          </p>
+          <div class="divEnlaceServ">
+            <a href="#" onclick="openCourseModal('AWS Fundamentals')"
+              >Sign up</a
+            >
+          </div>
+        </div>
+
+        <div class="divServices div-show" data-category="cloud">
+          <div class="block">
+            <h2>Azure Fundamentals</h2>
+            <img class="icon" src="public/azure.png" alt="Azure icon" />
+          </div>
+          <p>
+            Learn Azure services, cloud concepts, and deployment strategies.
+          </p>
+          <div class="divEnlaceServ">
+            <a href="#" onclick="openCourseModal('Azure Fundamentals')"
+              >Sign up</a
+            >
+          </div>
+        </div>
+
+        <div class="divServices div-show" data-category="cloud">
+          <div class="block">
+            <h2>Google Cloud Platform</h2>
+            <img class="icon" src="public/gcp.png" alt="GCP icon" />
+          </div>
+          <p>
+            Understand GCP services, cloud architecture, and deployment
+            pipelines.
+          </p>
+          <div class="divEnlaceServ">
+            <a href="#" onclick="openCourseModal('Google Cloud Platform')"
+              >Sign up</a
+            >
+          </div>
+        </div>
+
+        <div class="divServices div-show" data-category="cloud">
+          <div class="block">
+            <h2>Cloud Automation</h2>
+            <img
+              class="icon"
+              src="public/cloud_automation.png"
+              alt="Cloud Automation icon"
+            />
+          </div>
+          <p>
+            Automate cloud deployments and infrastructure using Terraform and
+            Ansible.
+          </p>
+          <div class="divEnlaceServ">
+            <a href="#" onclick="openCourseModal('Cloud Automation')"
+              >Sign up</a
+            >
+          </div>
+        </div>
+
+        <div class="divServices div-show" data-category="cloud">
+          <div class="block">
+            <h2>Containerization & Kubernetes</h2>
+            <img
+              class="icon"
+              src="public/kubernetes.png"
+              alt="Kubernetes icon"
+            />
+          </div>
+          <p>
+            Learn container orchestration and deployment strategies with Docker
+            and Kubernetes.
+          </p>
+          <div class="divEnlaceServ">
+            <a
+              href="#"
+              onclick="openCourseModal('Containerization & Kubernetes')"
+              >Sign up</a
+            >
+          </div>
         </div>
       </section>
     </main>
-    
 
     <footer>
       <img src="public/logo.png" alt="CodeTrain Academy logo" />
       <p>© 2025 CodeTrain Academy. All rights reserved.</p>
     </footer>
 
+    <script src="servicios.js"></script>
   </body>
 </html>
