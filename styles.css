@@ -6,11 +6,15 @@
   /*background-color: #57606a;*/
   color: #fff;
 }
+
 .dark-mode input,
 .dark-mode textarea {
-  background-color: #1f2833; /* dark input background */
-  color: #fff; /* text color */
-  border-color: #555; /* optional: darker border */
+  background-color: #1f2833;
+  /* dark input background */
+  color: #fff;
+  /* text color */
+  border-color: #555;
+  /* optional: darker border */
 }
 
 .dark-mode .block h2 {
@@ -18,16 +22,20 @@
 }
 .dark-mode input::placeholder,
 .dark-mode textarea::placeholder {
-  color: #aaa; /* lighter gray for placeholders */
+  color: #aaa;
+  /* lighter gray for placeholders */
 }
+
 .dark-mode-subdiv {
   background-color: #343f4eff !important;
 }
 
 .switch-container {
   display: flex;
-  justify-content: center;  /* horizontal centering */
-  align-items: center;      /* vertical centering */
+  justify-content: center;
+  /* horizontal centering */
+  align-items: center;
+  /* vertical centering */
 }
 
 .switch {
@@ -77,12 +85,14 @@ input[type="checkbox"]:checked+.switch:after {
 input[type="checkbox"]:checked+.switch {
   background-color: #6e6e6e;
 }
+
 /*fin de la hoja de estilos del boton para claro/oscuro*/
 
 /*Menu lateral*/
 .openSideNav {
   display: none;
 }
+
 .closebtn {
   display: none;
 }
@@ -140,21 +150,22 @@ body {
   .navigation {
     margin-top: 0 !important;
   }
+
   .nav_container {
     padding: 10px 30px !important;
   }
 }
 
 @media screen and (max-width: 1168px) {
-  .openSideNav{
-    display:block;
-    font-size:30px;
-    cursor:pointer;
+  .openSideNav {
+    display: block;
+    font-size: 30px;
+    cursor: pointer;
     position: fixed;
     margin-left: 15px;
   }
 
-  .closebtn{
+  .closebtn {
     display: block;
     top: 0;
     right: 25px;
@@ -173,11 +184,11 @@ body {
     padding-top: 60px;
   }
 
-  .navigation{
+  .navigation {
     flex-direction: column;
   }
 
-  .nav_links{
+  .nav_links {
     display: flex;
     flex-direction: column;
     font-size: 25px;
@@ -232,9 +243,11 @@ body {
   flex-wrap: wrap;
   width: 100%;
 }
+
 form label {
   min-width: 80px;
-  width: auto; /*check*/
+  width: auto;
+  /*check*/
   text-align: left;
 }
 
@@ -255,8 +268,10 @@ form label {
 }
 
 .yourmessage-contacto {
-    flex: 1;              /* ocupa el espacio restante */
-  min-width: 250px;     /* evita que se haga demasiado pequeño */
+  flex: 1;
+  /* ocupa el espacio restante */
+  min-width: 250px;
+  /* evita que se haga demasiado pequeño */
   height: 200px;
   resize: vertical;
   margin-top: 5px;
@@ -268,25 +283,26 @@ form label {
 .form-message p {
   flex-basis: 100%;
   font-size: 12px;
-  min-height: 18px; 
+  min-height: 18px;
   margin: 0 0 0 80px;
 }
 
-.form-button{
+.form-button {
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   margin-top: 10px;
   margin-bottom: 40px;
 }
 
- .message-opinion {
+.message-opinion {
   width: 400px;
   height: 200px;
- }
+}
+
 .message-contacto::placeholder,
 .yourmessage-contacto::placeholder {
- font-size: 14px;
- font-family:"Inter";
+  font-size: 14px;
+  font-family: "Inter";
 }
 
 #send_button {
@@ -502,6 +518,7 @@ footer>img {
   display: block;
   margin: 0 auto;
 }
+
 /* Santos, he eliminado las clases que había aquí porqué estaban duplicadas (footer y body). Cuando lo tengamos todo, intentaré ponerlo bien.
 /*-------------------------------------------*/
 
@@ -527,6 +544,7 @@ footer>img {
   flex-direction: column;
   max-width: 400px;
 }
+
 .blockSobre {
   display: flex;
   justify-content: space-between;
@@ -542,12 +560,12 @@ footer>img {
 
 .containerServices {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);  
-  grid-template-rows: repeat(2, 1fr);   
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   gap: 30px;
   padding: 40px;
-  max-width: 1200px;  
-  margin: 0 auto;   
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .divServices {
@@ -622,6 +640,59 @@ footer>img {
 
 }
 
+/*
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .containerServices {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 769px) {
+  .containerServices {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+}*/
+
+/*-------------------------------------------*/
+
+/*Diseño de la pagina de Reseñas*/
+/*-------------------------------------------*/
+
+ul.pagination {
+  display: inline-block;
+  padding: 5px;
+  margin: 2px;
+}
+
+ul.pagination li {
+  display: inline;
+}
+
+ul.pagination li a {
+  color: #000;
+  float: center;
+  padding: 9px 18px;
+  text-decoration: none;
+}
+
+ul.pagination li a.active {
+  background-color: #004080;
+  color: #fff;
+}
+
+/*ul.pagination li a.active:hover {background-color: #0066cc;}*/
+
+ul.pagination li button:hover {
+  background-color: #291f1f;
+}
+
+ul.pagination li button:active {
+  background-color: #c22525;
+}
+
+/*subido santos*/
+
 .filter-btn {
   background: #f0f0f0;
   border: 2px solid #004080;
@@ -640,11 +711,12 @@ footer>img {
 }
 
 .container {
-   display: grid;
-   grid-template-columns: auto auto;
-  }
+  display: grid;
+  grid-template-columns: auto auto;
+}
 
 /* Animaciones de entrada */
+
 .div-show {
   opacity: 0;
   transform: translateY(20px);
@@ -662,10 +734,10 @@ footer>img {
 @media only screen and (max-width: 768px) {
   .containerServices {
     grid-template-columns: 1fr;
-    grid-template-rows: auto; 
+    grid-template-rows: auto;
     padding: 20px;
   }
-  
+
   .filter-container {
     padding: 0 20px;
   }
@@ -674,7 +746,6 @@ footer>img {
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
   .containerServices {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr); 
+    grid-template-rows: repeat(3, 1fr);
   }
 }
-
