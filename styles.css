@@ -13,6 +13,9 @@
   border-color: #555; /* optional: darker border */
 }
 
+.dark-mode .block h2 {
+  color: white;
+}
 .dark-mode input::placeholder,
 .dark-mode textarea::placeholder {
   color: #aaa; /* lighter gray for placeholders */
@@ -615,6 +618,7 @@ footer>img {
   gap: 10px;
   margin-bottom: 30px;
   flex-wrap: wrap;
+  text-align: center;
 
 }
 
