@@ -374,7 +374,18 @@ form label {
 .blockEquipo {
   display: flex;
   gap: 30px;
+  
+  
 }
+.blockEquipo:hover{
+  background:#dddde1;
+  color:#202122;
+  transform:scale(1.10);
+  box-shadow: 2px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 50px;
+  
+}
+
 
 .imagenEquipo {
   height: 250px;
