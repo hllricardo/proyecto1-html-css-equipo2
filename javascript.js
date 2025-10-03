@@ -7,7 +7,7 @@ const textServicios = document.getElementsByClassName("divServices");
 const currentTheme = localStorage.getItem("theme");
 console.log(currentTheme);
 if (currentTheme === "dark-mode") {
-  console.log(textServicios.length)
+  console.log(textServicios.length);
   body.classList.toggle("dark-mode");
   for (let i = 0; i < textEquipo.length; i++) {
     textEquipo[i].classList.toggle("dark-mode-subdiv");
@@ -16,7 +16,7 @@ if (currentTheme === "dark-mode") {
     textSobre[i].classList.toggle("dark-mode-subdiv");
   }
   for (let i = 0; i < textServicios.length; i++) {
-    console.log("bucle servicios")
+    console.log("bucle servicios");
     textServicios[i].classList.toggle("dark-mode-subdiv");
   }
 }
@@ -39,8 +39,6 @@ themeSwitch.addEventListener("change", () => {
   }
 });
 
-
-
 //---------------------------------------------------
 // Codigo para el menu lateral
 function openNav() {
@@ -53,6 +51,54 @@ function closeNav() {
   document.querySelector(".nav_container").style.padding = "10px 30px";
 }
 //---------------------------------------------------
+
+// Codigo para sobre.html
+document.querySelectorAll(".divSobre").forEach((box) => {
+  const text = box.querySelector(".extraTextSobre");
+  const fullHTML = text.innerHTML.replace(/\n\s*/g, " ");
+  let typingInterval = null;
+  let typingTimeout = null;
+  console.log(fullHTML);
+
+  box.addEventListener("mouseenter", () => {
+    text.innerHTML = "";
+    let i = 0;
+
+    typingTimeout = setTimeout(() => {
+      typingInterval = setInterval(() => {
+        const char = fullHTML[i];
+
+        if (fullHTML.slice(i, i + 4) === "<br>") {
+          text.innerHTML += "<br>";
+          i += 4;
+        } else if (fullHTML.slice(i, i + 5) === "<br />") {
+          text.innerHTML += "<br />";
+          i += 5;
+        } else {
+          text.innerHTML += char;
+          i++;
+        }
+
+        if (i >= fullHTML.length) {
+          clearInterval(typingInterval);
+          typingInterval = null;
+        }
+      }, 20);
+    }, 950);
+  });
+
+  box.addEventListener("mouseleave", () => {
+    text.innerHTML = "";
+    if (typingInterval) {
+      clearInterval(typingInterval);
+      typingInterval = null;
+    }
+    if (typingTimeout) {
+      clearTimeout(typingTimeout);
+      typingTimeout = null;
+    }
+  });
+});
 
 // Input validation for form in contacto.html
 function validateInput(id, regex, errorMessage, minLength = 0) {
@@ -130,99 +176,211 @@ function send_form_sim() {
 //---------------------------------------------------
 // Codigo para servicios.html
 // Animaciones al cargar
-document.addEventListener('DOMContentLoaded', () => {
-  const services = document.querySelectorAll('.divServices');
+document.addEventListener("DOMContentLoaded", () => {
+  const services = document.querySelectorAll(".divServices");
   services.forEach((service, index) => {
     setTimeout(() => {
-      service.classList.add('show');
-      service.style.opacity = '1';
-      service.style.transform = 'translateY(0)';
+      service.classList.add("show");
+      service.style.opacity = "1";
+      service.style.transform = "translateY(0)";
     }, index * 200);
   });
 
   // Inicializar categorías cuando el DOM esté listo
-  document.querySelectorAll('.divServices').forEach(service => {
-    const title = service.querySelector('h2').textContent.trim();
-    service.setAttribute('data-category', getCategory(title));
+  document.querySelectorAll(".divServices").forEach((service) => {
+    const title = service.querySelector("h2").textContent.trim();
+    service.setAttribute("data-category", getCategory(title));
   });
 });
 function openCourseModal(courseName) {
   const courseInfo = {
-    'Full Stack Development': {
+    "Full Stack Development": {
       duration: "6 meses",
       level: "Intermedio",
-      topics: ["HTML, CSS, JavaScript", "React.js", "Node.js", "Bases de datos"]
+      topics: [
+        "HTML, CSS, JavaScript",
+        "React.js",
+        "Node.js",
+        "Bases de datos",
+      ],
     },
-    "Cybersecurity": {
+    Cybersecurity: {
       duration: "8 meses",
       level: "Intermedio",
-      topics: ["Seguridad de redes", "Ethical Hacking", "DFIR"]
+      topics: ["Seguridad de redes", "Ethical Hacking", "DFIR"],
     },
     "Artificial Intelligence": {
       duration: "10 meses",
       level: "Avanzado",
-      topics: ["Machine Learning", "Deep Learning", "NLP"]
+      topics: ["Machine Learning", "Deep Learning", "NLP"],
     },
-    "Databases": {
+    Databases: {
       duration: "4 meses",
       level: "Básico",
-      topics: ["SQL", "NoSQL", "Modelado de datos"]
+      topics: ["SQL", "NoSQL", "Modelado de datos"],
     },
     "Data Science": {
       duration: "6 meses",
       level: "Intermedio",
-      topics: ["Estadística", "Python para Data Science", "Visualización de datos"]
+      topics: [
+        "Estadística",
+        "Python para Data Science",
+        "Visualización de datos",
+      ],
     },
     "Cloud Computing": {
       duration: "5 meses",
       level: "Intermedio",
-      topics: ["AWS", "Azure", "Google Cloud"]
+      topics: ["AWS", "Azure", "Google Cloud"],
+    },
+    
+    "Frontend Development": {
+      duration: "4 meses",
+      level: "Intermedio",
+      topics: ["HTML", "CSS", "JavaScript", "React", "Vue"]
+    },
+    "Backend Development": {
+      duration: "5 meses",
+      level: "Intermedio",
+      topics: ["Node.js", "Express", "Django", "Flask", "Databases"]
+    },
+    "Mobile App Development": {
+      duration: "5 meses",
+      level: "Intermedio",
+      topics: ["Flutter", "React Native", "Swift", "Kotlin"]
+    },
+    "Game Development": {
+      duration: "6 meses",
+      level: "Intermedio",
+      topics: ["Unity", "Unreal Engine", "C#", "Game Physics"]
+    },
+    "DevOps & CI/CD": {
+      duration: "4 meses",
+      level: "Intermedio",
+      topics: ["Jenkins", "GitHub Actions", "Docker", "CI/CD Pipelines"]
+    },
+    "Ethical Hacking": {
+      duration: "6 meses",
+      level: "Avanzado",
+      topics: ["Penetration Testing", "Metasploit", "Reconnaissance", "Exploitation"]
+    },
+    "Network Security": {
+      duration: "5 meses",
+      level: "Intermedio",
+      topics: ["Firewalls", "IDS/IPS", "VPN", "Network Protocols"]
+    },
+    "Cloud Security": {
+      duration: "4 meses",
+      level: "Intermedio",
+      topics: ["IAM", "Encryption", "Compliance", "Security Monitoring"]
+    },
+    "Incident Response": {
+      duration: "3 meses",
+      level: "Intermedio",
+      topics: ["Detection", "Containment", "Eradication", "Recovery"]
+    },
+    "Malware Analysis": {
+      duration: "4 meses",
+      level: "Avanzado",
+      topics: ["Static Analysis", "Dynamic Analysis", "Reverse Engineering", "Sandboxing"]
+    },
+    "Big Data Analytics": {
+      duration: "5 meses",
+      level: "Intermedio",
+      topics: ["Hadoop", "Spark", "Data Lakes", "ETL Processes"]
+    },
+    "Machine Learning": {
+      duration: "6 meses",
+      level: "Avanzado",
+      topics: ["Supervised Learning", "Unsupervised Learning", "Neural Networks", "Model Evaluation"]
+    },
+    "Data Visualization": {
+      duration: "3 meses",
+      level: "Intermedio",
+      topics: ["Tableau", "Power BI", "Matplotlib", "D3.js"]
+    },
+    "Statistics for Data Science": {
+      duration: "4 meses",
+      level: "Intermedio",
+      topics: ["Probability", "Distributions", "Hypothesis Testing", "Regression"]
+    },
+    "Business Intelligence": {
+      duration: "4 meses",
+      level: "Intermedio",
+      topics: ["Dashboards", "KPIs", "Data Warehousing", "Reporting"]
+    },
+    "AWS Fundamentals": {
+      duration: "3 meses",
+      level: "Básico",
+      topics: ["EC2", "S3", "IAM", "VPC"]
+    },
+    "Azure Fundamentals": {
+      duration: "3 meses",
+      level: "Básico",
+      topics: ["Azure VM", "Blob Storage", "Azure AD", "Resource Groups"]
+    },
+    "Google Cloud Platform": {
+      duration: "3 meses",
+      level: "Básico",
+      topics: ["Compute Engine", "Cloud Storage", "IAM", "BigQuery"]
+    },
+    "Cloud Automation": {
+      duration: "4 meses",
+      level: "Intermedio",
+      topics: ["Terraform", "Ansible", "CloudFormation", "Scripting"]
+    },
+    "Containerization & Kubernetes": {
+      duration: "5 meses",
+      level: "Intermedio",
+      topics: ["Docker", "Kubernetes", "Helm", "Container Orchestration"]
     }
-  };
-
-  const course = courseInfo[courseName];
-  if (!course) {
-    alert('Información del curso no disponible');
-    return;
   }
 
-  const message = `
+};
+
+const course = courseInfo[courseName];
+if (!course) {
+  alert("Información del curso no disponible");
+}
+
+const message = `
 CURSO: ${courseName}
 Duración: ${course.duration}
 Nivel: ${course.level}
-Temas: ${course.topics.join(', ')}
+Temas: ${course.topics.join(", ")}
 
 ¿Te gustaría inscribirte en este curso? Contáctanos para más información.`;
 
-  if (confirm(message)) {
-    window.location.href = 'contacto.html?curso=' + encodeURIComponent(courseName);
-  }
-}// Modal para información de cursos
+if (confirm(message)) {
+  window.location.href =
+    "contacto.html?curso=" + encodeURIComponent(courseName);
+}
+ // Modal para información de cursos
 function filterServices(category) {
   // Remover clase active de todos los botones
-  document.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.classList.remove('active');
+  document.querySelectorAll(".filter-btn").forEach((btn) => {
+    btn.classList.remove("active");
   });
 
   // Añadir clase active al botón clickeado
   if (event && event.target) {
-    event.target.classList.add('active');
+    event.target.classList.add("active");
   }
 
   // Filtrar servicios
-  document.querySelectorAll('.divServices').forEach(service => {
-    const serviceCategory = service.getAttribute('data-category');
-    if (category === 'all' || serviceCategory === category) {
-      service.style.display = 'flex';
+  document.querySelectorAll(".divServices").forEach((service) => {
+    const serviceCategory = service.getAttribute("data-category");
+    if (category === "all" || serviceCategory === category) {
+      service.style.display = "flex";
       setTimeout(() => {
-        service.style.opacity = '1';
-        service.style.transform = 'translateY(0)';
+        service.style.opacity = "1";
+        service.style.transform = "translateY(0)";
       }, 50);
     } else {
-      service.style.opacity = '0';
-      service.style.transform = 'translateY(20px)';
+      service.style.opacity = "0";
+      service.style.transform = "translateY(20px)";
       setTimeout(() => {
-        service.style.display = 'none';
+        service.style.display = "none";
       }, 300);
     }
   });
@@ -230,13 +388,13 @@ function filterServices(category) {
 
 // Efecto hover en tarjetas
 function enhanceHoverEffects() {
-  document.querySelectorAll('.divServices').forEach(service => {
-    service.addEventListener('mouseenter', function () {
+  document.querySelectorAll(".divServices").forEach((service) => {
+    service.addEventListener("mouseenter", function () {
       this.style.transform = "translateY(-10px) scale(1.05)";
       this.style.boxShadow = "0 8px 20px rgba(0, 0, 0, 0.15)";
     });
 
-    service.addEventListener('mouseleave', function () {
+    service.addEventListener("mouseleave", function () {
       this.style.transform = "translateY(0) scale(1)";
       this.style.boxShadow = "0 2px 6px rgba(0, 0, 0, 0.1)";
     });
@@ -245,7 +403,7 @@ function enhanceHoverEffects() {
 
 // Botón scroll to top
 function createScrollToTop() {
-  const scrollBtn = document.createElement('button');
+  const scrollBtn = document.createElement("button");
   scrollBtn.innerHTML = "↑";
   scrollBtn.style.cssText = `
         position: fixed;
@@ -267,62 +425,62 @@ function createScrollToTop() {
   document.body.appendChild(scrollBtn);
 
   // Mostrar/Ocultar botón según scroll
-  window.addEventListener('scroll', () => {
+  window.addEventListener("scroll", () => {
     if (window.pageYOffset > 300) {
-      scrollBtn.style.display = 'block';
+      scrollBtn.style.display = "block";
     } else {
-      scrollBtn.style.display = 'none';
+      scrollBtn.style.display = "none";
     }
   });
 
   // Scroll suave al hacer click
-  scrollBtn.addEventListener('click', () => {
+  scrollBtn.addEventListener("click", () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
   });
 }
 
 // Función para lazy loading de imágenes
 function lazyLoadImages() {
-  const images = document.querySelectorAll('img[data-src]');
+  const images = document.querySelectorAll("img[data-src]");
   const imageObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
         const img = entry.target;
         img.src = img.dataset.src;
-        img.classList.remove('lazy');
+        img.classList.remove("lazy");
         observer.unobserve(img);
       }
     });
   });
 
-  images.forEach(img => imageObserver.observe(img));
+  images.forEach((img) => imageObserver.observe(img));
 }
 
 // Función para trackear cursos populares
 function trackPopularCourses() {
   // Simulación de tracking - aquí podrías integrar analytics reales
-  console.log('Tracking de cursos populares inicializado');
+  console.log("Tracking de cursos populares inicializado");
 }
 
 // Inicializar todas las funciones
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   // Inicializar animaciones y categorías
-  const services = document.querySelectorAll('.divServices');
+  const services = document.querySelectorAll(".divServices");
   services.forEach((service, index) => {
     setTimeout(() => {
-      service.classList.add('show');
-      service.style.opacity = '1';
-      service.style.transform = 'translateY(0)';
+      service.classList.add("show");
+      service.style.opacity = "1";
+      service.style.transform = "translateY(0)";
     }, index * 200);
   });
 
   // Asignar categorías
-  document.querySelectorAll('.divServices').forEach(service => {
-    const title = service.querySelector('h2').textContent.trim();
-    service.setAttribute('data-category', getCategory(title));
+  document.querySelectorAll(".divServices").forEach((service) => {
+    const title = service.querySelector("h2").textContent.trim();
+    service.setAttribute("data-category", getCategory(title));
   });
 
   // Inicializar otras funcionalidades
@@ -331,3 +489,4 @@ document.addEventListener('DOMContentLoaded', () => {
   trackPopularCourses();
   lazyLoadImages();
 });
+
