@@ -204,7 +204,7 @@ function openCourseModal(courseName) {
         "Bases de datos",
       ],
     },
-    Cybersecurity: {
+    "Cybersecurity": {
       duration: "8 meses",
       level: "Intermedio",
       topics: ["Seguridad de redes", "Ethical Hacking", "DFIR"],
@@ -214,7 +214,7 @@ function openCourseModal(courseName) {
       level: "Avanzado",
       topics: ["Machine Learning", "Deep Learning", "NLP"],
     },
-    Databases: {
+    "Databases": {
       duration: "4 meses",
       level: "Básico",
       topics: ["SQL", "NoSQL", "Modelado de datos"],
@@ -341,7 +341,7 @@ function openCourseModal(courseName) {
 const course = courseInfo[courseName];
 if (!course) {
   alert("Información del curso no disponible");
-  return;
+
 }
 
 const message = `
@@ -356,7 +356,7 @@ if (confirm(message)) {
   window.location.href =
     "contacto.html?curso=" + encodeURIComponent(courseName);
 }
-} // Modal para información de cursos
+ // Modal para información de cursos
 function filterServices(category) {
   // Remover clase active de todos los botones
   document.querySelectorAll(".filter-btn").forEach((btn) => {
