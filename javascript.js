@@ -5,20 +5,26 @@ const textEquipo = document.getElementsByClassName("divEquipo");
 const textSobre = document.getElementsByClassName("divSobre");
 const textServicios = document.getElementsByClassName("divServices");
 const currentTheme = localStorage.getItem("theme");
-console.log(currentTheme);
+console.log(textEquipo);
+
+// He cambiado un poco esto porque al cambiar a modo oscuro
+// y luego vamos a otra página, aunque el modo oscuro se mantiene
+// el switch se resetea.
 if (currentTheme === "dark-mode") {
-  console.log(textServicios.length);
-  body.classList.toggle("dark-mode");
+  body.classList.add("dark-mode");
   for (let i = 0; i < textEquipo.length; i++) {
-    textEquipo[i].classList.toggle("dark-mode-subdiv");
+    textEquipo[i].classList.add("dark-mode-subdiv");
   }
   for (let i = 0; i < textSobre.length; i++) {
-    textSobre[i].classList.toggle("dark-mode-subdiv");
+    textSobre[i].classList.add("dark-mode-subdiv");
   }
   for (let i = 0; i < textServicios.length; i++) {
     console.log("bucle servicios");
-    textServicios[i].classList.toggle("dark-mode-subdiv");
+    textServicios[i].classList.add("dark-mode-subdiv");
   }
+  themeSwitch.checked = true;
+} else {
+  themeSwitch.checked = false;
 }
 
 themeSwitch.addEventListener("change", () => {
@@ -191,7 +197,7 @@ const courseInfo = {
     level: "Intermedio",
     topics: ["HTML, CSS, JavaScript", "React.js", "Node.js", "Bases de datos"],
   },
-  "Cybersecurity": {
+  Cybersecurity: {
     duration: "8 meses",
     level: "Intermedio",
     topics: ["Seguridad de redes", "Ethical Hacking", "DFIR"],
@@ -205,8 +211,8 @@ const courseInfo = {
   "Containerization & Kubernetes": {
     duration: "5 meses",
     level: "Intermedio",
-    topics: ["Docker", "Kubernetes", "Helm", "Container Orchestration"]
-  }
+    topics: ["Docker", "Kubernetes", "Helm", "Container Orchestration"],
+  },
 };
 
 // Modal para información de cursos
@@ -226,7 +232,8 @@ Temas: ${course.topics.join(", ")}
 ¿Te gustaría inscribirte en este curso? Contáctanos para más información.`;
 
   if (confirm(message)) {
-    window.location.href = "contacto.html?curso=" + encodeURIComponent(courseName);
+    window.location.href =
+      "contacto.html?curso=" + encodeURIComponent(courseName);
   }
 }
 
