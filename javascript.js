@@ -200,6 +200,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const title = service.querySelector("h2").textContent.trim();
     service.setAttribute("data-category", getCategory(title));
   });
+<<<<<<< HEAD
 
   // Inicializar otras funcionalidades
   enhanceHoverEffects();
@@ -350,6 +351,59 @@ function openCourseModal(courseName) {
     return;
   }
 
+=======
+
+  // Activar modal al hacer clic en botones de inscripción
+  document.querySelectorAll(".sign-up-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const courseName = btn.getAttribute("data-course");
+      openCourseModal(courseName);
+    });
+  });
+
+  // Inicializar otras funcionalidades
+  enhanceHoverEffects();
+  createScrollToTop();
+  trackPopularCourses();
+  lazyLoadImages();
+});
+
+// Función para categorizar servicios
+function getCategory(title) {
+  if (title.includes("Cloud")) return "cloud";
+  if (title.includes("Data")) return "data";
+  if (title.includes("Security")) return "security";
+  if (title.includes("Development")) return "development";
+  return "general";
+}
+
+function openCourseModal(courseName) {
+  const courseInfo = {
+    "Full Stack Development": {
+      duration: "6 meses",
+      level: "Intermedio",
+      topics: ["HTML, CSS, JavaScript", "React.js", "Node.js", "Bases de datos"],
+    },
+    "Cybersecurity": {
+      duration: "8 meses",
+      level: "Intermedio",
+      topics: ["Seguridad de redes", "Ethical Hacking", "DFIR"],
+    },
+    "Artificial Intelligence": {
+      duration: "10 meses",
+      level: "Avanzado",
+      topics: ["Machine Learning", "Deep Learning", "NLP"],
+    },
+    // ...otros cursos omitidos por brevedad
+  };
+
+  const course = courseInfo[courseName];
+  if (!course) {
+    alert("Información del curso no disponible");
+    return;
+  }
+
+>>>>>>> nueva-rama
   const message = `
 CURSO: ${courseName}
 Duración: ${course.duration}
@@ -363,8 +417,13 @@ Temas: ${course.topics.join(", ")}
   }
 }
 
+<<<<<<< HEAD
 // Filtrar servicios
 function filterServices(category, event) {
+=======
+// Modal para información de cursos
+function filterServices(category) {
+>>>>>>> nueva-rama
   document.querySelectorAll(".filter-btn").forEach((btn) => {
     btn.classList.remove("active");
   });
@@ -430,10 +489,41 @@ function createScrollToTop() {
   document.body.appendChild(scrollBtn);
 
   window.addEventListener("scroll", () => {
+<<<<<<< HEAD
     scrollBtn.style.display = window.scrollY > 300 ? "block" : "none";
+=======
+    scrollBtn.style.display = window.pageYOffset > 300 ? "block" : "none";
+>>>>>>> nueva-rama
   });
 
   scrollBtn.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 }
+<<<<<<< HEAD
+=======
+
+// Lazy loading de imágenes
+function lazyLoadImages() {
+  const images = document.querySelectorAll("img[data-src]");
+  const imageObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        img.src = img.dataset.src;
+        img.classList.remove("lazy");
+        observer.unobserve(img);
+      }
+    });
+  });
+
+  images.forEach((img) => imageObserver.observe(img));
+}
+
+// Tracking de cursos populares
+function trackPopularCourses() {
+  console.log("Tracking de cursos populares inicializado");
+}
+
+
+>>>>>>> nueva-rama
