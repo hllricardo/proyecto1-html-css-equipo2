@@ -6,6 +6,7 @@
   /*background-color: #57606a;*/
   color: #fff;
 }
+
 .dark-mode input,
 .dark-mode textarea {
   background-color: #1f2833;
@@ -13,10 +14,14 @@
   border-color: #555;
 }
 
+.dark-mode .block h2 {
+  color: white;
+}
 .dark-mode input::placeholder,
 .dark-mode textarea::placeholder {
   color: #aaa;
 }
+
 .dark-mode-subdiv {
   background-color: #343f4eff !important;
   color: #fff !important;
@@ -75,12 +80,14 @@ input[type="checkbox"]:checked + .switch:after {
 input[type="checkbox"]:checked + .switch {
   background-color: #6e6e6e;
 }
+
 /*fin de la hoja de estilos del boton para claro/oscuro*/
 
 /*Menu lateral*/
 .openSideNav {
   display: none;
 }
+
 .closebtn {
   display: none;
 }
@@ -138,6 +145,7 @@ body {
   .navigation {
     margin-top: 0 !important;
   }
+
   .nav_container {
     padding: 10px 30px !important;
   }
@@ -275,9 +283,11 @@ body {
   flex-wrap: wrap;
   width: 100%;
 }
+
 form label {
   min-width: 80px;
-  width: auto; /*check*/
+  width: auto;
+  /*check*/
   text-align: left;
 }
 
@@ -325,6 +335,7 @@ form label {
   width: 400px;
   height: 200px;
 }
+
 .message-contacto::placeholder,
 .yourmessage-contacto::placeholder {
   font-size: 14px;
@@ -543,6 +554,7 @@ footer > img {
   margin: 0 auto;
   padding: 20px;
 }
+
 /* Santos, he eliminado las clases que había aquí porqué estaban duplicadas (footer y body). Cuando lo tengamos todo, intentaré ponerlo bien.
 /*-------------------------------------------*/
 
@@ -719,7 +731,61 @@ footer > img {
   gap: 10px;
   margin-bottom: 30px;
   flex-wrap: wrap;
+  text-align: center;
 }
+
+/*
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .containerServices {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 769px) {
+  .containerServices {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+}*/
+
+/*-------------------------------------------*/
+
+/*Diseño de la pagina de Reseñas*/
+/*-------------------------------------------*/
+
+ul.pagination {
+  display: inline-block;
+  padding: 5px;
+  margin: 2px;
+}
+
+ul.pagination li {
+  display: inline;
+}
+
+ul.pagination li a {
+  color: #000;
+  float: center;
+  padding: 9px 18px;
+  text-decoration: none;
+}
+
+ul.pagination li a.active {
+  background-color: #004080;
+  color: #fff;
+}
+
+/*ul.pagination li a.active:hover {background-color: #0066cc;}*/
+
+ul.pagination li button:hover {
+  background-color: #291f1f;
+}
+
+ul.pagination li button:active {
+  background-color: #c22525;
+}
+
+/*subido santos*/
 
 .filter-btn {
   background: #f0f0f0;
@@ -744,6 +810,7 @@ footer > img {
 }
 
 /* Animaciones de entrada */
+
 .div-show {
   opacity: 0;
   transform: translateY(20px);
