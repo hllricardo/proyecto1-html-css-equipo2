@@ -46,6 +46,7 @@
 
 .switch::before {
   content: "☀️";
+  transform: scale(1.4);
   position: absolute;
   left: 5px;
   top: 5px;
@@ -54,6 +55,7 @@
 
 .switch::after {
   content: "🌙";
+  transform: scale(1.4);
   position: absolute;
   right: 5px;
   top: 5px;
@@ -148,6 +150,17 @@ body {
 }
 
 @media screen and (max-width: 1168px) {
+  .switch::before {
+    left: 1px !important;
+    top: 0px !important;
+    transform: scale(1) !important;
+  }
+
+  .switch::after {
+    right: 1px !important;
+    top: 0px !important;
+    transform: scale(1) !important;
+  }
   .openSideNav {
     display: block;
     font-size: 30px;
