@@ -16,10 +16,11 @@
       <img src="public/logo.png" alt="CodeTrain Academy logo">
       <div class="nav_links">
         <a href="index.html">Home</a>
-        <a href="servicios.html">Services</a>
-        <a href="equipo.html">Team</a>
-        <a href="sobre.html">About us</a>
-        <a href="contacto.html">Contact</a>
+          <a href="servicios.html">Services</a>
+          <a href="equipo.html">Team</a>
+          <a href="sobre.html">About us</a>
+          <a href="contacto.html">Contact</a>
+          <a href="reseñas.html">Reviews</a>
         <div class="switch-container">
           <input type="checkbox" id="theme-switch">
           <label for="theme-switch" class="switch"></label>
@@ -32,70 +33,55 @@
   <div>
     <div class="main_title_other">
 
-      <h1> Contact CodeTrain Academy</h1>
-      <h1>
-        <Contact CodeTrain Academy>
-      </h1>
-
+      <h1>Contact CodeTrain Academy</h1>
       <h2>Do you have any questions?<h2>
           <img src="public/contact.png" alt="ContactLogo" class="col-contacto">
           <h3>We'll be happy to answer them as soon as possible.</h3>
     </div>
     <br>
 
-
     <div class="main_title_other">
-
-      <h1>Join the Code Revolution:</h1>
-      <h3>Apply now and unlock new career opportunities!</h3>
+      <h3 class="highlight-text">Join the Code Revolution</h3>
+      <h3 class="highlight-text">Apply now and unlock new career opportunities!</h3>
     </div>
-
-
-
     <form class="container-contacto">
-
       <div class="form-div">
-
-        <label for="username">Your Name:</label>
-        <input class="message-contacto" type="text" placeholder="Your Name">
-
+        <label for="name">Name:</label>
+        <input id="name" class="message-contacto" oninput="name_validation(); button_activation()" type="text" placeholder="Your Name">
+        <p id="name_msg_error"></p>
       </div>
       <div class="form-div">
-        <label for="username">Your Surname:</label>
-        <input class="message-contacto" type="text" placeholder="Your Surname">
+        <label for="surname">Surname:</label>
+        <input id="surname" class="message-contacto" oninput="surname_validation(); button_activation()" type="text" placeholder="Your Surname">
+        <p id="surname_msg_error"></p>
       </div>
-
       <div class="form-div">
-        <label for="username">Your email: </label>
-        <input class="message-contacto" type="text" placeholder="Your email">
+        <label for="email">Email: </label>
+        <input id="email" class="message-contacto" oninput="email_validation(); button_activation()" type="text" placeholder="Your email">
+        <p id="email_msg_error"></p>
       </div>
-
       <div class="form-message">
-        <label for="username">Your Message:</label>
-        
-          <textarea class="yourmessage-contacto" rows="40" placeholder="Your Message"></textarea>
-        
+        <label for="message">Message:</label>
+        <textarea id="message" class="yourmessage-contacto" oninput="message_validation(); button_activation()" rows="20" placeholder="Your Message"></textarea>
+        <p id="message_msg_error"></p>
       </div>
-
-
-      <input type="submit" value="send your message" /><br>
-
+      <div class="form-button">
+      <button id="send_button" type="button" onclick="send_form_sim()" disabled>Send your message</button><br>
+      </div>
     </form>
+    <div class="contactDetails">
 
-    <div class="main_title_other">
-    🌍 The World<br>
+    <p>🌍 The World<br>
     🎓 CodeTrain Academy<br>
     📞 P: +34 222 333 444<br>
-    📩 hello@codetrainacademy.com
+    📩 hello@codetrainacademy.com</p>
 
    </div>
-
   <footer>
     <img src="public/logo.png" alt="CodeTrain Academy logo">
     <p>© 2025 CodeTrain Academy. All rights reserved.</p>
   </footer>
-
 </body>
-
 </html>
+
 <script src="javascript.js"></script>

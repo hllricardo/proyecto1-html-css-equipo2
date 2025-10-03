@@ -7,6 +7,37 @@
   color: #fff;
 }
 
+.dark-mode input,
+.dark-mode textarea {
+  background-color: #1f2833;
+  /* dark input background */
+  color: #fff;
+  /* text color */
+  border-color: #555;
+  /* optional: darker border */
+}
+
+.dark-mode .block h2 {
+  color: white;
+}
+.dark-mode input::placeholder,
+.dark-mode textarea::placeholder {
+  color: #aaa;
+  /* lighter gray for placeholders */
+}
+
+.dark-mode-subdiv {
+  background-color: #343f4eff !important;
+}
+
+.switch-container {
+  display: flex;
+  justify-content: center;
+  /* horizontal centering */
+  align-items: center;
+  /* vertical centering */
+}
+
 .switch {
   display: inline-block;
   width: 60px;
@@ -39,8 +70,8 @@
   background-color: #000;
 }
 
-input[type="checkbox"] {
-  visibility: hidden;
+#theme-switch {
+  display: none;
 }
 
 input[type="checkbox"]:checked+.switch:before {
@@ -54,12 +85,14 @@ input[type="checkbox"]:checked+.switch:after {
 input[type="checkbox"]:checked+.switch {
   background-color: #6e6e6e;
 }
+
 /*fin de la hoja de estilos del boton para claro/oscuro*/
 
 /*Menu lateral*/
 .openSideNav {
   display: none;
 }
+
 .closebtn {
   display: none;
 }
@@ -81,6 +114,7 @@ body {
   padding: 10px 30px;
   position: sticky;
   top: 0;
+  z-index: 1;
 }
 
 .navigation {
@@ -98,6 +132,7 @@ body {
   color: white;
   text-decoration: none;
   padding: 12px 18px;
+  white-space: nowrap;
 }
 
 .navigation a:hover {
@@ -111,59 +146,76 @@ body {
   gap: 20px;
 }
 
-@media screen and (max-width: 1168px) {
-  .openSideNav{
-    display:block;
-    font-size:30px;
-    cursor:pointer;
-    position: fixed;
-  }
-
-  .closebtn{
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
+@media screen and (min-width: 1169px) {
+  .navigation {
+    margin-top: 0 !important;
   }
 
   .nav_container {
-  display: none;
-  height: 100%;
-  width: 150px;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  overflow-x: hidden;
-  padding-top: 60px;
+    padding: 10px 30px !important;
+  }
 }
 
-.navigation{
-  flex-direction: column;
-}
+@media screen and (max-width: 1168px) {
+  .openSideNav {
+    display: block;
+    font-size: 30px;
+    cursor: pointer;
+    position: fixed;
+    margin-left: 15px;
+  }
 
-.nav_links{
-  flex-direction: column;
-  padding: 8px 8px 8px 32px;
-  font-size: 25px;
-  display: block;
-  transition: 0.3s;
-}
+  .closebtn {
+    display: block;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+  }
 
+  .nav_container {
+    display: none;
+    height: 100%;
+    width: 150px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 60px;
+  }
+
+  .navigation {
+    flex-direction: column;
+  }
+
+  .nav_links {
+    display: flex;
+    flex-direction: column;
+    font-size: 25px;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+  }
 }
 
 /*-------------------------------------------*/
 
 /*Diseño de la pagina de Contacto*/
 /*-------------------------------------------*/
+.highlight-text {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+
 .col-contacto {
   display: block;
   height: auto;
   margin: 0 auto 15px;
-  max-width: 250%px;
-  width: 50%;
+  width: 40%;
 }
 
 .container-contacto {
@@ -171,54 +223,132 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px;
-  gap: 20px;
-  width: 600px;
+  padding: 20px;
+  gap: 10px;
+  max-width: 450px;
   margin-right: auto;
   margin-left: auto;
 }
 
-.form-div{
-  width: 400px; 
+.form-div {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 450px;
+  width: 100%;
+}
+
+.form-message {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 form label {
-  width: 140px;
-  text-overflow: ellipsis;
+  min-width: 80px;
+  width: auto;
+  /*check*/
+  text-align: left;
 }
 
-.message-contacto {
-  width: 400px;
-  height: 20px;
+.form-div input,
+.form-div textarea {
+  flex: 1;
+}
 
+.message-contacto,
+.yourmessage-contacto {
+  font-size: 14px;
+  font-family: "Inter";
+  border-radius: 5px;
+  background-color: transparent;
+  border: 2px solid black;
+  padding: 8px 4px;
+  box-sizing: border-box;
 }
 
 .yourmessage-contacto {
+  flex: 1;
+  /* ocupa el espacio restante */
+  min-width: 250px;
+  /* evita que se haga demasiado pequeño */
+  height: 200px;
+  resize: vertical;
+  margin-top: 5px;
+  width: auto;
+}
+
+
+.form-div p,
+.form-message p {
+  flex-basis: 100%;
+  font-size: 12px;
+  min-height: 18px;
+  margin: 0 0 0 80px;
+}
+
+.form-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+.message-opinion {
   width: 400px;
   height: 200px;
-  
-}
-.form-message{
-  display: flex;
-  flex-direction: column;
-  width: 400px; 
 }
 
-
+.message-contacto::placeholder,
 .yourmessage-contacto::placeholder {
- font-size: 14px;
- font-family:"Inter";
+  font-size: 14px;
+  font-family: "Inter";
 }
 
-.message-contacto::placeholder {
- font-size: 14px;
- font-family:"Inter";
+#send_button {
+  background: #0079ff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
+#send_button:hover {
+  background: #005fcc;
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+#send_button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.contactDetails {
+  text-align: left;
+  margin: 0 auto;
+  padding-bottom: 40px;
+  width: max-content;
+}
+
+.contactDetails p {
+  margin: 0;
+}
+
+
+.error {
+  color: red;
+  font-style: italic;
+}
 
 /*Diseño mensaje formulario: style="width: 400px; height: 200px;"*/
+
 
 /*Diseño de la pagina de Equipo*/
 
@@ -392,22 +522,50 @@ footer>img {
 /* Santos, he eliminado las clases que había aquí porqué estaban duplicadas (footer y body). Cuando lo tengamos todo, intentaré ponerlo bien.
 /*-------------------------------------------*/
 
-/*Diseño de la pagina de servicios*/
-/*El estilo del body es una sugerencia se puede eliminar si es necesario*/
-/*He puesto este mismo background arriba, queda más bien*/
-/*.bodyServicios {
-  background-color: whitesmoke;
-}*/
+/*-------------------------------------------*/
+/*Diseño de la página de sobre*/
+/*-------------------------------------------*/
+.containerSobre {
+  display: flex;
+  padding: 40px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
 
+.divSobre {
+  background-color: white;
+  padding: 10px;
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 5%;
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+}
+
+.blockSobre {
+  display: flex;
+  justify-content: space-between;
+}
+
+.blockSobre h3 {
+  margin: 0;
+}
+
+/*-------------------------------------------*/
+/*Diseño de la página de servicios*/
+/*-------------------------------------------*/
 
 .containerServices {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);  
-  grid-template-rows: repeat(2, 1fr);   
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   gap: 30px;
   padding: 40px;
-  max-width: 1200px;  
-  margin: 0 auto;   
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .divServices {
@@ -418,13 +576,20 @@ footer>img {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: transform 0.3s ease;
+  transition: all 0.6s ease;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.divServices.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .divServices:hover {
   transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
-
 
 .block {
   display: flex;
@@ -443,7 +608,6 @@ footer>img {
   height: 60px;
 }
 
-
 .divEnlaceServ {
   display: flex;
   justify-content: center;
@@ -457,6 +621,7 @@ footer>img {
   border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
 .divEnlaceServ a:hover {
@@ -464,26 +629,94 @@ footer>img {
 }
 
 
-@media only screen and (max-width: 768px) {
-  .containerServices {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto; 
-  }
+/* Estilos para los filtros */
+.filter-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  text-align: center;
+
 }
 
+/*
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
-
-@media only screen and (max-width: 1024px) and (min-width: 769px) {
   .containerServices {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr); 
-  }
-}
     grid-template-columns: auto auto;
   }
 }
 
+@media only screen and (max-width: 1024px) and (min-width: 769px) {
+  .containerServices {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+}*/
+
+/*-------------------------------------------*/
+
+/*Diseño de la pagina de Reseñas*/
+/*-------------------------------------------*/
+
+ul.pagination {
+  display: inline-block;
+  padding: 5px;
+  margin: 2px;
+}
+
+ul.pagination li {
+  display: inline;
+}
+
+ul.pagination li a {
+  color: #000;
+  float: center;
+  padding: 9px 18px;
+  text-decoration: none;
+}
+
+ul.pagination li a.active {
+  background-color: #004080;
+  color: #fff;
+}
+
+/*ul.pagination li a.active:hover {background-color: #0066cc;}*/
+
+ul.pagination li button:hover {
+  background-color: #291f1f;
+}
+
+ul.pagination li button:active {
+  background-color: #c22525;
+}
+
 /*subido santos*/
+
+.filter-btn {
+  background: #f0f0f0;
+  border: 2px solid #004080;
+  padding: 8px 16px;
+  margin: 5px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "Inter", sans-serif;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: #004080;
+  color: white;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+/* Animaciones de entrada */
+
 .div-show {
   opacity: 0;
   transform: translateY(20px);
@@ -496,3 +729,23 @@ footer>img {
 }
 
 /*-------------------------------------------*/
+/*-------------------------------------------*/
+/* Media queries para responsive */
+@media only screen and (max-width: 768px) {
+  .containerServices {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    padding: 20px;
+  }
+
+  .filter-container {
+    padding: 0 20px;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .containerServices {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+}
