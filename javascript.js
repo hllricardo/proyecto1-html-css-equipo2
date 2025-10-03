@@ -233,6 +233,109 @@ function openCourseModal(courseName) {
       level: "Intermedio",
       topics: ["AWS", "Azure", "Google Cloud"],
     },
+    {
+  "Frontend Development": {
+    duration: "4 meses",
+    level: "Intermedio",
+    topics: ["HTML", "CSS", "JavaScript", "React", "Vue"]
+  },
+  "Backend Development": {
+    duration: "5 meses",
+    level: "Intermedio",
+    topics: ["Node.js", "Express", "Django", "Flask", "Databases"]
+  },
+  "Mobile App Development": {
+    duration: "5 meses",
+    level: "Intermedio",
+    topics: ["Flutter", "React Native", "Swift", "Kotlin"]
+  },
+  "Game Development": {
+    duration: "6 meses",
+    level: "Intermedio",
+    topics: ["Unity", "Unreal Engine", "C#", "Game Physics"]
+  },
+  "DevOps & CI/CD": {
+    duration: "4 meses",
+    level: "Intermedio",
+    topics: ["Jenkins", "GitHub Actions", "Docker", "CI/CD Pipelines"]
+  },
+  "Ethical Hacking": {
+    duration: "6 meses",
+    level: "Avanzado",
+    topics: ["Penetration Testing", "Metasploit", "Reconnaissance", "Exploitation"]
+  },
+  "Network Security": {
+    duration: "5 meses",
+    level: "Intermedio",
+    topics: ["Firewalls", "IDS/IPS", "VPN", "Network Protocols"]
+  },
+  "Cloud Security": {
+    duration: "4 meses",
+    level: "Intermedio",
+    topics: ["IAM", "Encryption", "Compliance", "Security Monitoring"]
+  },
+  "Incident Response": {
+    duration: "3 meses",
+    level: "Intermedio",
+    topics: ["Detection", "Containment", "Eradication", "Recovery"]
+  },
+  "Malware Analysis": {
+    duration: "4 meses",
+    level: "Avanzado",
+    topics: ["Static Analysis", "Dynamic Analysis", "Reverse Engineering", "Sandboxing"]
+  },
+  "Big Data Analytics": {
+    duration: "5 meses",
+    level: "Intermedio",
+    topics: ["Hadoop", "Spark", "Data Lakes", "ETL Processes"]
+  },
+  "Machine Learning": {
+    duration: "6 meses",
+    level: "Avanzado",
+    topics: ["Supervised Learning", "Unsupervised Learning", "Neural Networks", "Model Evaluation"]
+  },
+  "Data Visualization": {
+    duration: "3 meses",
+    level: "Intermedio",
+    topics: ["Tableau", "Power BI", "Matplotlib", "D3.js"]
+  },
+  "Statistics for Data Science": {
+    duration: "4 meses",
+    level: "Intermedio",
+    topics: ["Probability", "Distributions", "Hypothesis Testing", "Regression"]
+  },
+  "Business Intelligence": {
+    duration: "4 meses",
+    level: "Intermedio",
+    topics: ["Dashboards", "KPIs", "Data Warehousing", "Reporting"]
+  },
+  "AWS Fundamentals": {
+    duration: "3 meses",
+    level: "Básico",
+    topics: ["EC2", "S3", "IAM", "VPC"]
+  },
+  "Azure Fundamentals": {
+    duration: "3 meses",
+    level: "Básico",
+    topics: ["Azure VM", "Blob Storage", "Azure AD", "Resource Groups"]
+  },
+  "Google Cloud Platform": {
+    duration: "3 meses",
+    level: "Básico",
+    topics: ["Compute Engine", "Cloud Storage", "IAM", "BigQuery"]
+  },
+  "Cloud Automation": {
+    duration: "4 meses",
+    level: "Intermedio",
+    topics: ["Terraform", "Ansible", "CloudFormation", "Scripting"]
+  },
+  "Containerization & Kubernetes": {
+    duration: "5 meses",
+    level: "Intermedio",
+    topics: ["Docker", "Kubernetes", "Helm", "Container Orchestration"]
+  }
+}
+
   };
 
   const course = courseInfo[courseName];
