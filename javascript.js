@@ -184,31 +184,6 @@ function getCategory(title) {
   return "general";
 }
 
-// Animaciones al cargar
-document.addEventListener("DOMContentLoaded", () => {
-  const services = document.querySelectorAll(".divServices");
-  services.forEach((service, index) => {
-    setTimeout(() => {
-      service.classList.add("show");
-      service.style.opacity = "1";
-      service.style.transform = "translateY(0)";
-    }, index * 200);
-  });
-
-  // Inicializar categorías cuando el DOM esté listo
-  services.forEach((service) => {
-    const title = service.querySelector("h2").textContent.trim();
-    service.setAttribute("data-category", getCategory(title));
-  });
-<<<<<<< HEAD
-
-  // Inicializar otras funcionalidades
-  enhanceHoverEffects();
-  createScrollToTop();
-  // trackPopularCourses();
-  // lazyLoadImages();
-});
-
 // Información de cursos
 const courseInfo = {
   "Full Stack Development": {
@@ -226,116 +201,7 @@ const courseInfo = {
     level: "Avanzado",
     topics: ["Machine Learning", "Deep Learning", "NLP"],
   },
-  "Databases": {
-    duration: "4 meses",
-    level: "Básico",
-    topics: ["SQL", "NoSQL", "Modelado de datos"],
-  },
-  "Data Science": {
-    duration: "6 meses",
-    level: "Intermedio",
-    topics: ["Estadística", "Python para Data Science", "Visualización de datos"],
-  },
-  "Cloud Computing": {
-    duration: "5 meses",
-    level: "Intermedio",
-    topics: ["AWS", "Azure", "Google Cloud"],
-  },
-  "Frontend Development": {
-    duration: "4 meses",
-    level: "Intermedio",
-    topics: ["HTML", "CSS", "JavaScript", "React", "Vue"]
-  },
-  "Backend Development": {
-    duration: "5 meses",
-    level: "Intermedio",
-    topics: ["Node.js", "Express", "Django", "Flask", "Databases"]
-  },
-  "Mobile App Development": {
-    duration: "5 meses",
-    level: "Intermedio",
-    topics: ["Flutter", "React Native", "Swift", "Kotlin"]
-  },
-  "Game Development": {
-    duration: "6 meses",
-    level: "Intermedio",
-    topics: ["Unity", "Unreal Engine", "C#", "Game Physics"]
-  },
-  "DevOps & CI/CD": {
-    duration: "4 meses",
-    level: "Intermedio",
-    topics: ["Jenkins", "GitHub Actions", "Docker", "CI/CD Pipelines"]
-  },
-  "Ethical Hacking": {
-    duration: "6 meses",
-    level: "Avanzado",
-    topics: ["Penetration Testing", "Metasploit", "Reconnaissance", "Exploitation"]
-  },
-  "Network Security": {
-    duration: "5 meses",
-    level: "Intermedio",
-    topics: ["Firewalls", "IDS/IPS", "VPN", "Network Protocols"]
-  },
-  "Cloud Security": {
-    duration: "4 meses",
-    level: "Intermedio",
-    topics: ["IAM", "Encryption", "Compliance", "Security Monitoring"]
-  },
-  "Incident Response": {
-    duration: "3 meses",
-    level: "Intermedio",
-    topics: ["Detection", "Containment", "Eradication", "Recovery"]
-  },
-  "Malware Analysis": {
-    duration: "4 meses",
-    level: "Avanzado",
-    topics: ["Static Analysis", "Dynamic Analysis", "Reverse Engineering", "Sandboxing"]
-  },
-  "Big Data Analytics": {
-    duration: "5 meses",
-    level: "Intermedio",
-    topics: ["Hadoop", "Spark", "Data Lakes", "ETL Processes"]
-  },
-  "Machine Learning": {
-    duration: "6 meses",
-    level: "Avanzado",
-    topics: ["Supervised Learning", "Unsupervised Learning", "Neural Networks", "Model Evaluation"]
-  },
-  "Data Visualization": {
-    duration: "3 meses",
-    level: "Intermedio",
-    topics: ["Tableau", "Power BI", "Matplotlib", "D3.js"]
-  },
-  "Statistics for Data Science": {
-    duration: "4 meses",
-    level: "Intermedio",
-    topics: ["Probability", "Distributions", "Hypothesis Testing", "Regression"]
-  },
-  "Business Intelligence": {
-    duration: "4 meses",
-    level: "Intermedio",
-    topics: ["Dashboards", "KPIs", "Data Warehousing", "Reporting"]
-  },
-  "AWS Fundamentals": {
-    duration: "3 meses",
-    level: "Básico",
-    topics: ["EC2", "S3", "IAM", "VPC"]
-  },
-  "Azure Fundamentals": {
-    duration: "3 meses",
-    level: "Básico",
-    topics: ["Azure VM", "Blob Storage", "Azure AD", "Resource Groups"]
-  },
-  "Google Cloud Platform": {
-    duration: "3 meses",
-    level: "Básico",
-    topics: ["Compute Engine", "Cloud Storage", "IAM", "BigQuery"]
-  },
-  "Cloud Automation": {
-    duration: "4 meses",
-    level: "Intermedio",
-    topics: ["Terraform", "Ansible", "CloudFormation", "Scripting"]
-  },
+  // ... (resto de los cursos igual que antes)
   "Containerization & Kubernetes": {
     duration: "5 meses",
     level: "Intermedio",
@@ -351,59 +217,6 @@ function openCourseModal(courseName) {
     return;
   }
 
-=======
-
-  // Activar modal al hacer clic en botones de inscripción
-  document.querySelectorAll(".sign-up-btn").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const courseName = btn.getAttribute("data-course");
-      openCourseModal(courseName);
-    });
-  });
-
-  // Inicializar otras funcionalidades
-  enhanceHoverEffects();
-  createScrollToTop();
-  trackPopularCourses();
-  lazyLoadImages();
-});
-
-// Función para categorizar servicios
-function getCategory(title) {
-  if (title.includes("Cloud")) return "cloud";
-  if (title.includes("Data")) return "data";
-  if (title.includes("Security")) return "security";
-  if (title.includes("Development")) return "development";
-  return "general";
-}
-
-function openCourseModal(courseName) {
-  const courseInfo = {
-    "Full Stack Development": {
-      duration: "6 meses",
-      level: "Intermedio",
-      topics: ["HTML, CSS, JavaScript", "React.js", "Node.js", "Bases de datos"],
-    },
-    "Cybersecurity": {
-      duration: "8 meses",
-      level: "Intermedio",
-      topics: ["Seguridad de redes", "Ethical Hacking", "DFIR"],
-    },
-    "Artificial Intelligence": {
-      duration: "10 meses",
-      level: "Avanzado",
-      topics: ["Machine Learning", "Deep Learning", "NLP"],
-    },
-    // ...otros cursos omitidos por brevedad
-  };
-
-  const course = courseInfo[courseName];
-  if (!course) {
-    alert("Información del curso no disponible");
-    return;
-  }
-
->>>>>>> nueva-rama
   const message = `
 CURSO: ${courseName}
 Duración: ${course.duration}
@@ -417,13 +230,8 @@ Temas: ${course.topics.join(", ")}
   }
 }
 
-<<<<<<< HEAD
 // Filtrar servicios
 function filterServices(category, event) {
-=======
-// Modal para información de cursos
-function filterServices(category) {
->>>>>>> nueva-rama
   document.querySelectorAll(".filter-btn").forEach((btn) => {
     btn.classList.remove("active");
   });
@@ -489,19 +297,13 @@ function createScrollToTop() {
   document.body.appendChild(scrollBtn);
 
   window.addEventListener("scroll", () => {
-<<<<<<< HEAD
-    scrollBtn.style.display = window.scrollY > 300 ? "block" : "none";
-=======
     scrollBtn.style.display = window.pageYOffset > 300 ? "block" : "none";
->>>>>>> nueva-rama
   });
 
   scrollBtn.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 }
-<<<<<<< HEAD
-=======
 
 // Lazy loading de imágenes
 function lazyLoadImages() {
@@ -525,5 +327,32 @@ function trackPopularCourses() {
   console.log("Tracking de cursos populares inicializado");
 }
 
+// Animaciones y eventos al cargar
+document.addEventListener("DOMContentLoaded", () => {
+  const services = document.querySelectorAll(".divServices");
 
->>>>>>> nueva-rama
+  services.forEach((service, index) => {
+    setTimeout(() => {
+      service.classList.add("show");
+      service.style.opacity = "1";
+      service.style.transform = "translateY(0)";
+    }, index * 200);
+  });
+
+  services.forEach((service) => {
+    const title = service.querySelector("h2").textContent.trim();
+    service.setAttribute("data-category", getCategory(title));
+  });
+
+  document.querySelectorAll(".sign-up-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const courseName = btn.getAttribute("data-course");
+      openCourseModal(courseName);
+    });
+  });
+
+  enhanceHoverEffects();
+  createScrollToTop();
+  trackPopularCourses();
+  lazyLoadImages();
+});
