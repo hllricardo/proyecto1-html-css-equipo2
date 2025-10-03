@@ -13,7 +13,6 @@ if (currentTheme === "dark-mode") {
   for (let i = 0; i < textSobre.length; i++) {
     textSobre[i].classList.toggle("dark-mode-subdiv");
   }
-
 }
 
 themeSwitch.addEventListener("change", () => {
@@ -24,14 +23,12 @@ themeSwitch.addEventListener("change", () => {
   for (let i = 0; i < textSobre.length; i++) {
     textSobre[i].classList.toggle("dark-mode-subdiv");
   }
-  if (body.classList.contains("dark-mode")){
+  if (body.classList.contains("dark-mode")) {
     localStorage.setItem("theme", "dark-mode");
   } else {
     localStorage.setItem("theme", "light-mode");
   }
 });
-
-
 
 //---------------------------------------------------
 // Codigo para el menu lateral
@@ -45,6 +42,54 @@ function closeNav() {
   document.querySelector(".nav_container").style.padding = "10px 30px";
 }
 //---------------------------------------------------
+
+// Codigo para sobre.html
+document.querySelectorAll(".divSobre").forEach((box) => {
+  const text = box.querySelector(".extraTextSobre");
+  const fullHTML = text.innerHTML.replace(/\n\s*/g, " ");
+  let typingInterval = null;
+  let typingTimeout = null;
+  console.log(fullHTML);
+
+  box.addEventListener("mouseenter", () => {
+    text.innerHTML = "";
+    let i = 0;
+
+    typingTimeout = setTimeout(() => {
+      typingInterval = setInterval(() => {
+        const char = fullHTML[i];
+
+        if (fullHTML.slice(i, i + 4) === "<br>") {
+          text.innerHTML += "<br>";
+          i += 4;
+        } else if (fullHTML.slice(i, i + 5) === "<br />") {
+          text.innerHTML += "<br />";
+          i += 5;
+        } else {
+          text.innerHTML += char;
+          i++;
+        }
+
+        if (i >= fullHTML.length) {
+          clearInterval(typingInterval);
+          typingInterval = null;
+        }
+      }, 20);
+    }, 950);
+  });
+
+  box.addEventListener("mouseleave", () => {
+    text.innerHTML = "";
+    if (typingInterval) {
+      clearInterval(typingInterval);
+      typingInterval = null;
+    }
+    if (typingTimeout) {
+      clearTimeout(typingTimeout);
+      typingTimeout = null;
+    }
+  });
+});
 
 // Input validation for form in contacto.html
 function validateInput(id, regex, errorMessage, minLength = 0) {

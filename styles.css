@@ -8,23 +8,24 @@
 }
 .dark-mode input,
 .dark-mode textarea {
-  background-color: #1f2833; /* dark input background */
-  color: #fff; /* text color */
-  border-color: #555; /* optional: darker border */
+  background-color: #1f2833;
+  color: #fff;
+  border-color: #555;
 }
 
 .dark-mode input::placeholder,
 .dark-mode textarea::placeholder {
-  color: #aaa; /* lighter gray for placeholders */
+  color: #aaa;
 }
 .dark-mode-subdiv {
   background-color: #343f4eff !important;
+  color: #fff !important;
 }
 
 .switch-container {
   display: flex;
-  justify-content: center;  /* horizontal centering */
-  align-items: center;      /* vertical centering */
+  justify-content: center;
+  align-items: center;
 }
 
 .switch {
@@ -63,15 +64,15 @@
   display: none;
 }
 
-input[type="checkbox"]:checked+.switch:before {
+input[type="checkbox"]:checked + .switch:before {
   transform: translateX(26px);
 }
 
-input[type="checkbox"]:checked+.switch:after {
+input[type="checkbox"]:checked + .switch:after {
   transform: translateX(-26px);
 }
 
-input[type="checkbox"]:checked+.switch {
+input[type="checkbox"]:checked + .switch {
   background-color: #6e6e6e;
 }
 /*fin de la hoja de estilos del boton para claro/oscuro*/
@@ -143,15 +144,15 @@ body {
 }
 
 @media screen and (max-width: 1168px) {
-  .openSideNav{
-    display:block;
-    font-size:30px;
-    cursor:pointer;
+  .openSideNav {
+    display: block;
+    font-size: 30px;
+    cursor: pointer;
     position: fixed;
     margin-left: 15px;
   }
 
-  .closebtn{
+  .closebtn {
     display: block;
     top: 0;
     right: 25px;
@@ -170,17 +171,62 @@ body {
     padding-top: 60px;
   }
 
-  .navigation{
+  .navigation {
     flex-direction: column;
   }
 
-  .nav_links{
+  .nav_links {
     display: flex;
     flex-direction: column;
     font-size: 25px;
     justify-content: center;
     text-align: center;
     gap: 10px;
+  }
+  .containerSobre {
+    flex-direction: column !important;
+    padding: 40px 80px !important;
+  }
+  .divSobre {
+    max-height: 280px;
+    overflow: hidden;
+    transition: max-height 0.6s ease 0.4s;
+    position: relative;
+  }
+
+  .divSobre p {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition:
+      opacity 0.4s ease,
+      max-height 0.4s ease;
+  }
+
+  .divSobre:hover {
+    max-height: 1000px;
+    transition-delay: 0s;
+  }
+
+  .divSobre:hover p {
+    opacity: 1;
+    max-height: 1000px;
+    transition-delay: 0.6s;
+  }
+
+  .blockSobre {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    text-align: left;
+    transition:
+      top 0.6s ease 0.6s,
+      transform 0.6s ease 0.6s;
+  }
+
+  .divSobre:hover .blockSobre {
+    transition-delay: 0s;
   }
 }
 
@@ -252,38 +298,37 @@ form label {
 }
 
 .yourmessage-contacto {
-    flex: 1;              /* ocupa el espacio restante */
-  min-width: 250px;     /* evita que se haga demasiado pequeño */
+  flex: 1;
+  min-width: 250px;
   height: 200px;
   resize: vertical;
   margin-top: 5px;
   width: auto;
 }
 
-
 .form-div p,
 .form-message p {
   flex-basis: 100%;
   font-size: 12px;
-  min-height: 18px; 
+  min-height: 18px;
   margin: 0 0 0 80px;
 }
 
-.form-button{
+.form-button {
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   margin-top: 10px;
   margin-bottom: 40px;
 }
 
- .message-opinion {
+.message-opinion {
   width: 400px;
   height: 200px;
- }
+}
 .message-contacto::placeholder,
 .yourmessage-contacto::placeholder {
- font-size: 14px;
- font-family:"Inter";
+  font-size: 14px;
+  font-family: "Inter";
 }
 
 #send_button {
@@ -322,14 +367,12 @@ form label {
   margin: 0;
 }
 
-
 .error {
   color: red;
   font-style: italic;
 }
 
 /*Diseño mensaje formulario: style="width: 400px; height: 200px;"*/
-
 
 /*Diseño de la pagina de Equipo*/
 
@@ -423,7 +466,7 @@ form label {
   padding: 40px 20px;
 }
 
-.row>h2 {
+.row > h2 {
   width: 100%;
   margin-bottom: 0px;
 }
@@ -479,14 +522,14 @@ footer {
   margin: 0px;
 }
 
-footer>p {
+footer > p {
   color: white;
   font-size: 18px;
   margin: 0px;
   padding-bottom: 5px;
 }
 
-footer>img {
+footer > img {
   width: 200px;
   display: block;
   margin: 5px auto 0;
@@ -498,6 +541,7 @@ footer>img {
   height: auto;
   display: block;
   margin: 0 auto;
+  padding: 20px;
 }
 /* Santos, he eliminado las clases que había aquí porqué estaban duplicadas (footer y body). Cuando lo tengamos todo, intentaré ponerlo bien.
 /*-------------------------------------------*/
@@ -507,30 +551,91 @@ footer>img {
 /*-------------------------------------------*/
 .containerSobre {
   display: flex;
-  padding: 40px;
+  padding: 80px 100px;
   flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
+  /*  flex-wrap: wrap;
+  align-items: stretch;*/
 }
 
 .divSobre {
-  background-color: white;
+  flex: 1;
   padding: 10px;
-  margin-top: 20px;
-  margin-left: 10px;
-  margin-right: 10px;
-  border-radius: 5%;
-  display: flex;
-  flex-direction: column;
-  max-width: 400px;
+  margin: 0px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  height: 280px;
+  transition: flex 1s;
+  position: relative;
+  overflow: hidden;
+  background-color: #f2f7f7;
+  border-radius: 12px;
+  align-content: center;
 }
+
+.divSobre:hover {
+  flex: 3.75;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  border-left: 8px solid transparent;
+  border-image: linear-gradient(180deg, #3b82f6, #10b981, #f59e0b, #ef4444);
+  border-image-slice: 1;
+}
+
+.divSobre-blue {
+  border-left: 8px solid #3b82f6;
+}
+
+.divSobre-green {
+  border-left: 8px solid #10b981;
+}
+
+.divSobre-gold {
+  border-left: 8px solid #f59e0b;
+}
+
+.divSobre-aqua {
+  border-left: 8px solid #06b6d4;
+}
+
+.divSobre-red {
+  border-left: 8px solid #ef4444;
+}
+
 .blockSobre {
-  display: flex;
-  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  text-align: center;
+  transition:
+    top 0.6s ease,
+    transform 0.6s ease;
 }
 
 .blockSobre h3 {
   margin: 0;
+  transition: transform 0.6s ease;
+}
+
+.extraTextSobre {
+  position: relative;
+  text-align: justify;
+  opacity: 0;
+  margin-top: 60px;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.divSobre:hover .blockSobre {
+  top: 48px;
+  padding: 0;
+  text-align: center;
+}
+
+.divSobre:hover .extraTextSobre {
+  opacity: 1;
+  max-height: 280px;
+  transition-delay: 0.95s;
 }
 
 /*-------------------------------------------*/
@@ -539,12 +644,12 @@ footer>img {
 
 .containerServices {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);  
-  grid-template-rows: repeat(2, 1fr);   
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   gap: 30px;
   padding: 40px;
-  max-width: 1200px;  
-  margin: 0 auto;   
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .divServices {
@@ -607,7 +712,6 @@ footer>img {
   background-color: #0066cc;
 }
 
-
 /* Estilos para los filtros */
 .filter-container {
   display: flex;
@@ -615,7 +719,6 @@ footer>img {
   gap: 10px;
   margin-bottom: 30px;
   flex-wrap: wrap;
-
 }
 
 .filter-btn {
@@ -636,9 +739,9 @@ footer>img {
 }
 
 .container {
-   display: grid;
-   grid-template-columns: auto auto;
-  }
+  display: grid;
+  grid-template-columns: auto auto;
+}
 
 /* Animaciones de entrada */
 .div-show {
@@ -658,10 +761,10 @@ footer>img {
 @media only screen and (max-width: 768px) {
   .containerServices {
     grid-template-columns: 1fr;
-    grid-template-rows: auto; 
+    grid-template-rows: auto;
     padding: 20px;
   }
-  
+
   .filter-container {
     padding: 0 20px;
   }
@@ -670,7 +773,6 @@ footer>img {
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
   .containerServices {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr); 
+    grid-template-rows: repeat(3, 1fr);
   }
 }
-
