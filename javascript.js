@@ -190,8 +190,7 @@ function getCategory(title) {
   return "general";
 }
 
-// Información de cursos
-const courseInfo = {
+
   // Información de cursos
 const courseInfo = {
   "Full Stack Development": {
