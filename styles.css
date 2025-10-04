@@ -7,6 +7,22 @@
   color: #fff;
 }
 
+.dark-mode .nav_container footer {
+  background: linear-gradient(90deg, #0a0f1d, #111827, #0a0f1d);
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .navigation img,
+.dark-mode footer img {
+  filter: drop-shadow(0px 0px 6px rgba(255, 255, 255, 0.4));
+}
+
+.dark-mode .navigation a:hover {
+  background: #38bdf8;
+  color: #0f172a;
+  box-shadow: 0 3px 12px rgba(56, 189, 248, 0.6);
+}
+
 .dark-mode input,
 .dark-mode textarea {
   background-color: #1f2833;
@@ -103,8 +119,9 @@ body {
 }
 
 .nav_container {
-  background-color: #000000;
-  padding: 10px 30px;
+  background: linear-gradient(90deg, #0f172a, #1e293b, #0f172a);
+  padding: 12px 40px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
   position: sticky;
   top: 0;
   z-index: 1;
@@ -117,26 +134,29 @@ body {
 }
 
 .navigation img {
-  height: 45px;
+  height: 50px;
 }
 
 .navigation a {
-  font-size: 20px;
-  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  color: #e2e8f0; /* gris claro */
   text-decoration: none;
-  padding: 12px 18px;
-  white-space: nowrap;
+  padding: 10px 16px;
+  border-radius: 8px; /* bordes suaves */
+  transition: all 0.3s ease;
 }
 
 .navigation a:hover {
-  background-color: white;
-  color: black;
+  background: #38bdf8; /* azul cyan brillante */
+  color: #0f172a;
+  box-shadow: 0 3px 12px rgba(56, 189, 248, 0.4); /* efecto glow */
 }
 
 .nav_links {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 25px;
 }
 
 @media screen and (min-width: 1169px) {
@@ -544,20 +564,21 @@ form label {
 }
 
 footer {
-  background-color: #000000;
+  background: linear-gradient(90deg, #0f172a, #1e293b, #0f172a);
   text-align: center;
   margin: 0px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
 }
 
-footer > p {
+footer p {
   color: white;
-  font-size: 18px;
+  font-size: 16px;
   margin: 0px;
   padding-bottom: 5px;
 }
 
-footer > img {
-  width: 200px;
+footer img {
+  height: 50px;
   display: block;
   margin: 5px auto 0;
 }
@@ -570,9 +591,6 @@ footer > img {
   margin: 0 auto;
   padding: 20px;
 }
-
-/* Santos, he eliminado las clases que había aquí porqué estaban duplicadas (footer y body). Cuando lo tengamos todo, intentaré ponerlo bien.
-/*-------------------------------------------*/
 
 /*-------------------------------------------*/
 /*Diseño de la página de sobre*/
@@ -588,7 +606,7 @@ footer > img {
 
 .divSobre {
   flex: 1;
-  padding: 10px;
+  padding: 20px;
   margin: 0px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   height: 280px;
