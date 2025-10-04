@@ -233,7 +233,7 @@ function openCourseModal(courseName) {
       level: "Intermedio",
       topics: ["AWS", "Azure", "Google Cloud"],
     },
-    
+
     "Frontend Development": {
       duration: "4 meses",
       level: "Intermedio",
@@ -336,26 +336,29 @@ function openCourseModal(courseName) {
     }
   }
 
+  const course = courseInfo[courseName];
+  if (!course) {
+    alert("Información del curso no disponible");
+  }
+
+  const message = `
+  CURSO: ${courseName}
+  Duración: ${course.duration}
+  Nivel: ${course.level}
+  Temas: ${course.topics.join(", ")}
+
+  ¿Te gustaría inscribirte en este curso? Contáctanos para más información.`;
+
+  if (confirm(message)) {
+    window.location.href =
+      "contacto.html?curso=" + encodeURIComponent(courseName);
+  }
 };
 
-const course = courseInfo[courseName];
-if (!course) {
-  alert("Información del curso no disponible");
-}
 
-const message = `
-CURSO: ${courseName}
-Duración: ${course.duration}
-Nivel: ${course.level}
-Temas: ${course.topics.join(", ")}
 
-¿Te gustaría inscribirte en este curso? Contáctanos para más información.`;
 
-if (confirm(message)) {
-  window.location.href =
-    "contacto.html?curso=" + encodeURIComponent(courseName);
-}
- // Modal para información de cursos
+// Modal para información de cursos
 function filterServices(category) {
   // Remover clase active de todos los botones
   document.querySelectorAll(".filter-btn").forEach((btn) => {
