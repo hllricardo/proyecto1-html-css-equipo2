@@ -181,24 +181,23 @@ function send_form_sim() {
 
 //---------------------------------------------------
 // Codigo para servicios.html
-// Función para categorizar servicios según el título
-function getCategory(title) {
+// Función para categorizar servicios según el título (ya no hace falta)
+/*function getCategory(title) {
   if (title.includes("Cloud")) return "cloud";
   if (title.includes("Data")) return "data";
   if (title.includes("Security")) return "security";
   if (title.includes("Development")) return "development";
   return "general";
-}
+}*/
 
-
-  // Información de cursos
+// Información de cursos
 const courseInfo = {
   "Full Stack Development": {
     duration: "6 meses",
     level: "Intermedio",
     topics: ["HTML, CSS, JavaScript", "React.js", "Node.js", "Bases de datos"],
   },
-  "Cybersecurity": {
+  Cybersecurity: {
     duration: "8 meses",
     level: "Intermedio",
     topics: ["Seguridad de redes", "Ethical Hacking", "DFIR"],
@@ -208,7 +207,7 @@ const courseInfo = {
     level: "Avanzado",
     topics: ["Machine Learning", "Deep Learning", "NLP"],
   },
-  "Databases": {
+  Databases: {
     duration: "4 meses",
     level: "Básico",
     topics: ["SQL", "NoSQL", "Modelado de datos"],
@@ -216,7 +215,11 @@ const courseInfo = {
   "Data Science": {
     duration: "6 meses",
     level: "Intermedio",
-    topics: ["Estadística", "Python para Data Science", "Visualización de datos"],
+    topics: [
+      "Estadística",
+      "Python para Data Science",
+      "Visualización de datos",
+    ],
   },
   "Cloud Computing": {
     duration: "5 meses",
@@ -226,103 +229,123 @@ const courseInfo = {
   "Frontend Development": {
     duration: "4 meses",
     level: "Intermedio",
-    topics: ["HTML", "CSS", "JavaScript", "React", "Vue"]
+    topics: ["HTML", "CSS", "JavaScript", "React", "Vue"],
   },
   "Backend Development": {
     duration: "5 meses",
     level: "Intermedio",
-    topics: ["Node.js", "Express", "Django", "Flask", "Databases"]
+    topics: ["Node.js", "Express", "Django", "Flask", "Databases"],
   },
   "Mobile App Development": {
     duration: "5 meses",
     level: "Intermedio",
-    topics: ["Flutter", "React Native", "Swift", "Kotlin"]
+    topics: ["Flutter", "React Native", "Swift", "Kotlin"],
   },
   "Game Development": {
     duration: "6 meses",
     level: "Intermedio",
-    topics: ["Unity", "Unreal Engine", "C#", "Game Physics"]
+    topics: ["Unity", "Unreal Engine", "C#", "Game Physics"],
   },
   "DevOps & CI/CD": {
     duration: "4 meses",
     level: "Intermedio",
-    topics: ["Jenkins", "GitHub Actions", "Docker", "CI/CD Pipelines"]
+    topics: ["Jenkins", "GitHub Actions", "Docker", "CI/CD Pipelines"],
   },
   "Ethical Hacking": {
     duration: "6 meses",
     level: "Avanzado",
-    topics: ["Penetration Testing", "Metasploit", "Reconnaissance", "Exploitation"]
+    topics: [
+      "Penetration Testing",
+      "Metasploit",
+      "Reconnaissance",
+      "Exploitation",
+    ],
   },
   "Network Security": {
     duration: "5 meses",
     level: "Intermedio",
-    topics: ["Firewalls", "IDS/IPS", "VPN", "Network Protocols"]
+    topics: ["Firewalls", "IDS/IPS", "VPN", "Network Protocols"],
   },
   "Cloud Security": {
     duration: "4 meses",
     level: "Intermedio",
-    topics: ["IAM", "Encryption", "Compliance", "Security Monitoring"]
+    topics: ["IAM", "Encryption", "Compliance", "Security Monitoring"],
   },
   "Incident Response": {
     duration: "3 meses",
     level: "Intermedio",
-    topics: ["Detection", "Containment", "Eradication", "Recovery"]
+    topics: ["Detection", "Containment", "Eradication", "Recovery"],
   },
   "Malware Analysis": {
     duration: "4 meses",
     level: "Avanzado",
-    topics: ["Static Analysis", "Dynamic Analysis", "Reverse Engineering", "Sandboxing"]
+    topics: [
+      "Static Analysis",
+      "Dynamic Analysis",
+      "Reverse Engineering",
+      "Sandboxing",
+    ],
   },
   "Big Data Analytics": {
     duration: "5 meses",
     level: "Intermedio",
-    topics: ["Hadoop", "Spark", "Data Lakes", "ETL Processes"]
+    topics: ["Hadoop", "Spark", "Data Lakes", "ETL Processes"],
   },
   "Machine Learning": {
     duration: "6 meses",
     level: "Avanzado",
-    topics: ["Supervised Learning", "Unsupervised Learning", "Neural Networks", "Model Evaluation"]
+    topics: [
+      "Supervised Learning",
+      "Unsupervised Learning",
+      "Neural Networks",
+      "Model Evaluation",
+    ],
   },
   "Data Visualization": {
     duration: "3 meses",
     level: "Intermedio",
-    topics: ["Tableau", "Power BI", "Matplotlib", "D3.js"]
+    topics: ["Tableau", "Power BI", "Matplotlib", "D3.js"],
   },
   "Statistics for Data Science": {
     duration: "4 meses",
     level: "Intermedio",
-    topics: ["Probability", "Distributions", "Hypothesis Testing", "Regression"]
+    topics: [
+      "Probability",
+      "Distributions",
+      "Hypothesis Testing",
+      "Regression",
+    ],
   },
   "Business Intelligence": {
     duration: "4 meses",
     level: "Intermedio",
-    topics: ["Dashboards", "KPIs", "Data Warehousing", "Reporting"]
+    topics: ["Dashboards", "KPIs", "Data Warehousing", "Reporting"],
   },
   "AWS Fundamentals": {
     duration: "3 meses",
     level: "Básico",
-    topics: ["EC2", "S3", "IAM", "VPC"]
+    topics: ["EC2", "S3", "IAM", "VPC"],
   },
   "Azure Fundamentals": {
     duration: "3 meses",
     level: "Básico",
-    topics: ["Azure VM", "Blob Storage", "Azure AD", "Resource Groups"]
+    topics: ["Azure VM", "Blob Storage", "Azure AD", "Resource Groups"],
   },
   "Google Cloud Platform": {
     duration: "3 meses",
     level: "Básico",
-    topics: ["Compute Engine", "Cloud Storage", "IAM", "BigQuery"]
+    topics: ["Compute Engine", "Cloud Storage", "IAM", "BigQuery"],
   },
   "Cloud Automation": {
     duration: "4 meses",
     level: "Intermedio",
-    topics: ["Terraform", "Ansible", "CloudFormation", "Scripting"]
+    topics: ["Terraform", "Ansible", "CloudFormation", "Scripting"],
   },
   "Containerization & Kubernetes": {
     duration: "5 meses",
     level: "Intermedio",
-    topics: ["Docker", "Kubernetes", "Helm", "Container Orchestration"]
-  }
+    topics: ["Docker", "Kubernetes", "Helm", "Container Orchestration"],
+  },
 };
 
 // Modal para información de cursos
@@ -348,14 +371,11 @@ Temas: ${course.topics.join(", ")}
 }
 
 // Filtrar servicios
-function filterServices(category, event) {
+function filterServices(category) {
   document.querySelectorAll(".filter-btn").forEach((btn) => {
     btn.classList.remove("active");
   });
-
-  if (event && event.target) {
-    event.target.classList.add("active");
-  }
+  document.getElementById(category).classList.add("active");
 
   document.querySelectorAll(".divServices").forEach((service) => {
     const serviceCategory = service.getAttribute("data-category");
@@ -456,10 +476,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }, index * 200);
   });
 
-  services.forEach((service) => {
+  /* Ya no hace falta */
+  /*  services.forEach((service) => {
     const title = service.querySelector("h2").textContent.trim();
     service.setAttribute("data-category", getCategory(title));
-  });
+  });*/
 
   document.querySelectorAll(".sign-up-btn").forEach((btn) => {
     btn.addEventListener("click", () => {
