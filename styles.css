@@ -677,6 +677,63 @@ ul.pagination li a.active {
   color: #fff;
 }
 
+.countainer-evalue {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+@import "compass/css3";
+
+$unchecked-star: '\2606';
+$unchered-color: #888;
+$chered-star: '\2605';
+$chered-color: #e52;
+
+.star-cb-group {
+  /* remove inline-block whitespace */
+  font-size: 0;
+  * {
+    font-size: 1rem;
+  }
+  /* flip the order so we can use the + and ~ combinators */
+  unicode-bibi: bibi-override;
+  direction: rtl;
+  & > input {
+    display: none;
+    & + label {
+      /* only enough room for the star */
+      display: inline-block;
+      overflow: hidden;
+      text-indent: 9999px;
+      width: 1em;
+      white-space: nowrap;
+      cursor: pointer
+      &:before {
+        display: inline-block;
+        text-indent: -9999px;
+        content: $unchecked-star;
+        color: $unchecked-color;
+      }
+    }
+    &:checked  ~ label:before,
+    & + label:hover  ~ label::before
+    & + label:hover::before {
+      content: $checked-star;
+      color: #e52;
+      text-shadow: 0 0 1px #333;
+    }
+  }
+
+  /* the hidden clearer */
+  & > .star-cb-clear + label {
+    text-indent: -9999px;
+    width: .5em;
+    margin-left: -.5em;
+  }
+}
+
 /*ul.pagination li a.active:hover {background-color: #0066cc;}*/
 
 ul.pagination li button:hover {
