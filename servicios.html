@@ -7,11 +7,13 @@
     <link href="styles.css" rel="stylesheet" />
   </head>
 
-  <body class="bodyServicios">
+  <body id="body">
     <div id="id_navigation_container" class="nav_container">
       <nav class="navigation">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <img src="public/logo.png" alt="CodeTrain Academy logo">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+          >&times;</a
+        >
+        <img src="public/logo.png" alt="CodeTrain Academy logo" />
         <div class="nav_links">
           <a href="index.html">Home</a>
           <a href="servicios.html">Services</a>
@@ -20,7 +22,11 @@
           <a href="contacto.html">Contact</a>
           <a href="reseñas.html">Reviews</a>
           <div class="switch-container">
-            <input type="checkbox" id="theme-switch">
+            <input
+              type="checkbox"
+              id="theme-switch"
+              title="switch light/dark-mode"
+            />
             <label for="theme-switch" class="switch"></label>
           </div>
         </div>
@@ -37,23 +43,32 @@
       </div>
 
       <!-- Category filters -->
-      <div
-        class="filter-container"
-        style="text-align: center; margin-bottom: 30px"
-      >
-        <button class="filter-btn active" onclick="filterServices('all')">
+      <div class="filter-container">
+        <button
+          id="all"
+          class="filter-btn active"
+          onclick="filterServices('all')"
+        >
           All
         </button>
-        <button class="filter-btn" onclick="filterServices('development')">
+        <button
+          id="development"
+          class="filter-btn"
+          onclick="filterServices('development')"
+        >
           Development
         </button>
-        <button class="filter-btn" onclick="filterServices('security')">
+        <button
+          id="security"
+          class="filter-btn"
+          onclick="filterServices('security')"
+        >
           Security
         </button>
-        <button class="filter-btn" onclick="filterServices('data')">
+        <button id="data" class="filter-btn" onclick="filterServices('data')">
           Data
         </button>
-        <button class="filter-btn" onclick="filterServices('cloud')">
+        <button id="cloud" class="filter-btn" onclick="filterServices('cloud')">
           Cloud
         </button>
       </div>
@@ -536,6 +551,6 @@
       <p>© 2025 CodeTrain Academy. All rights reserved.</p>
     </footer>
 
-    <script src="servicios.js"></script>
+    <script src="javascript.js"></script>
   </body>
 </html>
