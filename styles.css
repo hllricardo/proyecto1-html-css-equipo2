@@ -265,6 +265,16 @@ body {
   .divSobre:hover .blockSobre {
     transition-delay: 0s;
   }
+
+  .fake-terminal {
+    font-size: 12px !important;
+    padding: 10px !important;
+  }
+
+  .big-msg {
+    font-size: 18px !important;
+    height: 35vh !important;
+  }
 }
 
 /*-------------------------------------------*/
@@ -876,4 +886,62 @@ ul.pagination li button:active {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
   }
+}
+
+/* Secret */
+.fake-terminal {
+  position: fixed;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 35vw;
+  height: 35vh;
+  background: #000;
+  color: #0f0;
+  font-family: monospace;
+  font-size: 20px;
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 0 0 25px #0f08;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.fake-terminal p {
+  margin: 4px 0;
+  opacity: 0;
+  animation: fadeIn 0s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.glitch {
+  animation: glitch 0.3s steps(2) 5;
+}
+
+@keyframes glitch {
+  0% {
+    filter: hue-rotate(0deg);
+    transform: none;
+  }
+  50% {
+    filter: hue-rotate(80deg);
+    transform: translateX(5px);
+  }
+  100% {
+    filter: hue-rotate(0deg);
+    transform: none;
+  }
+}
+
+.big-msg {
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  color: #0f0;
+  margin-top: 20px;
 }

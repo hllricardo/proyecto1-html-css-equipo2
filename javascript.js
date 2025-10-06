@@ -5,7 +5,6 @@ const textEquipo = document.getElementsByClassName("divEquipo");
 const textSobre = document.getElementsByClassName("divSobre");
 const textServicios = document.getElementsByClassName("divServices");
 const currentTheme = localStorage.getItem("theme");
-console.log(textEquipo);
 
 // He cambiado un poco esto porque al cambiar a modo oscuro
 // y luego vamos a otra página, aunque el modo oscuro se mantiene
@@ -460,9 +459,7 @@ function lazyLoadImages() {
 }
 
 // Tracking de cursos populares
-function trackPopularCourses() {
-  console.log("Tracking de cursos populares inicializado");
-}
+function trackPopularCourses() {}
 
 // Animaciones y eventos al cargar
 document.addEventListener("DOMContentLoaded", () => {
@@ -494,3 +491,77 @@ document.addEventListener("DOMContentLoaded", () => {
   trackPopularCourses();
   lazyLoadImages();
 });
+
+// Secret
+let clicks = 0;
+//const logo = document.getElementById("logo");
+const logo = document.getElementsByClassName("navigation")[0].childNodes[3];
+
+logo.addEventListener("click", () => {
+  clicks++;
+  clearTimeout(window.resetClicks);
+  window.resetClicks = setTimeout(() => (clicks = 0), 2000);
+
+  if (clicks === 5) {
+    clicks = 0;
+    showTerminal();
+  }
+});
+
+function showTerminal() {
+  alert("🎊 Congratulations! You found the easter egg! 🎊");
+  const originalBg = document.body.style.background;
+  document.body.classList.add("glitch");
+
+  setTimeout(() => {
+    document.body.classList.remove("glitch");
+    document.body.style.background = "#111";
+
+    const term = document.createElement("div");
+    term.className = "fake-terminal";
+    document.body.appendChild(term);
+
+    const lines = [
+      "> Secret mode unlocked 🧠",
+      "> Initializing secret protocol",
+      ".loading",
+      "> Verifying credentials",
+      ".loading",
+      "> Access granted ✅",
+      "\u00A0",
+      "# Welcome, developer! #",
+    ];
+
+    let i = 0;
+    const typer = setInterval(() => {
+      if (i < lines.length) {
+        const line = lines[i++];
+        const p = document.createElement("p");
+
+        if (line === ".loading") {
+          p.textContent = ".";
+          term.appendChild(p);
+
+          let dots = 1;
+          const dotAnim = setInterval(() => {
+            p.textContent += ".";
+          }, 40);
+          setTimeout(() => clearInterval(dotAnim), 900);
+        } else if (line.includes("Welcome")) {
+          p.className = "big-msg";
+          p.textContent = line;
+          term.appendChild(p);
+        } else {
+          p.textContent = line;
+          term.appendChild(p);
+        }
+      } else {
+        clearInterval(typer);
+        setTimeout(() => {
+          term.remove();
+          document.body.style.background = originalBg;
+        }, 4000);
+      }
+    }, 1000);
+  }, 1500);
+}
