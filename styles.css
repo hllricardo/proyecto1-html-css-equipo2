@@ -828,10 +828,11 @@ ul.pagination li a.active {
 
 @import "compass/css3";
 
+
 $unchecked-star: '\2606';
-$unchered-color: #888;
-$chered-star: '\2605';
-$chered-color: #e52;
+$unchecked-color: #888;
+$checked-star: '\2605';
+$checked-color: #e52;
 
 .star-cb-group {
   /* remove inline-block whitespace */
@@ -840,7 +841,7 @@ $chered-color: #e52;
     font-size: 1rem;
   }
   /* flip the order so we can use the + and ~ combinators */
-  unicode-bibi: bibi-override;
+  unicode-bidi: bidi-override;
   direction: rtl;
   & > input {
     display: none;
@@ -851,7 +852,7 @@ $chered-color: #e52;
       text-indent: 9999px;
       width: 1em;
       white-space: nowrap;
-      cursor: pointer
+      cursor: pointer;
       &:before {
         display: inline-block;
         text-indent: -9999px;
@@ -859,15 +860,15 @@ $chered-color: #e52;
         color: $unchecked-color;
       }
     }
-    &:checked  ~ label:before,
-    & + label:hover  ~ label::before
-    & + label:hover::before {
+    &:checked ~ label:before,
+      & + label:hover ~ label:before,
+      & + label:hover:before {
       content: $checked-star;
       color: #e52;
       text-shadow: 0 0 1px #333;
     }
   }
-
+  
   /* the hidden clearer */
   & > .star-cb-clear + label {
     text-indent: -9999px;
@@ -891,19 +892,17 @@ $chered-color: #e52;
   }
 }
 
-// extra styles 
-
+// extra styles
 :root {
   font-size: 2em;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Helvetica, arial, sans-serif;
 }
 
 body {
   background: #333;
   color: $unchecked-color;
 }
-
-fieldset{
+fieldset {
   border: 0;
   background: #222;
   width: 5em;
@@ -911,13 +910,12 @@ fieldset{
   padding: 1em 1.5em 0.9em;
   margin: 1em auto;
 }
-
 #log {
   margin: 1em auto;
   width: 5em;
-  text-align: transparent;
+  text-align: center;
+  background: transparent;
 }
-
 h1 {
   text-align: center;
 }
