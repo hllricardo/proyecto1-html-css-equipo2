@@ -567,11 +567,11 @@ function showTerminal() {
 }
 
 const imgList = [
-  "classrooms_01.jpg",
-  "classrooms_02.jpg",
-  "classrooms_03.jpg",
-  "classrooms_04.jpg",
-  "classrooms_05.jpg",
+  "public/classrooms_01.jpg",
+  "public/classrooms_02.jpg",
+  "public/classrooms_03.jpg",
+  "public/classrooms_04.jpg",
+  "public/classrooms_05.jpg",
 ];
 const gallery = document.getElementById("img-gallery");
 let imgIndex = 0;
