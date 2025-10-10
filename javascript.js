@@ -172,29 +172,28 @@ function button_activation() {
   );
 }
 
-document.getElementById("name").addEventListener("input", name_validation);
+document.getElementById("name")?.addEventListener("input", name_validation);
 
 document
   .getElementById("surname")
-  .addEventListener("input", surname_validation);
+  ?.addEventListener("input", surname_validation);
 
-document.getElementById("email").addEventListener("input", email_validation);
+document.getElementById("email")?.addEventListener("input", email_validation);
 
 document
   .getElementById("message")
-  .addEventListener("input", message_validation);
+  ?.addEventListener("input", message_validation);
 
-console.log(document.getElementById("main-form").querySelectorAll("input"));
 document
   .getElementById("main-form")
-  .querySelectorAll("input, textarea")
+  ?.querySelectorAll("input, textarea")
   .forEach((input) => {
     input.addEventListener("input", function (e) {
       button_activation();
     });
   });
 
-document.getElementById("main-form").addEventListener("submit", function (e) {
+document.getElementById("main-form")?.addEventListener("submit", function (e) {
   e.preventDefault();
   alert(
     "Button Test Successful. This alert confirms the button works. The final feature is still under development and will be released shortly.",
@@ -591,6 +590,7 @@ function showTerminal() {
 }
 
 document.getElementById("btnImg").addEventListener("click", function (e) {
+  console.log("ffff");
   let checkEl = document.getElementById("img-gallery");
   const imgList = [
     "public/classrooms.jpg",
