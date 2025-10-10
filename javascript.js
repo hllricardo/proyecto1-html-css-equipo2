@@ -569,18 +569,26 @@ function showTerminal() {
 document.getElementById("btnImg").addEventListener("click", function (e) {
   let checkEl = document.getElementById("img-gallery");
   const imgList = [
+    "public/classrooms.jpg",
     "public/classrooms_01.jpg",
     "public/classrooms_02.jpg",
     "public/classrooms_03.jpg",
     "public/classrooms_04.jpg",
     "public/classrooms_05.jpg",
+    "public/classrooms_06.jpg",
+    "public/classrooms_07.jpg",
+    "public/classrooms_08.jpg",
+    "public/classrooms_09.jpg",
+    "public/classrooms_10.jpg",
   ];
-  const gallery = document.getElementById("img-gallery");
-  let dir = imgList[checkEl.children.length % imgList.length];
-  let img = document.createElement("img");
-  img.src = dir;
-  img.alt = `Gallery Image`;
-  gallery.appendChild(img);
+  if (checkEl.children.length < imgList.length) {
+    const gallery = document.getElementById("img-gallery");
+    let dir = imgList[checkEl.children.length % imgList.length];
+    let img = document.createElement("img");
+    img.src = dir;
+    img.alt = `Gallery Image`;
+    gallery.appendChild(img);
+  }
 });
 // estrellas reseñas //
 /*var logID = 'log',
