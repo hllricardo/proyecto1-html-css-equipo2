@@ -697,7 +697,7 @@ footer img {
     border-radius: 40px;
     border: 2px solid black;
     color: white;
-    cursor: pointer;
+    cursor: pointer; 
 }
 
 #img-gallery img{
@@ -706,6 +706,11 @@ footer img {
   height: 200px;
   object-fit: cover;
   cursor: pointer;
+}#img-gallery{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 80%;
 }
 
 
