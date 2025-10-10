@@ -1,45 +1,41 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About us | CodeTrain Academy</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body id="body">
-    <div id="id_navigation_container" class="nav_container">
-      <nav class="navigation">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
-          >&times;</a
-        >
-        <img src="public/logo.png" alt="CodeTrain Academy logo" />
-        <div class="nav_links">
-          <a href="index.html">Home</a>
-          <a href="servicios.html">Services</a>
-          <a href="equipo.html">Team</a>
-          <a href="sobre.html">About us</a>
-          <a href="contacto.html">Contact</a>
-          <a href="reseñas.html">Reviews</a>
-          <div class="switch-container">
-            <input type="checkbox" id="theme-switch" />
-            <label for="theme-switch" class="switch"></label>
-          </div>
-        </div>
-      </nav>
-    </div>
-    <span id="openNav" class="openSideNav" onclick="openNav()">&#9776;</span>
 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About us | CodeTrain Academy</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body id="body">
+  <div id="id_navigation_container" class="nav_container">
+    <nav class="navigation">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <img src="public/logo.png" alt="CodeTrain Academy logo" />
+      <div class="nav_links">
+        <a href="index.html">Home</a>
+        <a href="servicios.html">Services</a>
+        <a href="equipo.html">Team</a>
+        <a href="sobre.html">About us</a>
+        <a href="contacto.html">Contact</a>
+        <a href="reseñas.html">Reviews</a>
+        <div class="switch-container">
+          <input type="checkbox" id="theme-switch" />
+          <label for="theme-switch" class="switch"></label>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <span id="openNav" class="openSideNav" onclick="openNav()">&#9776;</span>
+  <div class="container-sobre">
     <div class="main_title_other">
       <h1>About CodeTrain Academy</h1>
       <h2>Empowering people and organizations through technology</h2>
     </div>
 
     <div class="bloque-image">
-      <img
-        src="public/sobre.jpg"
-        alt="Mano humana y robótica"
-        class="imagen-reducida"
-      />
+      <img src="public/sobre.jpg" alt="Mano humana y robótica" class="imagen-reducida" />
     </div>
 
     <div class="containerSobre">
@@ -112,17 +108,21 @@
           results.
         </p>
       </div>
-      <div class="images-container">
-        <div>
-          <button id="btnImg">See image</button>
-        </div>
-        <div id="img-gallery"></div>
-      </div>
+
     </div>
-    <footer>
-      <img src="public/logo.png" alt="CodeTrain Academy logo" />
-      <p>© 2025 CodeTrain Academy. All rights reserved.</p>
-    </footer>
-  </body>
+    <div class="images-container">
+      <div>
+        <button id="btnImg">See image</button>
+      </div>
+      <div id="img-gallery"></div>
+    </div>
+  </div>
+
+  <footer>
+    <img src="public/logo.png" alt="CodeTrain Academy logo" />
+    <p>© 2025 CodeTrain Academy. All rights reserved.</p>
+  </footer>
+</body>
+
 </html>
 <script src="javascript.js"></script>
