@@ -565,10 +565,28 @@ function showTerminal() {
     }, 1000);
   }, 1500);
 }
-/*
+
+const imgList = [
+  "classrooms_01.jpg",
+  "classrooms_02.jpg",
+  "classrooms_03.jpg",
+  "classrooms_04.jpg",
+  "classrooms_05.jpg",
+];
+const gallery = document.getElementById("img-gallery");
+let imgIndex = 0;
+document.getElementById("btnImg").addEventListener("click", function (e) {
+  let dir = imgList[imgIndex % imgList.length];
+  let img = document.createElement("img");
+  img.src = dir;
+  img.alt = `Gallery Image`;
+  gallery.appendChild(img);
+  imgIndex++;
+});
 // estrellas reseñas //
-var logID = 'log',
-log = $('<div id = "'+logID+'"></div>');
+/*var logID = 'log',
+log = $('<div id="'+logID'"></div>');
+>>>>>>> 3ee13f5 (feat: gallery)
 $('body').append(log);
 $('[type*="radio"]').change(function () {
   var me = $(this);

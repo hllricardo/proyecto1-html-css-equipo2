@@ -606,7 +606,7 @@ footer img {
 /*Diseño de la página de sobre*/
 /*-------------------------------------------*/
 .containerSobre {
-  display: flex;
+  /*display: flex;*/
   padding: 80px 100px;
   flex-direction: row;
   justify-content: center;
@@ -694,6 +694,12 @@ footer img {
   transition-delay: 0.95s;
 }
 
+.images-container {
+  display: block;
+  padding: 80px 100px;
+  flex-direction: row;
+  justify-content: center;
+}
 /*-------------------------------------------*/
 /*Diseño de la página de servicios*/
 /*-------------------------------------------*/
@@ -828,11 +834,10 @@ ul.pagination li a.active {
 
 @import "compass/css3";
 
-
-$unchecked-star: '\2606';
-$unchecked-color: #888;
-$checked-star: '\2605';
-$checked-color: #e52;
+$unchecked-star: "\2606";
+$unchered-color: #888;
+$chered-star: "\2605";
+$chered-color: #e52;
 
 .star-cb-group {
   /* remove inline-block whitespace */
@@ -861,22 +866,23 @@ $checked-color: #e52;
       }
     }
     &:checked ~ label:before,
-      & + label:hover ~ label:before,
-      & + label:hover:before {
+    & + label:hover ~ label:before,
+    & + label:hover:before {
+      /*   & + label:hover ~ label::before & + label:hover::before {*/
       content: $checked-star;
       color: #e52;
       text-shadow: 0 0 1px #333;
     }
   }
-  
+
   /* the hidden clearer */
   & > .star-cb-clear + label {
     text-indent: -9999px;
-    width: .5em;
-    margin-left: -.5em;
+    width: 0.5em;
+    margin-left: -0.5em;
   }
   & > .star-cb-clear + label:before {
-    width: .5em;
+    width: 0.5em;
   }
 
   &:hover > input + label:before {
@@ -898,10 +904,11 @@ $checked-color: #e52;
   font-family: Helvetica, arial, sans-serif;
 }
 
-body {
-  /*background: #333;*/
+/*body {
+  background: #333;
   color: $unchecked-color;
-}
+}*/
+
 fieldset {
   border: 0;
   background: #222;
@@ -916,9 +923,11 @@ fieldset {
   text-align: center;
   background: transparent;
 }
-h1 {
+
+/*h1 {
+>>>>>>> 3ee13f5 (feat: gallery)
   text-align: center;
-}
+}*/
 
 /*ul.pagination li a.active:hover {background-color: #0066cc;}*/
 

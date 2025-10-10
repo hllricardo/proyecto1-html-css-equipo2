@@ -1,16 +1,18 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Reseñas</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="body-res">
     <div id="id_navigation_container" class="nav_container">
       <nav class="navigation">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <img src="public/logo.png" alt="CodeTrain Academy logo">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+          >&times;</a
+        >
+        <img src="public/logo.png" alt="CodeTrain Academy logo" />
         <div class="nav_links">
           <a href="index.html">Home</a>
           <a href="servicios.html">Services</a>
@@ -19,7 +21,7 @@
           <a href="contacto.html">Contact</a>
           <a href="reseñas.html">Reviews</a>
           <div class="switch-container">
-            <input type="checkbox" id="theme-switch">
+            <input type="checkbox" id="theme-switch" />
             <label for="theme-switch" class="switch"></label>
           </div>
         </div>
@@ -27,55 +29,80 @@
     </div>
 
     <div class="main_title_other">
-        <h1>Rate us</h1>
-        <h2>Give your opinion about our services and faculty</h2>
+      <h1>Rate us</h1>
+      <h2>Give your opinion about our services and faculty</h2>
     </div>
 
     <div class="imagen califica">
-        <img src="public/califica-servicio-transvima.jpg" alt="califica" class="imagen-reducida">
+      <img
+        src="public/califica-servicio-transvima.jpg"
+        alt="califica"
+        class="imagen-reducida"
+      />
     </div>
-    
-    <div class="countainer-evalue">
 
-        <form>
-            <label for="username">Your name:</label>
-            <input class="text" placeholder="your name">
-            <br>
-            <br>
-            <label for="Message-opinion">your message</label>
-            <textarea id="message" class="yourmessage-contacto" oninput="message_validation(); button_activation()" rows="20" placeholder="your message"></textarea>
-            <br>
-            <br>
-            <input type="submit" value="submit"/><br>
-        </form>
-        <br>
-        <br>
-       <h1>star rating</h1>
-       <form>
+    <div class="countainer-evalue">
+      <form>
+        <label for="username">Your name:</label>
+        <input class="text" placeholder="your name" />
+        <br />
+        <br />
+        <label for="Message-opinion">your message</label>
+        <textarea
+          id="message"
+          class="yourmessage-contacto"
+          oninput="message_validation(); button_activation()"
+          rows="20"
+          placeholder="your message"
+        ></textarea>
+        <br />
+        <br />
+        <input type="submit" value="submit" /><br />
+      </form>
+      <br />
+      <br />
+      <h1>star rating</h1>
+      <form>
         <fieldset>
           <spam class="star-cd-group">
-            <input type="radio" id="rating-5" name="rating" value="5" /><label for="rating-5">5</label>
-              <input type="radio" id="rating-4" name="rating" value="4" /><label for="rating-4">4</label>
-                <input type="radio" id="rating-3" name="rating" value="3" /><label for="rating-3">3</label>
-                  <input type="radio" id="rating-2" name="rating" value="2" /><label for="rating-2">2</label>
-                    <input type="radio" id="rating-1" name="rating" value="1" /><label for="rating-1">1</label>
+            <input type="radio" id="rating-5" name="rating" value="5" /><label
+              for="rating-5"
+              >5</label
+            >
+            <input type="radio" id="rating-4" name="rating" value="4" /><label
+              for="rating-4"
+              >4</label
+            >
+            <input type="radio" id="rating-3" name="rating" value="3" /><label
+              for="rating-3"
+              >3</label
+            >
+            <input type="radio" id="rating-2" name="rating" value="2" /><label
+              for="rating-2"
+              >2</label
+            >
+            <input type="radio" id="rating-1" name="rating" value="1" /><label
+              for="rating-1"
+              >1</label
+            >
+            <input type="radio" id="rating-0" name="rating" value="0" /><label
+              for="rating-0"
+              >0</label
+            >
           </spam>
         </fieldset>
-       </form>
+      </form>
     </div>
-    <br>
-    <br>
-        🌍 The World<br>
-          🎓 CodeTrain Academy<br>
-          📞 P: +34 222 333 444<br>
-          📩 hello@codetrainacademy.com<br>
-
+    <br />
+    <br />
+    🌍 The World<br />
+    🎓 CodeTrain Academy<br />
+    📞 P: +34 222 333 444<br />
+    📩 hello@codetrainacademy.com<br />
 
     <footer>
-         <img src="public/logo.png" alt="CodeTrain Academy logo">
+      <img src="public/logo.png" alt="CodeTrain Academy logo" />
       <p>© 2025 CodeTrain Academy. All rights reserved.</p>
     </footer>
-
-    
-</body>
+  </body>
 </html>
