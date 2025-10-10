@@ -566,22 +566,21 @@ function showTerminal() {
   }, 1500);
 }
 
-const imgList = [
-  "public/classrooms_01.jpg",
-  "public/classrooms_02.jpg",
-  "public/classrooms_03.jpg",
-  "public/classrooms_04.jpg",
-  "public/classrooms_05.jpg",
-];
-const gallery = document.getElementById("img-gallery");
-let imgIndex = 0;
 document.getElementById("btnImg").addEventListener("click", function (e) {
-  let dir = imgList[imgIndex % imgList.length];
+  let checkEl = document.getElementById("img-gallery");
+  const imgList = [
+    "public/classrooms_01.jpg",
+    "public/classrooms_02.jpg",
+    "public/classrooms_03.jpg",
+    "public/classrooms_04.jpg",
+    "public/classrooms_05.jpg",
+  ];
+  const gallery = document.getElementById("img-gallery");
+  let dir = imgList[checkEl.children.length % imgList.length];
   let img = document.createElement("img");
   img.src = dir;
   img.alt = `Gallery Image`;
   gallery.appendChild(img);
-  imgIndex++;
 });
 // estrellas reseñas //
 /*var logID = 'log',
