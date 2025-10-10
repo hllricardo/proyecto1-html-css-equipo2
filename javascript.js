@@ -172,11 +172,35 @@ function button_activation() {
   );
 }
 
-function send_form_sim() {
+document.getElementById("name").addEventListener("input", name_validation);
+
+document
+  .getElementById("surname")
+  .addEventListener("input", surname_validation);
+
+document.getElementById("email").addEventListener("input", email_validation);
+
+document
+  .getElementById("message")
+  .addEventListener("input", message_validation);
+
+console.log(document.getElementById("main-form").querySelectorAll("input"));
+document
+  .getElementById("main-form")
+  .querySelectorAll("input, textarea")
+  .forEach((input) => {
+    input.addEventListener("input", function (e) {
+      button_activation();
+    });
+  });
+
+document.getElementById("main-form").addEventListener("submit", function (e) {
+  e.preventDefault();
   alert(
     "Button Test Successful. This alert confirms the button works. The final feature is still under development and will be released shortly.",
   );
-}
+  document.getElementById("main-form").reset();
+});
 
 //---------------------------------------------------
 // Codigo para servicios.html
