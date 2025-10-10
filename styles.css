@@ -899,7 +899,7 @@ $checked-color: #e52;
 }
 
 body {
-  background: #333;
+  /*background: #333;*/
   color: $unchecked-color;
 }
 fieldset {
