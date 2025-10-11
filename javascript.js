@@ -172,11 +172,34 @@ function button_activation() {
   );
 }
 
-function send_form_sim() {
+document.getElementById("name")?.addEventListener("input", name_validation);
+
+document
+  .getElementById("surname")
+  ?.addEventListener("input", surname_validation);
+
+document.getElementById("email")?.addEventListener("input", email_validation);
+
+document
+  .getElementById("message")
+  ?.addEventListener("input", message_validation);
+
+document
+  .getElementById("main-form")
+  ?.querySelectorAll("input, textarea")
+  .forEach((input) => {
+    input.addEventListener("input", function (e) {
+      button_activation();
+    });
+  });
+
+document.getElementById("main-form")?.addEventListener("submit", function (e) {
+  e.preventDefault();
   alert(
     "Button Test Successful. This alert confirms the button works. The final feature is still under development and will be released shortly.",
   );
-}
+  document.getElementById("main-form").reset();
+});
 
 //---------------------------------------------------
 // Codigo para servicios.html
@@ -459,7 +482,7 @@ function lazyLoadImages() {
 }
 
 // Tracking de cursos populares
-function trackPopularCourses() {}
+function trackPopularCourses() { }
 
 // Animaciones y eventos al cargar
 document.addEventListener("DOMContentLoaded", () => {
@@ -565,6 +588,57 @@ function showTerminal() {
     }, 1000);
   }, 1500);
 }
+
+document.getElementById("btnImg").addEventListener("click", function (e) {
+  console.log("ffff");
+  let checkEl = document.getElementById("img-gallery");
+  const imgList = [
+    "public/classrooms.jpg",
+    "public/classrooms_01.jpg",
+    "public/classrooms_02.jpg",
+    "public/classrooms_03.jpg",
+    "public/classrooms_04.jpg",
+    "public/classrooms_05.jpg",
+    "public/classrooms_06.jpg",
+    "public/classrooms_07.jpg",
+    "public/classrooms_08.jpg",
+    "public/classrooms_09.jpg",
+    "public/classrooms_10.jpg",
+  ];
+  if (checkEl.children.length < imgList.length) {
+    const gallery = document.getElementById("img-gallery");
+    let dir = imgList[checkEl.children.length % imgList.length];
+    let img = document.createElement("img");
+    img.src = dir;
+    img.alt = `Gallery Image`;
+    gallery.appendChild(img);
+  }
+});
+
+// Funcion para la galeria de imagenes de servicios que se activan al hacer click en una imagen
+// y se abre en una ventana en la misma pagina pero mas grande
+document.getElementById("img-gallery").addEventListener("click", (e) => {
+  let lightboxImg = document.createElement("img");
+  let lightbox = document.createElement("div");
+
+  lightboxImg.className = "lightbox-img-content";
+  lightbox.className = "lightbox-img";
+  lightbox.id = "box-img";
+
+  if (e.target.tagName === "IMG") {
+    lightboxImg.src = e.target.src;
+  }
+  lightbox.appendChild(lightboxImg);
+  document.body.appendChild(lightbox);
+
+  lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) {
+        lightbox.remove();
+      }
+      });  
+});
+
+//------------------------------------------------
 
 // estrellas reseñas //
 window.addEventListener("DOMContentLoaded",() => {

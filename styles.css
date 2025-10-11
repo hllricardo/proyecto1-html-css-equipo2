@@ -619,8 +619,8 @@ footer img {
   padding: 80px 100px;
   flex-direction: row;
   justify-content: center;
-  /*  flex-wrap: wrap;
-  align-items: stretch;*/
+  flex-wrap: wrap;
+  align-items: stretch;
 }
 
 .divSobre {
@@ -690,6 +690,61 @@ footer img {
   max-height: 0;
   overflow: hidden;
 }
+
+.images-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 50px;
+}
+.images-container button{
+    background: #0079ff;
+    display: inline-block;
+    padding: 15px 20px;
+    border-radius: 40px;
+    border: 2px solid black;
+    color: white;
+    cursor: pointer; 
+}
+
+#img-gallery img{
+  margin: 20px;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  cursor: pointer;
+}#img-gallery{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 80%;
+}
+
+/*estilos del contenedor insertado en js de la galeria sobre.html al pinchar en una imagen*/
+.lightbox-img {
+  display:block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  padding-top: 30px;
+  box-sizing: border-box;
+}
+
+.lightbox-img-content {
+  display: block;
+  margin: auto;
+  width: 80%;
+  height: 80%;
+}
+
+/*---------------------------------------------------------*/
+
 
 .divSobre:hover .blockSobre {
   top: 48px;
