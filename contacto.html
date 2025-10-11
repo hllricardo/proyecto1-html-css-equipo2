@@ -44,29 +44,29 @@
       <h3 class="highlight-text">Join the Code Revolution</h3>
       <h3 class="highlight-text">Apply now and unlock new career opportunities!</h3>
     </div>
-    <form class="container-contacto">
+    <form id = "main-form" class="container-contacto">
       <div class="form-div">
         <label for="name">Name:</label>
-        <input id="name" class="message-contacto" oninput="name_validation(); button_activation()" type="text" placeholder="Your Name">
+        <input id="name" class="message-contacto" type="text" placeholder="Your Name">
         <p id="name_msg_error"></p>
       </div>
       <div class="form-div">
         <label for="surname">Surname:</label>
-        <input id="surname" class="message-contacto" oninput="surname_validation(); button_activation()" type="text" placeholder="Your Surname">
+        <input id="surname" class="message-contacto" type="text" placeholder="Your Surname">
         <p id="surname_msg_error"></p>
       </div>
       <div class="form-div">
         <label for="email">Email: </label>
-        <input id="email" class="message-contacto" oninput="email_validation(); button_activation()" type="text" placeholder="Your email">
+        <input id="email" class="message-contacto" type="text" placeholder="Your email">
         <p id="email_msg_error"></p>
       </div>
       <div class="form-message">
         <label for="message">Message:</label>
-        <textarea id="message" class="yourmessage-contacto" oninput="message_validation(); button_activation()" rows="20" placeholder="Your Message"></textarea>
+        <textarea id="message" class="yourmessage-contacto" rows="20" placeholder="Your Message"></textarea>
         <p id="message_msg_error"></p>
       </div>
       <div class="form-button">
-      <button id="send_button" type="button" onclick="send_form_sim()" disabled>Send your message</button><br>
+      <button id="send_button" type="submit" disabled>Send your message</button><br>
       </div>
     </form>
     <div class="contactDetails">
