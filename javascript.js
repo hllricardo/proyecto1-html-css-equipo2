@@ -18,7 +18,6 @@ if (currentTheme === "dark-mode") {
     textSobre[i].classList.add("dark-mode-subdiv");
   }
   for (let i = 0; i < textServicios.length; i++) {
-    console.log("bucle servicios");
     textServicios[i].classList.add("dark-mode-subdiv");
   }
   themeSwitch.checked = true;
@@ -63,7 +62,6 @@ document.querySelectorAll(".divSobre").forEach((box) => {
   const fullHTML = text.innerHTML.replace(/\n\s*/g, " ");
   let typingInterval = null;
   let typingTimeout = null;
-  console.log(fullHTML);
 
   box.addEventListener("mouseenter", () => {
     text.innerHTML = "";
@@ -504,10 +502,9 @@ document.addEventListener("DOMContentLoaded", () => {
 // Evento para cuando pulsamos sobre sign-up!
 document
   .getElementById("main-container-services")
-  .addEventListener("click", (e) => {
+  ?.addEventListener("click", (e) => {
     let courseName =
       e.target.parentElement.parentElement.children[0].children[0].innerText;
-    console.log(courseName);
     openCourseModal(courseName);
   });
 
@@ -586,8 +583,7 @@ function showTerminal() {
 }
 
 //Gallery
-document.getElementById("btnImg").addEventListener("click", function (e) {
-  console.log("ffff");
+document.getElementById("btnImg")?.addEventListener("click", function (e) {
   let checkEl = document.getElementById("img-gallery");
   const imgList = [
     "public/classrooms.jpg",
@@ -614,7 +610,7 @@ document.getElementById("btnImg").addEventListener("click", function (e) {
 
 // Funcion para la galeria de imagenes de servicios que se activan al hacer click en una imagen
 // y se abre en una ventana en la misma pagina pero mas grande
-document.getElementById("img-gallery").addEventListener("click", (e) => {
+document.getElementById("img-gallery")?.addEventListener("click", (e) => {
   let lightboxImg = document.createElement("img");
   let lightbox = document.createElement("div");
 
