@@ -33,6 +33,7 @@
 .dark-mode .block h2 {
   color: white;
 }
+
 .dark-mode input::placeholder,
 .dark-mode textarea::placeholder {
   color: #aaa;
@@ -83,15 +84,15 @@
   display: none;
 }
 
-input[type="checkbox"]:checked + .switch:before {
+input[type="checkbox"]:checked+.switch:before {
   opacity: 0;
 }
 
-input[type="checkbox"]:checked + .switch:after {
+input[type="checkbox"]:checked+.switch:after {
   opacity: 1;
 }
 
-input[type="checkbox"]:checked + .switch {
+input[type="checkbox"]:checked+.switch {
   background-color: #6e6e6e;
 }
 
@@ -140,17 +141,21 @@ body {
 .navigation a {
   font-size: 18px;
   font-weight: 500;
-  color: #e2e8f0; /* gris claro */
+  color: #e2e8f0;
+  /* gris claro */
   text-decoration: none;
   padding: 10px 16px;
-  border-radius: 8px; /* bordes suaves */
+  border-radius: 8px;
+  /* bordes suaves */
   transition: all 0.3s ease;
 }
 
 .navigation a:hover {
-  background: #38bdf8; /* azul cyan brillante */
+  background: #38bdf8;
+  /* azul cyan brillante */
   color: #0f172a;
-  box-shadow: 0 3px 12px rgba(56, 189, 248, 0.4); /* efecto glow */
+  box-shadow: 0 3px 12px rgba(56, 189, 248, 0.4);
+  /* efecto glow */
 }
 
 .nav_links {
@@ -181,6 +186,7 @@ body {
     top: 0px !important;
     transform: scale(1) !important;
   }
+
   .openSideNav {
     display: block;
     font-size: 30px;
@@ -220,10 +226,12 @@ body {
     text-align: center;
     gap: 10px;
   }
+
   .containerSobre {
     flex-direction: column !important;
     padding: 40px 80px !important;
   }
+
   .divSobre {
     max-height: 280px;
     overflow: hidden;
@@ -449,6 +457,7 @@ form label {
   display: flex;
   gap: 30px;
 }
+
 .blockEquipo:hover {
   background: #dddde1;
   color: #202122;
@@ -523,7 +532,7 @@ form label {
   padding: 40px 20px;
 }
 
-.row > h2 {
+.row>h2 {
   width: 100%;
   margin-bottom: 0px;
 }
@@ -826,109 +835,16 @@ ul.pagination li a.active {
   margin: 20px;
 }
 
-@import "compass/css3";
-
-
-$unchecked-star: '\2606';
-$unchecked-color: #888;
-$checked-star: '\2605';
-$checked-color: #e52;
-
-.star-cb-group {
-  /* remove inline-block whitespace */
-  font-size: 0;
-  * {
-    font-size: 1rem;
-  }
-  /* flip the order so we can use the + and ~ combinators */
-  unicode-bidi: bidi-override;
-  direction: rtl;
-  & > input {
-    display: none;
-    & + label {
-      /* only enough room for the star */
-      display: inline-block;
-      overflow: hidden;
-      text-indent: 9999px;
-      width: 1em;
-      white-space: nowrap;
-      cursor: pointer;
-      &:before {
-        display: inline-block;
-        text-indent: -9999px;
-        content: $unchecked-star;
-        color: $unchecked-color;
-      }
-    }
-    &:checked ~ label:before,
-      & + label:hover ~ label:before,
-      & + label:hover:before {
-      content: $checked-star;
-      color: #e52;
-      text-shadow: 0 0 1px #333;
-    }
-  }
+.rating_stars {
+  display: flex;
   
-  /* the hidden clearer */
-  & > .star-cb-clear + label {
-    text-indent: -9999px;
-    width: .5em;
-    margin-left: -.5em;
-  }
-  & > .star-cb-clear + label:before {
-    width: .5em;
-  }
-
-  &:hover > input + label:before {
-    content: $unchecked-star;
-    color: $unchecked-color;
-    text-shadow: none;
-  }
-  &:hover > input + label:hover ~ label:before,
-  &:hover > input + label:hover:before {
-    content: $checked-star;
-    color: $checked-color;
-    text-shadow: 0 0 1px #333;
-  }
 }
 
-// extra styles
-:root {
-  font-size: 2em;
-  font-family: Helvetica, arial, sans-serif;
+.rating {
+  display: grid;
+
 }
 
-body {
-  background: #333;
-  color: $unchecked-color;
-}
-fieldset {
-  border: 0;
-  background: #222;
-  width: 5em;
-  border-radius: 1px;
-  padding: 1em 1.5em 0.9em;
-  margin: 1em auto;
-}
-#log {
-  margin: 1em auto;
-  width: 5em;
-  text-align: center;
-  background: transparent;
-}
-h1 {
-  text-align: center;
-}
-
-/*ul.pagination li a.active:hover {background-color: #0066cc;}*/
-
-ul.pagination li button:hover {
-  background-color: #291f1f;
-}
-
-ul.pagination li button:active {
-  background-color: #c22525;
-}
 
 /*subido santos*/
 
@@ -1029,10 +945,12 @@ ul.pagination li button:active {
     filter: hue-rotate(0deg);
     transform: none;
   }
+
   50% {
     filter: hue-rotate(80deg);
     transform: translateX(5px);
   }
+
   100% {
     filter: hue-rotate(0deg);
     transform: none;
