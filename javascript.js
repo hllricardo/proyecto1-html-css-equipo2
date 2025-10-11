@@ -482,7 +482,7 @@ function lazyLoadImages() {
 }
 
 // Tracking de cursos populares
-function trackPopularCourses() { }
+//function trackPopularCourses() { }
 
 // Animaciones y eventos al cargar
 document.addEventListener("DOMContentLoaded", () => {
@@ -496,24 +496,20 @@ document.addEventListener("DOMContentLoaded", () => {
     }, index * 200);
   });
 
-  /* Ya no hace falta */
-  /*  services.forEach((service) => {
-    const title = service.querySelector("h2").textContent.trim();
-    service.setAttribute("data-category", getCategory(title));
-  });*/
-
-  document.querySelectorAll(".sign-up-btn").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const courseName = btn.getAttribute("data-course");
-      openCourseModal(courseName);
-    });
-  });
-
   enhanceHoverEffects();
   createScrollToTop();
-  trackPopularCourses();
   lazyLoadImages();
 });
+
+// Evento para cuando pulsamos sobre sign-up!
+document
+  .getElementById("main-container-services")
+  .addEventListener("click", (e) => {
+    let courseName =
+      e.target.parentElement.parentElement.children[0].children[0].innerText;
+    console.log(courseName);
+    openCourseModal(courseName);
+  });
 
 // Secret
 let clicks = 0;
@@ -589,6 +585,7 @@ function showTerminal() {
   }, 1500);
 }
 
+//Gallery
 document.getElementById("btnImg").addEventListener("click", function (e) {
   console.log("ffff");
   let checkEl = document.getElementById("img-gallery");
@@ -632,72 +629,70 @@ document.getElementById("img-gallery").addEventListener("click", (e) => {
   document.body.appendChild(lightbox);
 
   lightbox.addEventListener("click", (e) => {
-      if (e.target === lightbox) {
-        lightbox.remove();
-      }
-      });  
+    if (e.target === lightbox) {
+      lightbox.remove();
+    }
+  });
 });
 
 //------------------------------------------------
 
 // estrellas reseñas //
-window.addEventListener("DOMContentLoaded",() => {
-	const starRating = new StarRating("form");
+window.addEventListener("DOMContentLoaded", () => {
+  const starRating = new StarRating("form");
 });
 
 class StarRating {
-	constructor(qs) {
-		this.ratings = [
-			{id: 1, name: "Terrible"},
-			{id: 2, name: "Bad"},
-			{id: 3, name: "OK"},
-			{id: 4, name: "Good"},
-			{id: 5, name: "Excellent"}
-		];
-		this.rating = null;
-		this.el = document.querySelector(qs);
+  constructor(qs) {
+    this.ratings = [
+      { id: 1, name: "Terrible" },
+      { id: 2, name: "Bad" },
+      { id: 3, name: "OK" },
+      { id: 4, name: "Good" },
+      { id: 5, name: "Excellent" },
+    ];
+    this.rating = null;
+    this.el = document.querySelector(qs);
 
-		this.init();
-	}
-	init() {
-		this.el?.addEventListener("change",this.updateRating.bind(this));
+    this.init();
+  }
+  init() {
+    this.el?.addEventListener("change", this.updateRating.bind(this));
 
-		// stop Firefox from preserving form data between refreshes
-		try {
-			this.el?.reset();
-		} catch (err) {
-			console.error("Element isn’t a form.");
-		}
-	}
-	updateRating(e) {
-		// clear animation delays
-		Array.from(this.el.querySelectorAll(`[for*="rating"]`)).forEach(el => {
-			el.className = "rating__label";
-		});
+    // stop Firefox from preserving form data between refreshes
+    try {
+      this.el?.reset();
+    } catch (err) {
+      console.error("Element isn’t a form.");
+    }
+  }
+  updateRating(e) {
+    // clear animation delays
+    Array.from(this.el.querySelectorAll(`[for*="rating"]`)).forEach((el) => {
+      el.className = "rating__label";
+    });
 
-		const ratingObject = this.ratings.find(r => r.id === +e.target.value);
-		const prevRatingID = this.rating?.id || 0;
+    const ratingObject = this.ratings.find((r) => r.id === +e.target.value);
+    const prevRatingID = this.rating?.id || 0;
 
-		let delay = 0;
-		this.rating = ratingObject;
-		this.ratings.forEach(rating => {
-			const { id } = rating;
+    let delay = 0;
+    this.rating = ratingObject;
+    this.ratings.forEach((rating) => {
+      const { id } = rating;
 
-			// add the delays
-			const ratingLabel = this.el.querySelector(`[for="rating-${id}"]`);
+      // add the delays
+      const ratingLabel = this.el.querySelector(`[for="rating-${id}"]`);
 
-			if (id > prevRatingID + 1 && id <= this.rating.id) {
-				++delay;
-				ratingLabel.classList.add(`rating__label--delay${delay}`);
-			}
+      if (id > prevRatingID + 1 && id <= this.rating.id) {
+        ++delay;
+        ratingLabel.classList.add(`rating__label--delay${delay}`);
+      }
 
-			// hide ratings to not read, show the one to read
-			const ratingTextEl = this.el.querySelector(`[data-rating="${id}"]`);
+      // hide ratings to not read, show the one to read
+      const ratingTextEl = this.el.querySelector(`[data-rating="${id}"]`);
 
-			if (this.rating.id !== id)
-				ratingTextEl.setAttribute("hidden",true);
-			else
-				ratingTextEl.removeAttribute("hidden");
-		});
-	}
+      if (this.rating.id !== id) ratingTextEl.setAttribute("hidden", true);
+      else ratingTextEl.removeAttribute("hidden");
+    });
+  }
 }
