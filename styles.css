@@ -713,6 +713,29 @@ footer img {
   width: 80%;
 }
 
+/*estilos del contenedor insertado en js de la galeria sobre.html al pinchar en una imagen*/
+.lightbox-img {
+  display:block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  padding-top: 30px;
+  box-sizing: border-box;
+}
+
+.lightbox-img-content {
+  display: block;
+  margin: auto;
+  width: 80%;
+  height: 80%;
+}
+
+/*---------------------------------------------------------*/
+
 
 .divSobre:hover .blockSobre {
   top: 48px;

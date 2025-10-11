@@ -459,7 +459,7 @@ function lazyLoadImages() {
 }
 
 // Tracking de cursos populares
-function trackPopularCourses() {}
+function trackPopularCourses() { }
 
 // Animaciones y eventos al cargar
 document.addEventListener("DOMContentLoaded", () => {
@@ -590,6 +590,32 @@ document.getElementById("btnImg").addEventListener("click", function (e) {
     gallery.appendChild(img);
   }
 });
+
+// Funcion para la galeria de imagenes de servicios que se activan al hacer click en una imagen
+
+document.getElementById("img-gallery").addEventListener("click", (e) => {
+  let lightboxImg = document.createElement("img");
+  let lightbox = document.createElement("div");
+
+  lightboxImg.className = "lightbox-img-content";
+  lightbox.className = "lightbox-img";
+  lightbox.id = "box-img";
+
+  if (e.target.tagName === "IMG") {
+    lightboxImg.src = e.target.src;
+  }
+  lightbox.appendChild(lightboxImg);
+  document.body.appendChild(lightbox);
+
+  lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) {
+        lightbox.remove();
+      }
+      });  
+});
+
+//------------------------------------------------
+
 // estrellas reseñas //
 /*var logID = 'log',
 log = $('<div id="'+logID'"></div>');
