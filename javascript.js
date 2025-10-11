@@ -616,7 +616,7 @@ document.getElementById("btnImg").addEventListener("click", function (e) {
 });
 
 // Funcion para la galeria de imagenes de servicios que se activan al hacer click en una imagen
-
+// y se abre en una ventana en la misma pagina pero mas grande
 document.getElementById("img-gallery").addEventListener("click", (e) => {
   let lightboxImg = document.createElement("img");
   let lightbox = document.createElement("div");
