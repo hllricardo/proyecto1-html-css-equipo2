@@ -51,17 +51,26 @@
         <br>
         <br>
        <h1>star rating</h1>
-       <form>
-        <fieldset>
-          <spam class="star-cd-group">
-            <input type="radio" id="rating-5" name="rating" value="5" /><label for="rating-5">5</label>
-              <input type="radio" id="rating-4" name="rating" value="4" /><label for="rating-4">4</label>
-                <input type="radio" id="rating-3" name="rating" value="3" /><label for="rating-3">3</label>
-                  <input type="radio" id="rating-2" name="rating" value="2" /><label for="rating-2">2</label>
-                    <input type="radio" id="rating-1" name="rating" value="1" /><label for="rating-1">1</label>
-          </spam>
-        </fieldset>
-       </form>
+       <form class="rating">
+       <div class="rating_stars">
+            <input type="radio" id="rating-1" name="rating" class="rating_input rating_input-5" value="5" /><p class="rating__display" data-rating="5" >Excellent</p>
+            <input type="radio" id="rating-4" name="rating" class="rating_input rating_input-4" value="4" /><p class="rating__display" data-rating="4" >Good</p>
+            <input type="radio" id="rating-3" name="rating" class="rating_input rating_input-3" value="3" /><p class="rating__display" data-rating="3" >OK</p>
+            <input type="radio" id="rating-2" name="rating" class="rating_input rating_input-2" value="2" /><p class="rating__display" data-rating="2" >Bad</p>
+            <input type="radio" id="rating-1" name="rating" class="rating_input rating_input-1" value="1" /><p class="rating__display" data-rating="1" >Terrible</p>
+          <label class="rating__label" for="rating-1">
+			<span class="rating__sr"></span>
+		</label>
+    </div>
+    <div>
+		
+		
+		
+		
+		
+        
+      </div>
+      </form>
     </div>
     <br>
     <br>
