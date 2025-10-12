@@ -296,6 +296,11 @@ body {
 
 /*Diseño de la pagina de Contacto*/
 /*-------------------------------------------*/
+.hr-contact {
+  width: 350px;
+  border: 2px solid black;
+}
+
 .h3-contact h3 {
   text-align: center;
   font-weight: 600;
