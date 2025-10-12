@@ -30,8 +30,15 @@
   border-color: #555;
 }
 
-.dark-mode .block h2 {
+.dark-mode .block .main h2 {
   color: white;
+}
+
+.dark-mode .h3-contact h3 {
+  color: white;
+}
+.dark-mode .container-contacto {
+  background-color: #151b23;
 }
 
 .dark-mode input::placeholder,
@@ -289,32 +296,56 @@ body {
 
 /*Diseño de la pagina de Contacto*/
 /*-------------------------------------------*/
-.highlight-text {
-  font-size: 20px;
-  font-weight: bold;
+.h3-contact h3 {
   text-align: center;
-  margin-top: 10px;
-  margin-bottom: 15px;
-  line-height: 1.4;
+  font-weight: 600;
+  font-size: 22px;
+  color: #000;
+  margin: 10px 0;
+}
+
+.highlight-text {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 800;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
 .col-contacto {
-  display: block;
+  max-width: 533px;
   height: auto;
-  margin: 0 auto 15px;
-  width: 40%;
+  border-radius: 20px; /* soft rounded corners */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-.container-contacto {
-  flex-direction: column;
+.contactImg-container {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.container-contacto {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
   padding: 20px;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.combined-contact-form {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
   gap: 10px;
-  max-width: 450px;
-  margin-right: auto;
-  margin-left: auto;
+  padding: 40px 20px;
 }
 
 .form-div {
@@ -328,7 +359,7 @@ body {
 .form-message {
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
+  width: 450px;
 }
 
 form label {
@@ -375,7 +406,7 @@ form label {
   display: flex;
   justify-content: center;
   margin-top: 10px;
-  margin-bottom: 40px;
+  /*margin-bottom: 40px;*/
 }
 
 .message-opinion {
@@ -417,12 +448,12 @@ form label {
 .contactDetails {
   text-align: left;
   margin: 0 auto;
-  padding-bottom: 40px;
+  padding-bottom: 20px;
   width: max-content;
 }
 
 .contactDetails p {
-  margin: 0;
+  margin-top: 50px;
 }
 
 .error {
@@ -1017,4 +1048,3 @@ ul.pagination li a.active {
   color: #0f0;
   margin-top: 20px;
 }
-
