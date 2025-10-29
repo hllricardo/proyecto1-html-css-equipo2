@@ -897,44 +897,93 @@ footer img {
 
 /*Diseño de la pagina de Reseñas*/
 /*-------------------------------------------*/
-
-ul.pagination {
-  display: inline-block;
-  padding: 5px;
-  margin: 2px;
+.hr-rev {
+    width: 350px;
+    border: 2px solid black;
+    margin-bottom: 30px;
+    
+}
+.form-div-rev {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: 450px;
+    width: 100%;
 }
 
-ul.pagination li {
-  display: inline;
+.form-div-rev input {
+  flex: 1;
 }
 
-ul.pagination li a {
-  color: #000;
-  float: center;
-  padding: 9px 18px;
-  text-decoration: none;
+#name_msg_error-rev {
+  color: red;
+  font-size: 12px;
+  margin-left: 120px; 
+  margin-top: 4px;
+  margin-bottom: 0;
+  text-align: left;
 }
 
-ul.pagination li a.active {
-  background-color: #004080;
-  color: #fff;
+#rating_msg_error {
+  color: red;
+  font-size: 12px;
+  text-align: center;
+  margin-top: 4px;
 }
 
-.countainer-evalue {
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  margin: 20px;
+.form-message-rev {
+    display: flex;
+    flex-wrap: wrap;
+    width: 450px;
 }
 
-.rating_stars {
+#rating-stars {
   display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
 }
 
-.rating {
-  display: grid;
+#rating-stars img {
+  width: 30px;
+  cursor: pointer;
+  transition: transform 0.2s;
 }
 
+#rating-stars img:hover {
+  transform: scale(1.1);
+}
+
+#review-form label {
+  min-width:120px;
+  width: auto;
+  text-align: left;
+}
+
+#send_button-review {
+  background: #0079ff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#send_button-review:hover {
+  background: #005fcc;
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+#send_button-review:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
 /*subido santos*/
 
 .filter-btn {

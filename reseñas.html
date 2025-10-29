@@ -6,7 +6,7 @@
     <title>Reseñas</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body class="body-res">
+  <body id="body">
     <div id="id_navigation_container" class="nav_container">
       <nav class="navigation">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
@@ -32,58 +32,73 @@
       <h1>Rate us</h1>
       <h2>Give your opinion about our services and faculty</h2>
     </div>
-
-    <div class="imagen califica">
-      <img
-        src="public/califica-servicio-transvima.jpg"
-        alt="califica"
-        class="imagen-reducida"
-      />
-    </div>
-
-    <div class="countainer-evalue">
-
-        <form>
-            <label for="username">Your name:</label>
-            <input class="text" placeholder="your name">
-            <br>
-            <br>
-            <label for="Message-opinion">your message</label>
-            <textarea id="message" class="yourmessage-contacto" oninput="message_validation(); button_activation()" rows="20" placeholder="your message"></textarea>
-            <br>
-            <br>
-            <input type="submit" value="submit"/><br>
-        </form>
-        <br>
-        <br>
-       <h1>star rating</h1>
-       <form class="rating">
-       <div class="rating_stars">
-            <input type="radio" id="rating-1" name="rating" class="rating_input rating_input-5" value="5" /><p class="rating__display" data-rating="5" >Excellent</p>
-            <input type="radio" id="rating-4" name="rating" class="rating_input rating_input-4" value="4" /><p class="rating__display" data-rating="4" >Good</p>
-            <input type="radio" id="rating-3" name="rating" class="rating_input rating_input-3" value="3" /><p class="rating__display" data-rating="3" >OK</p>
-            <input type="radio" id="rating-2" name="rating" class="rating_input rating_input-2" value="2" /><p class="rating__display" data-rating="2" >Bad</p>
-            <input type="radio" id="rating-1" name="rating" class="rating_input rating_input-1" value="1" /><p class="rating__display" data-rating="1" >Terrible</p>
-          <label class="rating__label" for="rating-1">
-			<span class="rating__sr"></span>
-		</label>
-    </div>
-    <div>
-		
-		
-		
-		
-		
-        
+    <div class="h3-contact">
+      <h3>We value your feedback - help us improve!</h3>
+      <br /><br />
+      <hr class="hr-contact" />
+      <h3 class="highlight-text">Share your experience</h3>
+      <h3 class="highlight-text">Your review helps us grow!</h3>
+      <hr class="hr-rev" />
+      <div class="contactImg-container">
+        <img
+          src="public/califica-servicio-transvima.jpg"
+          alt="ReviewLogo"
+          class="col-contacto"
+        />
       </div>
+    </div>
+
+    <div class="combined-contact-form">
+      <form id="review-form" class="container-contacto">
+        <div class="form-div-rev">
+          <label for="name-rev">Name:</label>
+          <input
+            id="name-rev"
+            class="message-contacto"
+            type="text"
+            placeholder="Your Name"
+          />
+          <p id="name_msg_error-rev"></p>
+        </div>
+
+        <div class="form-message-rev">
+          <label for="message-rev">Your Review: </label>
+          <textarea
+            id="message-rev"
+            class="yourmessage-contacto"
+            rows="10"
+            placeholder="Write your opinion here..."
+          ></textarea>
+        </div>
+
+        <div class="form-div">
+          <label for="rating">Rating:</label>
+          <div id="rating-stars">
+            <img id="star1" src="public/star_empty.png" data-value="1" />
+            <img id="star2" src="public/star_empty.png" data-value="2" />
+            <img id="star3" src="public/star_empty.png" data-value="3" />
+            <img id="star4" src="public/star_empty.png" data-value="4" />
+            <img id="star5" src="public/star_empty.png" data-value="5" />
+          </div>
+          <input type="hidden" id="rating" name="rating" value="0" />
+        </div>
+
+        <div class="form-button">
+          <button id="send_button-review" type="submit" disabled>
+            Submit your review
+          </button>
+        </div>
       </form>
     </div>
-    <br />
-    <br />
-    🌍 The World<br />
-    🎓 CodeTrain Academy<br />
-    📞 P: +34 222 333 444<br />
-    📩 hello@codetrainacademy.com<br />
+
+    <div class="contactDetails">
+      <p>
+        🌍 The World<br />
+        🎓 CodeTrain Academy<br />
+        📞 P: +34 222 333 444<br />
+        📩 hello@codetrainacademy.com
+      </p>
+    </div>
 
     <footer>
       <img src="public/logo.png" alt="CodeTrain Academy logo" />
@@ -91,3 +106,5 @@
     </footer>
   </body>
 </html>
+
+<script src="javascript.js"></script>

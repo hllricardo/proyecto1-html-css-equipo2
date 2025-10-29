@@ -633,62 +633,80 @@ document.getElementById("img-gallery")?.addEventListener("click", (e) => {
 
 //------------------------------------------------
 
-// estrellas reseñas //
-window.addEventListener("DOMContentLoaded", () => {
-  const starRating = new StarRating("form");
-});
+// Página Reseñas //
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("review-form");
+  const nameInput = form.querySelector("#name-rev");
+  const messageInput = form.querySelector("#message-rev");
+  const ratingInput = form.querySelector("#rating");
+  const sendButton = form.querySelector("#send_button-review");
+  const nameError = form.querySelector("#name_msg_error-rev");
+  const stars = form.querySelectorAll("#rating-stars img");
 
-class StarRating {
-  constructor(qs) {
-    this.ratings = [
-      { id: 1, name: "Terrible" },
-      { id: 2, name: "Bad" },
-      { id: 3, name: "OK" },
-      { id: 4, name: "Good" },
-      { id: 5, name: "Excellent" },
-    ];
-    this.rating = null;
-    this.el = document.querySelector(qs);
+  const ratingError = document.createElement("section");
+  ratingError.id = "rating_msg_error";
+  ratingError.textContent = "You must select at least one star";
+  ratingError.style.display = "none";
+  ratingError.style.marginLeft = "120px";
+  document.querySelector("#rating-stars").after(ratingError);
 
-    this.init();
-  }
-  init() {
-    this.el?.addEventListener("change", this.updateRating.bind(this));
+  const updateButtonState = () => {
+    const nameValid = nameInput.value.trim().length > 2;
+    const ratingValid = parseInt(ratingInput.value) > 0;
+    sendButton.disabled = !(nameValid && ratingValid);
 
-    // stop Firefox from preserving form data between refreshes
-    try {
-      this.el?.reset();
-    } catch (err) {
-      console.error("Element isn’t a form.");
+    nameError.textContent = nameValid
+      ? ""
+      : "Name must have more than 2 characters";
+
+    ratingError.style.display = ratingValid ? "none" : "block";
+  };
+
+  nameInput.addEventListener("input", updateButtonState);
+
+  stars.forEach((star, index) => {
+    star.addEventListener("mouseover", () => {
+      stars.forEach((s, i) => {
+        s.src = i <= index ? "public/star_filled.png" : "public/star_empty.png";
+      });
+    });
+
+    star.addEventListener("click", () => {
+      ratingInput.value = star.dataset.value;
+      updateButtonState();
+    });
+  });
+
+  document.getElementById("rating-stars").addEventListener("mouseleave", () => {
+    const currentRating = parseInt(ratingInput.value);
+    stars.forEach((s, i) => {
+      s.src =
+        i < currentRating ? "public/star_filled.png" : "public/star_empty.png";
+    });
+  });
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const name = nameInput.value.trim();
+    const rating = ratingInput.value;
+    const message = messageInput.value.trim();
+
+    if (sendButton.disabled) {
+      updateButtonState();
+      return;
     }
-  }
-  updateRating(e) {
-    // clear animation delays
-    Array.from(this.el.querySelectorAll(`[for*="rating"]`)).forEach((el) => {
-      el.className = "rating__label";
-    });
 
-    const ratingObject = this.ratings.find((r) => r.id === +e.target.value);
-    const prevRatingID = this.rating?.id || 0;
+    let alertMessage = `${name} has submitted a review with a rating of ${rating}/5`;
+    if (message) {
+      alertMessage += ` and this message: "${message}"`;
+    }
+    alert(alertMessage);
 
-    let delay = 0;
-    this.rating = ratingObject;
-    this.ratings.forEach((rating) => {
-      const { id } = rating;
+    form.reset();
+    stars.forEach((s) => (s.src = "public/star_empty.png"));
+    ratingInput.value = 0;
+    updateButtonState();
+  });
 
-      // add the delays
-      const ratingLabel = this.el.querySelector(`[for="rating-${id}"]`);
-
-      if (id > prevRatingID + 1 && id <= this.rating.id) {
-        ++delay;
-        ratingLabel.classList.add(`rating__label--delay${delay}`);
-      }
-
-      // hide ratings to not read, show the one to read
-      const ratingTextEl = this.el.querySelector(`[data-rating="${id}"]`);
-
-      if (this.rating.id !== id) ratingTextEl.setAttribute("hidden", true);
-      else ratingTextEl.removeAttribute("hidden");
-    });
-  }
-}
+  updateButtonState();
+});
