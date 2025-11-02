@@ -37,6 +37,7 @@
 .dark-mode .h3-contact h3 {
   color: white;
 }
+
 .dark-mode .container-contacto {
   background-color: #151b23;
 }
@@ -91,15 +92,15 @@
   display: none;
 }
 
-input[type="checkbox"]:checked + .switch:before {
+input[type="checkbox"]:checked+.switch:before {
   opacity: 0;
 }
 
-input[type="checkbox"]:checked + .switch:after {
+input[type="checkbox"]:checked+.switch:after {
   opacity: 1;
 }
 
-input[type="checkbox"]:checked + .switch {
+input[type="checkbox"]:checked+.switch {
   background-color: #6e6e6e;
 }
 
@@ -322,10 +323,11 @@ body {
 .col-contacto {
   max-width: 533px;
   height: auto;
-  border-radius: 20px; /* soft rounded corners */
+  border-radius: 20px;
+  /* soft rounded corners */
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+  transform 0.3s ease,
+  box-shadow 0.3s ease;
 }
 
 .contactImg-container {
@@ -485,7 +487,7 @@ form label {
   margin-top: 20px;
   margin-left: 10px;
   margin-right: 10px;
-  border-radius: 5%;
+  border-radius: 10px;
   display: flex;
 }
 
@@ -494,13 +496,13 @@ form label {
   gap: 30px;
 }
 
-.blockEquipo:hover {
+/*.blockEquipo:hover {
   background: #dddde1;
   color: #202122;
   transform: scale(1.1);
   box-shadow: 2px 8px rgba(0, 0, 0, 0.15);
   border-radius: 50px;
-}
+}*/
 
 .imagenEquipo {
   height: 250px;
@@ -512,6 +514,149 @@ form label {
   .containerEquipo {
     grid-template-columns: auto;
   }
+}
+
+#block_equipo_1 {
+  display: none;
+}
+
+#block_equipo_2 {
+  display: none;
+}
+
+#block_equipo_3 {
+  display: none;
+}
+
+#block_equipo_4 {
+  display: none;
+}
+
+/*Equipo carousel-----------------------------------------*/
+.imagenEquipo_carousel {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+}
+
+.carousel_equipo {
+  display: flex;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+ul {
+  width: 100vw;
+  height: 300px;
+  padding: 20px;
+  display: flex;
+  gap: 4vw;
+
+}
+
+ul::-webkit-scrollbar {
+  display: none;
+}
+
+li {
+  list-style-type: none;
+  /*background-color: #eeeeee;
+  border: 1px solid #dddddd;*/
+  padding: 0px;
+
+  flex: 0 0 100%;
+}
+li :hover{
+  cursor: pointer;
+}
+
+
+ul {
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+}
+
+li {
+  scroll-snap-align: center;
+}
+
+ul::scroll-button(*) {
+  border: 0;
+  font-size: 2rem;
+  background: none;
+  color: #343f4eff;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+ul::scroll-button(*):hover,
+ul::scroll-button(*):focus {
+  opacity: 1;
+}
+
+ul::scroll-button(*):active {
+  translate: 1px 1px;
+}
+
+ul::scroll-button(*):disabled {
+  opacity: 0.2;
+  cursor: unset;
+}
+
+/*comentado para no complicar el modo oscuro*/
+/*ul::scroll-button(left) {
+  content: "◄";
+}
+
+ul::scroll-button(right) {
+  content: "►";
+}*/
+
+ul {
+  anchor-name: --my-carousel;
+}
+
+ul::scroll-button(*) {
+  position: absolute;
+  position-anchor: --my-carousel;
+}
+
+ul::scroll-button(left) {
+  right: calc(anchor(left) - 70px);
+  bottom: calc(anchor(top) + 13px);
+}
+
+ul::scroll-button(right) {
+  left: calc(anchor(right) - 70px);
+  bottom: calc(anchor(top) + 13px);
+}
+
+ul {
+  scroll-marker-group: after;
+}
+
+ul::scroll-marker-group {
+  position: absolute;
+  position-anchor: --my-carousel;
+  top: calc(anchor(bottom) - 70px);
+  justify-self: anchor-center;
+
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+li::scroll-marker {
+  content: "";
+  width: 16px;
+  height: 16px;
+  background-color: transparent;
+  border: 2px solid #343f4eff;
+  border-radius: 50%;
+}
+
+li::scroll-marker:target-current {
+  background-color: #343f4eff;
 }
 
 /*-------------------------------------------*/
@@ -568,7 +713,7 @@ form label {
   padding: 40px 20px;
 }
 
-.row > h2 {
+.row>h2 {
   width: 100%;
   margin-bottom: 0px;
 }
@@ -735,6 +880,7 @@ footer img {
   gap: 20px;
   margin-bottom: 50px;
 }
+
 .images-container button {
   background: #0079ff;
   display: inline-block;
@@ -752,6 +898,7 @@ footer img {
   object-fit: cover;
   cursor: pointer;
 }
+
 #img-gallery {
   display: flex;
   justify-content: center;
@@ -898,17 +1045,18 @@ footer img {
 /*Diseño de la pagina de Reseñas*/
 /*-------------------------------------------*/
 .hr-rev {
-    width: 350px;
-    border: 2px solid black;
-    margin-bottom: 30px;
-    
+  width: 350px;
+  border: 2px solid black;
+  margin-bottom: 30px;
+
 }
+
 .form-div-rev {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    max-width: 450px;
-    width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 450px;
+  width: 100%;
 }
 
 .form-div-rev input {
@@ -918,7 +1066,7 @@ footer img {
 #name_msg_error-rev {
   color: red;
   font-size: 12px;
-  margin-left: 120px; 
+  margin-left: 120px;
   margin-top: 4px;
   margin-bottom: 0;
   text-align: left;
@@ -932,9 +1080,9 @@ footer img {
 }
 
 .form-message-rev {
-    display: flex;
-    flex-wrap: wrap;
-    width: 450px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 450px;
 }
 
 #rating-stars {
@@ -955,7 +1103,7 @@ footer img {
 }
 
 #review-form label {
-  min-width:120px;
+  min-width: 120px;
   width: auto;
   text-align: left;
 }
@@ -984,6 +1132,7 @@ footer img {
   transform: none;
   box-shadow: none;
 }
+
 /*subido santos*/
 
 .filter-btn {

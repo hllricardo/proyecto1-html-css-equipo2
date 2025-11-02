@@ -1,128 +1,191 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Team | CodeTrain Academy</title>
-    <link href="styles.css" rel="stylesheet" />
-  </head>
-  <body id="body">
-     <div id="id_navigation_container" class="nav_container">
-      <nav class="navigation">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <img src="public/logo.png" alt="CodeTrain Academy logo">
-        <div class="nav_links">
-          <a href="index.html">Home</a>
-          <a href="servicios.html">Services</a>
-          <a href="equipo.html">Team</a>
-          <a href="sobre.html">About us</a>
-          <a href="contacto.html">Contact</a>
-          <a href="reseñas.html">Reviews</a>
-          <div class="switch-container">
-            <input type="checkbox" id="theme-switch">
-            <label for="theme-switch" class="switch"></label>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Team | CodeTrain Academy</title>
+  <link href="styles.css" rel="stylesheet" />
+</head>
+
+<body id="body">
+  <div id="id_navigation_container" class="nav_container">
+    <nav class="navigation">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <img src="public/logo.png" alt="CodeTrain Academy logo">
+      <div class="nav_links">
+        <a href="index.html">Home</a>
+        <a href="servicios.html">Services</a>
+        <a href="equipo.html">Team</a>
+        <a href="sobre.html">About us</a>
+        <a href="contacto.html">Contact</a>
+        <a href="reseñas.html">Reviews</a>
+        <div class="switch-container">
+          <input type="checkbox" id="theme-switch">
+          <label for="theme-switch" class="switch"></label>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <span id="openNav" class="openSideNav" onclick="openNav()">&#9776;</span>
+
+  <div>
+    <div class="main_title_other">
+      <h1>Our team of professionals</h1>
+      <h2>Our team is made up of the best professionals in their sector.</h2>
+    </div>
+
+    <div class="carousel_equipo">
+      <ul id="carousel">
+        <li id="item_1">
+          <div id="block_equipo_1_carousel" class="divEquipo">
+            <div class="blockEquipo">
+              <img class="imagenEquipo_carousel" src="public/female_profile_image.jpeg"
+                alt="foto de miembro del equipo">
+              <div>
+                <h2>Eleanor Rigby</h2>
+                <p>
+                  Expert in full-stack development
+                </p>
+                <p>
+                  Click for more information
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li id="item_2">
+          <div id="block_equipo_2_carousel" class="divEquipo">
+            <div class="blockEquipo">
+              <img class="imagenEquipo_carousel" src="public/male_profile_image-1.jpeg"
+                alt="foto de miembro del equipo">
+              <div>
+                <h2>Anthony Saints</h2>
+                <p>
+                  Founder of CodeTrain Academy and expert full-stack developer
+                </p>
+                <p>
+                  Click for more information
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li id="item_3">
+          <div id="block_equipo_3_carousel" class="divEquipo">
+            <div id="block_equipo" class="blockEquipo">
+              <img class="imagenEquipo_carousel" src="public/male_profile_image-2.jpeg"
+                alt="foto de miembro del equipo">
+              <div>
+                <h2>Ricardo Hernandez Lloret</h2>
+                <p>
+                  Full-stack developer and SQL expert
+                </p>
+                <p>
+                  Click for more information
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li id="item_4">
+          <div id="block_equipo_4_carousel" class="divEquipo">
+            <div id="block_equipo" class="blockEquipo">
+              <img class="imagenEquipo_carousel" src="public/male_profile_image-3.jpeg"
+                alt="foto de miembro del equipo">
+              <div>
+                <h2>James Moriarty aka <em>CodePhantom</em></h2>
+                <p>
+                  Expert in JavaScript and Python
+                </p>
+                <p>
+                  Click for more information
+                </p>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="containerEquipo">
+      <div id="block_equipo_1" class="divEquipo">
+        <div class="blockEquipo">
+          <img class="imagenEquipo" src="public/female_profile_image.jpeg" alt="foto de miembro del equipo">
+          <div>
+            <h2>Eleanor Rigby</h2>
+            <p>
+              Technology educator and seasoned software developer dedicated to cultivating technical
+              talent in today's digital landscape. With hands-on experience across the full development
+              stack—from frontend frameworks like React and Vue to backend technologies including Node.js,
+              Python, and cloud infrastructure—I transform complex programming concepts into accessible
+              learning experiences for aspiring technologists.Software development professional with extensive
+              experience as a full-stack developer and a strong passion for technology
+              education.
+            </p>
           </div>
         </div>
-      </nav>
-    </div>
-    <span id="openNav" class="openSideNav" onclick="openNav()">&#9776;</span>
+      </div>
 
-    <div>
-        <div class="main_title_other">
-            <h1>Our team of professionals</h1>
-            <h2>Our team is made up of the best professionals in their sector.</h2>
+      <div id="block_equipo_2" class="divEquipo">
+        <div class="blockEquipo">
+          <img class="imagenEquipo" src="public/male_profile_image-1.jpeg" alt="foto de miembro del equipo">
+          <div>
+            <h2>Anthony Saints</h2>
+            <p>
+              Web Developer in Training Tech Educator Founder of CodeTrain Academy – DevTraining Hub
+              Driven by a passion for accessible design and digital education, I’m building my career as
+              a full-stack web developer with a strong foundation in semantic HTML, modular CSS, JavaScript,
+              and Git-based workflows. Through CodeTrain Academy – DevTraining Hub, I document and share
+              my learning journey to empower others in tech. I specialize in creating responsive, well-structured
+              interfaces and educational resources that prioritize clarity, accessibility, and reproducibility.
+              Whether scripting in the terminal or refining UI components, I approach every project with a mindset
+              of continuous improvement and community impact.
+            </p>
+          </div>
         </div>
-  
-      <div class="containerEquipo">
-        <div id="block_equipo" class="divEquipo">
-            <div class="blockEquipo">
-                <img class="imagenEquipo" src="public/female_profile_image.jpeg" alt="foto de miembro del equipo">
-                <div>
-                    <h2>Eleanor Rigby</h2>
-                    <p>
-                        Technology educator and seasoned software developer dedicated to cultivating technical 
-                        talent in today's digital landscape. With hands-on experience across the full development 
-                        stack—from frontend frameworks like React and Vue to backend technologies including Node.js, 
-                        Python, and cloud infrastructure—I transform complex programming concepts into accessible 
-                        learning experiences for aspiring technologists.Software development professional with extensive
-                         experience as a full-stack developer and a strong passion for technology 
-                        education. 
-                    </p>   
-                   </div> 
-            </div>
-        </div>
+      </div>
 
-        <div id="block_equipo"  class="divEquipo">
-            <div class="blockEquipo">
-                <img class="imagenEquipo" src="public/male_profile_image-1.jpeg" alt="foto de miembro del equipo">
-                <div>
-                    <h2>Anthony Saints</h2>
-                    <p>
-                         Web Developer in Training  Tech Educator  Founder of CodeTrain Academy – DevTraining Hub
-                         Driven by a passion for accessible design and digital education, I’m building my career as
-                         a full-stack web developer with a strong foundation in semantic HTML, modular CSS, JavaScript, 
-                         and Git-based workflows. Through CodeTrain Academy – DevTraining Hub, I document and share 
-                         my learning journey to empower others in tech. I specialize in creating responsive, well-structured
-                         interfaces and educational resources that prioritize clarity, accessibility, and reproducibility. 
-                         Whether scripting in the terminal or refining UI components, I approach every project with a mindset
-                         of continuous improvement and community impact.
-                    </p>
-                </div>
-            </div>
+      <div id="block_equipo_3" class="divEquipo">
+        <div id="block_equipo" class="blockEquipo">
+          <img class="imagenEquipo" src="public/male_profile_image-2.jpeg" alt="foto de miembro del equipo">
+          <div>
+            <h2>Ricardo Hernandez Lloret</h2>
+            <p>
+              Software development professional with extensive experience as a full-stack developer and a strong passion
+              for technology
+              education. Specializing in modern web technologies such as JavaScript (Node.js, React.js), HTML/CSS,
+              Python/Django, and
+              SQL and NoSQL databases, I combine up-to-date technical knowledge with teaching skills to train future
+              developers.
+            </p>
+          </div>
         </div>
+      </div>
 
-        <div id="block_equipo"  class="divEquipo">
-            <div id="block_equipo" class="blockEquipo">
-                <img class="imagenEquipo" src="public/male_profile_image-2.jpeg" alt="foto de miembro del equipo">
-                <div>
-                    <h2>Ricardo Hernandez Lloret</h2>
-                    <p>
-                        Software development professional with extensive experience as a full-stack developer and a strong passion for technology 
-                        education. Specializing in modern web technologies such as JavaScript (Node.js, React.js), HTML/CSS, Python/Django, and 
-                        SQL and NoSQL databases, I combine up-to-date technical knowledge with teaching skills to train future developers.
-                    </p>
-                </div>
-            </div>
+      <div id="block_equipo_4" class="divEquipo">
+        <div id="block_equipo" class="blockEquipo">
+          <img class="imagenEquipo" src="public/male_profile_image-3.jpeg" alt="foto de miembro del equipo">
+          <div>
+            <h2>James Moriarty aka <em>CodePhantom</em></h2>
+            <p>
+              Cybersecurity enthusiast and full-stack developer with a knack for Python and JavaScript. Experienced in
+              building secure web
+              applications, automating tasks, and mentoring aspiring developers. Passionate about translating complex
+              concepts into hands-on
+              learning experiences.
+            </p>
+          </div>
         </div>
-
-        <div id="block_equipo"  class="divEquipo">
-            <div id="block_equipo" class="blockEquipo">
-                <img class="imagenEquipo" src="public/male_profile_image-3.jpeg" alt="foto de miembro del equipo">
-                <div>
-                    <h2>James Moriarty aka <em>CodePhantom</em></h2>
-                    <p>
-                      Cybersecurity enthusiast and full-stack developer with a knack for Python and JavaScript. Experienced in building secure web
-                      applications, automating tasks, and mentoring aspiring developers. Passionate about translating complex concepts into hands-on
-                      learning experiences.
-                    </p>
-                </div>
-            </div>
-        </div>
-        
-         <div id="block_equipo"  class="divEquipo">
-            <div id="block_equipo" class="blockEquipo">
-                <img class="imagenEquipo" src="public/male_profile_image-4.jpeg" alt="foto de miembro del equipo">
-                <div>
-                    <h2>Ricardo Hernandez Lloret</h2>
-                    <p>
-                        Software development professional with extensive experience as a full-stack developer and a strong passion for technology 
-                        education. Specializing in modern web technologies such as JavaScript (Node.js, React.js), HTML/CSS, Python/Django, and 
-                        SQL and NoSQL databases, I combine up-to-date technical knowledge with teaching skills to train future developers.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-
       </div>
     </div>
-    <div>
-      
-    </div>
-    <footer>
-      <img src="public/logo.png" alt="CodeTrain Academy logo">
-      <p>© 2025 CodeTrain Academy. All rights reserved.</p>
-    </footer>
-  </body>
+  </div>
+
+  <footer>
+    <img src="public/logo.png" alt="CodeTrain Academy logo">
+    <p>© 2025 CodeTrain Academy. All rights reserved.</p>
+  </footer>
+</body>
+
 </html>
-<script src="equipo.js"></script>
+<script src="javascript.js"></script>

@@ -710,3 +710,62 @@ document.addEventListener("DOMContentLoaded", () => {
 
   updateButtonState();
 });
+
+//Javascript para el carousel de equipo
+// auto scroll del carousel en la pagina equipo
+
+const ul = document.getElementById("carousel");
+const items = ul.querySelectorAll("li");
+let index = 0;
+
+// tiempo entre cambios (en milisegundos)
+const interval = 3000; // 3 segundos
+
+setInterval(() => {
+  index = (index + 1) % items.length;
+  ul.scrollTo({
+    left: items[index].offsetLeft,
+    behavior: "smooth",
+  });
+}, interval);
+
+// al hacer click en un elemento del carousel este carga 
+// el elemento del miembro del equipo en la pagina y oculta al resto
+ul.querySelectorAll("li").forEach(li => {
+  li.addEventListener("click", () => {
+    const click = li.id
+
+    const item1 = document.getElementById("block_equipo_1");
+    const item2 = document.getElementById("block_equipo_2");
+    const item3 = document.getElementById("block_equipo_3");
+    const item4 = document.getElementById("block_equipo_4");
+
+    if(click === "item_1"){
+      item1.style.display = "block";
+      item2.style.display = "none";
+      item3.style.display = "none";
+      item4.style.display = "none";
+    }
+    if(click === "item_2"){
+      item1.style.display = "none";
+      item2.style.display = "block";
+      item3.style.display = "none";
+      item4.style.display = "none";
+    }
+    if(click === "item_3"){
+      item1.style.display = "none";
+      item2.style.display = "none";
+      item3.style.display = "block";
+      item4.style.display = "none";
+    }
+    if(click === "item_4"){
+      item1.style.display = "none";
+      item2.style.display = "none";
+      item3.style.display = "none";
+      item4.style.display = "block";
+    }
+
+  })
+})
+
+//-------------------------------------------- 
