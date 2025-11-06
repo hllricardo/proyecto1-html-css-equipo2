@@ -7,91 +7,94 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body id="body">
-    <div id="id_navigation_container" class="nav_container">
-      <nav class="navigation">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+    <div id="nav-wrapper" class="nav-wrapper">
+      <nav class="nav-main">
+        <a href="javascript:void(0)" class="btn-close" onclick="closeNav()"
           >&times;</a
         >
         <img src="public/logo.png" alt="CodeTrain Academy logo" />
-        <div class="nav_links">
+        <div class="nav-links">
           <a href="index.html">Home</a>
           <a href="servicios.html">Services</a>
           <a href="equipo.html">Team</a>
           <a href="sobre.html">About us</a>
           <a href="contacto.html">Contact</a>
           <a href="reseñas.html">Reviews</a>
-          <div class="switch-container">
-            <input type="checkbox" id="theme-switch" />
-            <label for="theme-switch" class="switch"></label>
+          <div class="toggle-switch-wrapper">
+            <input type="checkbox" id="toggle-theme" />
+            <label for="toggle-theme" class="switch"></label>
           </div>
         </div>
       </nav>
     </div>
+    <span id="btn-open-nav" class="btn-open-side-nav" onclick="openNav()"
+      >&#9776;</span
+    >
 
-    <div class="main_title_other">
+    <div class="main-title-alt">
       <h1>Rate us</h1>
       <h2>Give your opinion about our services and faculty</h2>
     </div>
-    <div class="h3-contact">
+    <div class="h3-contact-title">
       <h3>We value your feedback - help us improve!</h3>
       <br /><br />
-      <hr class="hr-contact" />
-      <h3 class="highlight-text">Share your experience</h3>
-      <h3 class="highlight-text">Your review helps us grow!</h3>
-      <hr class="hr-rev" />
-      <div class="contactImg-container">
+      <hr class="hr-contact-line" />
+      <h3 class="text-highlight">Share your experience</h3>
+      <h3 class="text-highlight">Your review helps us grow!</h3>
+      <hr class="hr-review" />
+      <div class="contact-img-container">
         <img
           src="public/califica-servicio-transvima.jpg"
           alt="ReviewLogo"
-          class="col-contacto"
+          class="column-contact"
         />
       </div>
     </div>
 
-    <div class="combined-contact-form">
-      <form id="review-form" class="container-contacto">
-        <div class="form-div-rev">
+    <div class="contact-form-combined">
+      <form id="form-review" class="container-contact">
+        <div class="form-group-review">
           <label for="name-rev">Name:</label>
           <input
             id="name-rev"
-            class="message-contacto"
+            class="contact-message"
             type="text"
             placeholder="Your Name"
           />
-          <p id="name_msg_error-rev"></p>
+          <p id="name-error-review"></p>
         </div>
 
-        <div class="form-message-rev">
-          <label for="message-rev">Your Review: </label>
+        <div class="form-msg-review">
+          <label for="message-review">Your Review: </label>
           <textarea
-            id="message-rev"
-            class="yourmessage-contacto"
+            id="message-review"
+            class="contact-message-input"
             rows="10"
             placeholder="Write your opinion here..."
           ></textarea>
         </div>
 
-        <div class="form-div">
+        <div class="form-group">
           <label for="rating">Rating:</label>
           <div id="rating-stars">
-            <img id="star1" src="public/star_empty.png" data-value="1" />
-            <img id="star2" src="public/star_empty.png" data-value="2" />
-            <img id="star3" src="public/star_empty.png" data-value="3" />
-            <img id="star4" src="public/star_empty.png" data-value="4" />
-            <img id="star5" src="public/star_empty.png" data-value="5" />
+            <img id="star-1" src="public/star_empty.png" data-value="1" />
+            <img id="star-2" src="public/star_empty.png" data-value="2" />
+            <img id="star-3" src="public/star_empty.png" data-value="3" />
+            <img id="star-4" src="public/star_empty.png" data-value="4" />
+            <img id="star-5" src="public/star_empty.png" data-value="5" />
           </div>
           <input type="hidden" id="rating" name="rating" value="0" />
         </div>
 
-        <div class="form-button">
-          <button id="send_button-review" type="submit" disabled>
+        <div class="btn-form">
+          <button id="btn-send-review" type="submit" disabled>
             Submit your review
           </button>
         </div>
       </form>
     </div>
 
-    <div class="contactDetails">
+    <div class="contact-details">
       <p>
         🌍 The World<br />
         🎓 CodeTrain Academy<br />

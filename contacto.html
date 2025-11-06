@@ -10,69 +10,69 @@
 
 <body id="body">
 
-  <div id="id_navigation_container" class="nav_container">
-    <nav class="navigation">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div id="nav-wrapper" class="nav-wrapper">
+    <nav class="nav-main">
+      <a href="javascript:void(0)" class="btn-close" onclick="closeNav()">&times;</a>
       <img src="public/logo.png" alt="CodeTrain Academy logo">
-      <div class="nav_links">
+      <div class="nav-links">
         <a href="index.html">Home</a>
           <a href="servicios.html">Services</a>
           <a href="equipo.html">Team</a>
           <a href="sobre.html">About us</a>
           <a href="contacto.html">Contact</a>
           <a href="reseñas.html">Reviews</a>
-        <div class="switch-container">
-          <input type="checkbox" id="theme-switch">
-          <label for="theme-switch" class="switch"></label>
+        <div class="toggle-switch-wrapper">
+          <input type="checkbox" id="toggle-theme">
+          <label for="toggle-theme" class="switch"></label>
         </div>
       </div>
     </nav>
   </div>
-  <span id="openNav" class="openSideNav" onclick="openNav()">&#9776;</span>
+  <span id="btn-open-nav" class="btn-open-side-nav" onclick="openNav()">&#9776;</span>
 
   <div>
-    <div class="main_title_other">
+    <div class="main-title-alt">
       <h1>Contact CodeTrain Academy</h1>
       <h2>Do you have any questions?</h2>
     </div>
-    <div class="h3-contact">
+    <div class="h3-contact-title">
       <h3>We'll be happy to answer them as soon as possible.</h3><br><br>
-      <hr class="hr-contact">
-      <h3 class="highlight-text">Join the Code Revolution</h3>
-      <h3 class="highlight-text">Apply now and unlock new career opportunities!</h3>
-      <hr class="hr-contact">
+      <hr class="hr-contact-line">
+      <h3 class="text-highlight">Join the Code Revolution</h3>
+      <h3 class="text-highlight">Apply now and unlock new career opportunities!</h3>
+      <hr class="hr-contact-line">
     </div>
-    <div class="combined-contact-form">
-        <div class="contactImg-container">
-      <img src="public/contact_2.png" alt="ContactLogo" class="col-contacto">
+    <div class="contact-form-combined">
+        <div class="contact-img-container">
+      <img src="public/contact_2.png" alt="ContactLogo" class="column-contact">
           </div>
-    <form id = "main-form" class="container-contacto">
-      <div class="form-div">
+    <form id = "main-form" class="container-contact">
+      <div class="form-group">
         <label for="name">Name:</label>
-        <input id="name" class="message-contacto" type="text" placeholder="Your Name">
-        <p id="name_msg_error"></p>
+        <input id="name" class="contact-message" type="text" placeholder="Your Name">
+        <p id="name-error"></p>
       </div>
-      <div class="form-div">
+      <div class="form-group">
         <label for="surname">Surname:</label>
-        <input id="surname" class="message-contacto" type="text" placeholder="Your Surname">
-        <p id="surname_msg_error"></p>
+        <input id="surname" class="contact-message" type="text" placeholder="Your Surname">
+        <p id="surname-error"></p>
       </div>
-      <div class="form-div">
+      <div class="form-group">
         <label for="email">Email: </label>
-        <input id="email" class="message-contacto" type="text" placeholder="Your email">
-        <p id="email_msg_error"></p>
+        <input id="email" class="contact-message" type="text" placeholder="Your email">
+        <p id="email-error"></p>
       </div>
-      <div class="form-message">
+      <div class="form-msg">
         <label for="message">Message:</label>
-        <textarea id="message" class="yourmessage-contacto" rows="20" placeholder="Your Message"></textarea>
-        <p id="message_msg_error"></p>
+        <textarea id="message" class="contact-message-input" rows="20" placeholder="Your Message"></textarea>
+        <p id="message-error"></p>
       </div>
-      <div class="form-button">
-      <button id="send_button" type="submit" disabled>Send your message</button><br>
+      <div class="btn-form">
+      <button id="btn-send" type="submit" disabled>Send your message</button><br>
       </div>
     </form>
         </div>
-    <div class="contactDetails">
+    <div class="contact-details">
 
     <p>🌍 The World<br>
     🎓 CodeTrain Academy<br>

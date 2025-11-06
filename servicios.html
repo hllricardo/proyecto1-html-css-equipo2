@@ -8,34 +8,35 @@
   </head>
 
   <body id="body">
-    <div id="id_navigation_container" class="nav_container">
-      <nav class="navigation">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+    <div id="nav-wrapper" class="nav-wrapper">
+      <nav class="nav-main">
+        <a href="javascript:void(0)" class="btn-close" onclick="closeNav()"
           >&times;</a
         >
         <img src="public/logo.png" alt="CodeTrain Academy logo" />
-        <div class="nav_links">
+        <div class="nav-links">
           <a href="index.html">Home</a>
           <a href="servicios.html">Services</a>
           <a href="equipo.html">Team</a>
           <a href="sobre.html">About us</a>
           <a href="contacto.html">Contact</a>
           <a href="reseñas.html">Reviews</a>
-          <div class="switch-container">
+          <div class="toggle-switch-wrapper">
             <input
               type="checkbox"
-              id="theme-switch"
+              id="toggle-theme"
               title="switch light/dark-mode"
             />
-            <label for="theme-switch" class="switch"></label>
+            <label for="toggle-theme" class="switch"></label>
           </div>
         </div>
       </nav>
     </div>
-    <span id="openNav" class="openSideNav">&#9776;</span>
+    <span id="btn-open-nav" class="btn-open-side-nav" onclick="openNav()"
+    >&#9776;</span>
 
     <main>
-      <div class="main_title_other">
+      <div class="main-title-alt">
         <h1>Start your academic future</h1>
         <h2>
           Choose the right path for your career with our specialized courses
@@ -43,42 +44,42 @@
       </div>
 
       <!-- Category filters -->
-      <div class="filter-container">
+      <div class="filter-wrapper">
         <button
-          id="all"
-          class="filter-btn active"
-          onclick="filterServices('all')"
+          id="all-items"
+          class="btn-filter active"
+          onclick="filterServices('all-items')"
         >
           All
         </button>
         <button
-          id="development"
-          class="filter-btn"
-          onclick="filterServices('development')"
+          id="development-section"
+          class="btn-filter"
+          onclick="filterServices('development-section')"
         >
           Development
         </button>
         <button
-          id="security"
-          class="filter-btn"
-          onclick="filterServices('security')"
+          id="security-element"
+          class="btn-filter"
+          onclick="filterServices('security-element')"
         >
           Security
         </button>
-        <button id="data" class="filter-btn" onclick="filterServices('data')">
+        <button id="data-element" class="btn-filter" onclick="filterServices('data-element')">
           Data
         </button>
-        <button id="cloud" class="filter-btn" onclick="filterServices('cloud')">
+        <button id="cloud-element" class="btn-filter" onclick="filterServices('cloud-element')">
           Cloud
         </button>
       </div>
 
-      <section id="main-container-services" class="containerServices">
-        <div class="divServices div-show" data-category="development">
-          <div class="block">
+      <section id="main-container-services" class="container-services">
+        <div class="services-wrapper visible" data-category="development-section">
+          <div class="section-block">
             <h2>Full Stack Development</h2>
             <img
-              class="icon"
+              class="icon-main"
               src="public/full-stack-developer.png"
               alt="Full-Stack Developer icon"
             />
@@ -87,18 +88,18 @@
             Design and build complete websites using modern technologies and
             expert guidance.
           </p>
-          <div class="divEnlaceServ">
+          <div class="service-link-wrapper">
             <a href="#""
               >Sign up</a
             >
           </div>
         </div>
 
-        <div class="divServices div-show" data-category="security">
-          <div class="block">
+        <div class="services-wrapper visible" data-category="security-element">
+          <div class="section-block">
             <h2>Cybersecurity</h2>
             <img
-              class="icon"
+              class="icon-main"
               src="public/cyberseguridad.png"
               alt="Cybersecurity icon"
             />
@@ -107,16 +108,16 @@
             Identify and mitigate system vulnerabilities using global security
             standards.
           </p>
-          <div class="divEnlaceServ">
+          <div class="service-link-wrapper">
             <a href="#">Sign up</a>
           </div>
         </div>
 
-        <div class="divServices div-show" data-category="data">
-          <div class="block">
+        <div class="services-wrapper visible" data-category="data-element">
+          <div class="section-block">
             <h2>Artificial Intelligence</h2>
             <img
-              class="icon"
+              class="icon-main"
               src="public/inteligencia-artificial.png"
               alt="AI icon"
             />
@@ -125,32 +126,32 @@
             Explore AI platforms and learn to build intelligent systems with
             real-world applications.
           </p>
-          <div class="divEnlaceServ">
+          <div class="service-link-wrapper">
             <a href="#"
               >Sign up</a
             >
           </div>
         </div>
 
-        <div class="divServices div-show" data-category="data">
-          <div class="block">
+        <div class="services-wrapper visible" data-category="data-element">
+          <div class="section-block">
             <h2>Databases</h2>
-            <img class="icon" src="public/databases.png" alt="Databases icon" />
+            <img class="icon-main" src="public/databases.png" alt="Databases icon" />
           </div>
           <p>
             Master database systems from foundational concepts to advanced data
             management techniques.
           </p>
-          <div class="divEnlaceServ">
+          <div class="service-link-wrapper">
             <a href="#">Sign up</a>
           </div>
         </div>
 
-        <div class="divServices div-show" data-category="data">
-          <div class="block">
+        <div class="services-wrapper visible" data-category="data-element">
+          <div class="section-block">
             <h2>Data Science</h2>
             <img
-              class="icon"
+              class="icon-main"
               src="public/datascience.png"
               alt="Data Science icon"
             />
@@ -159,16 +160,16 @@
             Develop skills in data analysis, visualization, and machine learning
             to unlock insights from data.
           </p>
-          <div class="divEnlaceServ">
+          <div class="service-link-wrapper">
             <a href="#">Sign up</a>
           </div>
         </div>
 
-        <div class="divServices div-show" data-category="cloud">
-          <div class="block">
+        <div class="services-wrapper visible" data-category="cloud-element">
+          <div class="section-block">
             <h2>Cloud Computing</h2>
             <img
-              class="icon"
+              class="icon-main"
               src="public/cloud_computing.png"
               alt="Cloud Computing icon"
             />
@@ -177,15 +178,15 @@
             Learn IT fundamentals and gain hands-on experience with cloud
             platforms, infrastructure as code, and automation.
           </p>
-          <div class="divEnlaceServ">
+          <div class="service-link-wrapper">
             <a href="#">Sign up</a>
           </div>
         </div>
-        <div class="divServices div-show" data-category="development">
-          <div class="block">
+        <div class="services-wrapper visible" data-category="development-section">
+          <div class="section-block">
             <h2>Frontend Development</h2>
             <img
-              class="icon"
+              class="icon-main"
               src="public/frontend.png"
               alt="Frontend Development icon"
             />
@@ -194,18 +195,18 @@
             Learn HTML, CSS, JavaScript, and modern frameworks like React and
             Angular.
           </p>
-          <div class="divEnlaceServ">
+          <div class="service-link-wrapper">
             <a href="#"
               >Sign up</a
             >
           </div>
         </div>
 
-        <div class="divServices div-show" data-category="development">
-          <div class="block">
+        <div class="services-wrapper visible" data-category="development-section">
+          <div class="section-block">
             <h2>Backend Development</h2>
             <img
-              class="icon"
+              class="icon-main"
               src="public/backend.png"
               alt="Backend Development icon"
             />
@@ -214,18 +215,18 @@
             Build scalable server-side applications with Node.js, Python, Java,
             and databases.
           </p>
-          <div class="divEnlaceServ">
+          <div class="service-link-wrapper">
             <a href="#"
               >Sign up</a
             >
           </div>
         </div>
 
-        <div class="divServices div-show" data-category="development">
-          <div class="block">
+        <div class="services-wrapper visible" data-category="development-section">
+          <div class="section-block">
             <h2>Mobile App Development</h2>
             <img
-              class="icon"
+              class="icon-main"
               src="public/mobile.png"
               alt="Mobile App Development icon"
             />
@@ -233,50 +234,50 @@
           <p>
             Create cross-platform mobile apps using Flutter and React Native.
           </p>
-          <div class="divEnlaceServ">
+          <div class="service-link-wrapper">
             <a href="#"
               >Sign up</a
             >
           </div>
         </div>
 
-        <div class="divServices div-show" data-category="development">
-          <div class="block">
+        <div class="services-wrapper visible" data-category="development-section">
+          <div class="section-block">
             <h2>Game Development</h2>
             <img
-              class="icon"
+              class="icon-main"
               src="public/game_dev.png"
               alt="Game Development icon"
             />
           </div>
           <p>Learn Unity and Unreal Engine to design 2D and 3D games.</p>
-          <div class="divEnlaceServ">
+          <div class="service-link-wrapper">
             <a href="#"
               >Sign up</a
             >
           </div>
         </div>
 
-        <div class="divServices div-show" data-category="development">
-          <div class="block">
+        <div class="services-wrapper visible" data-category="development-section">
+          <div class="section-block">
             <h2>DevOps & CI/CD</h2>
-            <img class="icon" src="public/devops.png" alt="DevOps icon" />
+            <img class="icon-main" src="public/devops.png" alt="DevOps icon" />
           </div>
           <p>
             Automate deployments and maintain CI/CD pipelines with Jenkins,
             Docker, and Kubernetes.
           </p>
-          <div class="divEnlaceServ">
+          <div class="service-link-wrapper">
             <a href="#">Sign up</a>
           </div>
         </div>
 
         <!-- Security -->
-        <div class="divServices div-show" data-category="security">
-          <div class="block">
+        <div class="services-wrapper visible" data-category="security-element">
+          <div class="section-block">
             <h2>Ethical Hacking</h2>
             <img
-              class="icon"
+              class="icon-main"
               src="public/ethical_hacking.png"
               alt="Ethical Hacking icon"
             />
@@ -284,16 +285,16 @@
           <p>
             Learn penetration testing and vulnerability assessment techniques.
           </p>
-          <div class="divEnlaceServ">
+          <div class="service-link-wrapper">
             <a href="#">Sign up</a>
           </div>
         </div>
 
-        <div class="divServices div-show" data-category="security">
-          <div class="block">
+        <div class="services-wrapper visible" data-category="security-element">
+          <div class="section-block">
             <h2>Network Security</h2>
             <img
-              class="icon"
+              class="icon-main"
               src="public/network_security.png"
               alt="Network Security icon"
             />
@@ -301,33 +302,33 @@
           <p>
             Secure networks using firewalls, VPNs, IDS/IPS, and best practices.
           </p>
-          <div class="divEnlaceServ">
+          <div class="service-link-wrapper">
             <a href="#"
               >Sign up</a
             >
           </div>
         </div>
 
-        <div class="divServices div-show" data-category="security">
-          <div class="block">
+        <div class="services-wrapper visible" data-category="security-element">
+          <div class="section-block">
             <h2>Cloud Security</h2>
             <img
-              class="icon"
+              class="icon-main"
               src="public/cloud_security.png"
               alt="Cloud Security icon"
             />
           </div>
           <p>Protect cloud infrastructures on AWS, Azure, and GCP.</p>
-          <div class="divEnlaceServ">
+          <div class="service-link-wrapper">
             <a href="#">Sign up</a>
           </div>
         </div>
 
-        <div class="divServices div-show" data-category="security">
-          <div class="block">
+        <div class="services-wrapper visible" data-category="security-element">
+          <div class="section-block">
             <h2>Incident Response</h2>
             <img
-              class="icon"
+              class="icon-main"
               src="public/incident_response.png"
               alt="Incident Response icon"
             />
@@ -336,24 +337,24 @@
             Respond to cyber incidents and learn forensic investigation
             techniques.
           </p>
-          <div class="divEnlaceServ">
+          <div class="service-link-wrapper">
             <a href="#"
               >Sign up</a
             >
           </div>
         </div>
 
-        <div class="divServices div-show" data-category="security">
-          <div class="block">
+        <div class="services-wrapper visible" data-category="security-element">
+          <div class="section-block">
             <h2>Malware Analysis</h2>
             <img
-              class="icon"
+              class="icon-main"
               src="public/malware.png"
               alt="Malware Analysis icon"
             />
           </div>
           <p>Analyze malware behavior and develop mitigation strategies.</p>
-          <div class="divEnlaceServ">
+          <div class="service-link-wrapper">
             <a href="#"
               >Sign up</a
             >
@@ -361,27 +362,27 @@
         </div>
 
         <!-- Data -->
-        <div class="divServices div-show" data-category="data">
-          <div class="block">
+        <div class="services-wrapper visible" data-category="data-element">
+          <div class="section-block">
             <h2>Big Data Analytics</h2>
-            <img class="icon" src="public/bigdata.png" alt="Big Data icon" />
+            <img class="icon-main" src="public/bigdata.png" alt="Big Data icon" />
           </div>
           <p>
             Work with Hadoop, Spark, and data pipelines to extract insights from
             large datasets.
           </p>
-          <div class="divEnlaceServ">
+          <div class="service-link-wrapper">
             <a href="#"
               >Sign up</a
             >
           </div>
         </div>
 
-        <div class="divServices div-show" data-category="data">
-          <div class="block">
+        <div class="services-wrapper visible" data-category="data-element">
+          <div class="section-block">
             <h2>Machine Learning</h2>
             <img
-              class="icon"
+              class="icon-main"
               src="public/machine_learning.png"
               alt="Machine Learning icon"
             />
@@ -389,18 +390,18 @@
           <p>
             Build predictive models using Python, scikit-learn, and TensorFlow.
           </p>
-          <div class="divEnlaceServ">
+          <div class="service-link-wrapper">
             <a href="#"
               >Sign up</a
             >
           </div>
         </div>
 
-        <div class="divServices div-show" data-category="data">
-          <div class="block">
+        <div class="services-wrapper visible" data-category="data-element">
+          <div class="section-block">
             <h2>Data Visualization</h2>
             <img
-              class="icon"
+              class="icon-main"
               src="public/data_viz.png"
               alt="Data Visualization icon"
             />
@@ -409,18 +410,18 @@
             Create impactful dashboards and reports using Power BI, Tableau, and
             Python.
           </p>
-          <div class="divEnlaceServ">
+          <div class="service-link-wrapper">
             <a href="#"
               >Sign up</a
             >
           </div>
         </div>
 
-        <div class="divServices div-show" data-category="data">
-          <div class="block">
+        <div class="services-wrapper visible" data-category="data-element">
+          <div class="section-block">
             <h2>Statistics for Data Science</h2>
             <img
-              class="icon"
+              class="icon-main"
               src="public/statistics.png"
               alt="Statistics icon"
             />
@@ -429,18 +430,18 @@
             Understand statistical methods for analyzing data and drawing
             conclusions.
           </p>
-          <div class="divEnlaceServ">
+          <div class="service-link-wrapper">
             <a href="#"
               >Sign up</a
             >
           </div>
         </div>
 
-        <div class="divServices div-show" data-category="data">
-          <div class="block">
+        <div class="services-wrapper visible" data-category="data-element">
+          <div class="section-block">
             <h2>Business Intelligence</h2>
             <img
-              class="icon"
+              class="icon-main"
               src="public/bi.png"
               alt="Business Intelligence icon"
             />
@@ -448,7 +449,7 @@
           <p>
             Transform data into actionable insights to guide business decisions.
           </p>
-          <div class="divEnlaceServ">
+          <div class="service-link-wrapper">
             <a href="#"
               >Sign up</a
             >
@@ -456,57 +457,57 @@
         </div>
 
         <!-- Cloud -->
-        <div class="divServices div-show" data-category="cloud">
-          <div class="block">
+        <div class="services-wrapper visible" data-category="cloud-element">
+          <div class="section-block">
             <h2>AWS Fundamentals</h2>
-            <img class="icon" src="public/aws.png" alt="AWS icon" />
+            <img class="icon-main" src="public/aws.png" alt="AWS icon" />
           </div>
           <p>
             Get started with AWS core services and architecture best practices.
           </p>
-          <div class="divEnlaceServ">
+          <div class="service-link-wrapper">
             <a href="#"
               >Sign up</a
             >
           </div>
         </div>
 
-        <div class="divServices div-show" data-category="cloud">
-          <div class="block">
+        <div class="services-wrapper visible" data-category="cloud-element">
+          <div class="section-block">
             <h2>Azure Fundamentals</h2>
-            <img class="icon" src="public/azure.png" alt="Azure icon" />
+            <img class="icon-main" src="public/azure.png" alt="Azure icon" />
           </div>
           <p>
             Learn Azure services, cloud concepts, and deployment strategies.
           </p>
-          <div class="divEnlaceServ">
+          <div class="service-link-wrapper">
             <a href="#"
               >Sign up</a
             >
           </div>
         </div>
 
-        <div class="divServices div-show" data-category="cloud">
-          <div class="block">
+        <div class="services-wrapper visible" data-category="cloud-element">
+          <div class="section-block">
             <h2>Google Cloud Platform</h2>
-            <img class="icon" src="public/gcp.png" alt="GCP icon" />
+            <img class="icon-main" src="public/gcp.png" alt="GCP icon" />
           </div>
           <p>
             Understand GCP services, cloud architecture, and deployment
             pipelines.
           </p>
-          <div class="divEnlaceServ">
+          <div class="service-link-wrapper">
             <a href="#"
               >Sign up</a
             >
           </div>
         </div>
 
-        <div class="divServices div-show" data-category="cloud">
-          <div class="block">
+        <div class="services-wrapper visible" data-category="cloud-element">
+          <div class="section-block">
             <h2>Cloud Automation</h2>
             <img
-              class="icon"
+              class="icon-main"
               src="public/cloud_automation.png"
               alt="Cloud Automation icon"
             />
@@ -515,18 +516,18 @@
             Automate cloud deployments and infrastructure using Terraform and
             Ansible.
           </p>
-          <div class="divEnlaceServ">
+          <div class="service-link-wrapper">
             <a href="#"
               >Sign up</a
             >
           </div>
         </div>
 
-        <div class="divServices div-show" data-category="cloud">
-          <div class="block">
+        <div class="services-wrapper visible" data-category="cloud-element">
+          <div class="section-block">
             <h2>Containerization & Kubernetes</h2>
             <img
-              class="icon"
+              class="icon-main"
               src="public/kubernetes.png"
               alt="Kubernetes icon"
             />
@@ -535,7 +536,7 @@
             Learn container orchestration and deployment strategies with Docker
             and Kubernetes.
           </p>
-          <div class="divEnlaceServ">
+          <div class="service-link-wrapper">
             <a href="#"
               >Sign up</a
             >

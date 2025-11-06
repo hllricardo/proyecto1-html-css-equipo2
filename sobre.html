@@ -9,41 +9,41 @@
 </head>
 
 <body id="body">
-  <div id="id_navigation_container" class="nav_container">
-    <nav class="navigation">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div id="nav-wrapper" class="nav-wrapper">
+    <nav class="nav-main">
+      <a href="javascript:void(0)" class="btn-close" onclick="closeNav()">&times;</a>
       <img src="public/logo.png" alt="CodeTrain Academy logo" />
-      <div class="nav_links">
+      <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="servicios.html">Services</a>
         <a href="equipo.html">Team</a>
         <a href="sobre.html">About us</a>
         <a href="contacto.html">Contact</a>
         <a href="reseñas.html">Reviews</a>
-        <div class="switch-container">
-          <input type="checkbox" id="theme-switch" />
-          <label for="theme-switch" class="switch"></label>
+        <div class="toggle-switch-wrapper">
+          <input type="checkbox" id="toggle-theme" />
+          <label for="toggle-theme" class="switch"></label>
         </div>
       </div>
     </nav>
   </div>
-  <span id="openNav" class="openSideNav" onclick="openNav()">&#9776;</span>
+  <span id="btn-open-nav" class="btn-open-side-nav" onclick="openNav()">&#9776;</span>
   <div class="container-sobre">
-    <div class="main_title_other">
+    <div class="main-title-alt">
       <h1>About CodeTrain Academy</h1>
       <h2>Empowering people and organizations through technology</h2>
     </div>
 
-    <div class="bloque-image">
-      <img src="public/sobre.jpg" alt="Mano humana y robótica" class="imagen-reducida" />
+    <div class="section-image">
+      <img src="public/sobre.jpg" alt="Mano humana y robótica" class="img-thumbnail" />
     </div>
 
-    <div class="containerSobre">
-      <div class="divSobre divSobre-blue">
-        <div class="blockSobre">
+    <div class="container-about">
+      <div class="about-wrapper about-wrapper-blue">
+        <div class="section-about">
           <h3>Our Story</h3>
         </div>
-        <p class="extraTextSobre">
+        <p class="about-extra-text">
           CodeTrain Academy – DevTraining Hub was founded in 2020 to meet the
           growing demand for high-impact tech education and digital
           transformation. <br />
@@ -54,11 +54,11 @@
         </p>
       </div>
 
-      <div class="divSobre divSobre-green">
-        <div class="blockSobre">
+      <div class="about-wrapper about-wrapper-green">
+        <div class="section-about">
           <h3>What We Do</h3>
         </div>
-        <p class="extraTextSobre">
+        <p class="about-extra-text">
           We deliver cutting-edge solutions and training in artificial
           intelligence, cybersecurity, and full stack development. <br />
           Our team builds intelligent systems, secures digital infrastructures,
@@ -68,11 +68,11 @@
         </p>
       </div>
 
-      <div class="divSobre divSobre-gold">
-        <div class="blockSobre">
+      <div class="about-wrapper about-wrapper-gold">
+        <div class="section-about">
           <h3>Our Mission</h3>
         </div>
-        <p class="extraTextSobre">
+        <p class="about-extra-text">
           To empower people and organizations through technology—providing
           AI-driven tools, secure digital environments, and development
           expertise that foster innovation, resilience, and growth. <br />
@@ -81,11 +81,11 @@
         </p>
       </div>
 
-      <div class="divSobre divSobre-aqua">
-        <div class="blockSobre">
+      <div class="about-wrapper about-wrapper-aqua">
+        <div class="section-about">
           <h3>Our Vision</h3>
         </div>
-        <p class="extraTextSobre">
+        <p class="about-extra-text">
           To become a global reference in tech education and digital solutions,
           known for integrating artificial intelligence, cybersecurity, and full
           stack development into impactful projects.<br />
@@ -94,11 +94,11 @@
         </p>
       </div>
 
-      <div class="divSobre divSobre-red">
-        <div class="blockSobre">
+      <div class="about-wrapper about-wrapper-red">
+        <div class="section-about">
           <h3>Our Differentiator</h3>
         </div>
-        <p class="extraTextSobre">
+        <p class="about-extra-text">
           At CodeTrain Academy, we combine deep technical expertise with a
           passion for teaching. <br />
           We don’t just build solutions—we teach how to design, implement, and
@@ -110,9 +110,9 @@
       </div>
 
     </div>
-    <div class="images-container">
+    <div class="img-container">
       <div>
-        <button id="btnImg">See image</button>
+        <button id="btn-img">See image</button>
       </div>
       <div id="img-gallery"></div>
     </div>

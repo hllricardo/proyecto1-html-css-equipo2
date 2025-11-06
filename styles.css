@@ -1,23 +1,28 @@
-/*Diseño comun de todas las paginas web*/
-/*estilos y cosas necesarias para que el boton cambie a un entorno oscuro o claro*/
+/* ===========================================================
+   CodeTrain Academy - styles.css (reorganizado y corregido)
+   =========================================================== */
+
+/* ============================
+   1) DARK MODE
+   ============================ */
 .dark-mode {
-  /*estoy entre estos dos colores para el fondo oscuro (acepto sugerencias)*/
+  /* fondo y color general para modo oscuro */
   background-color: #151b23;
   /*background-color: #57606a;*/
   color: #fff;
 }
 
-.dark-mode .nav_container footer {
+.dark-mode .nav-wrapper footer {
   background: linear-gradient(90deg, #0a0f1d, #111827, #0a0f1d);
   box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
 }
 
-.dark-mode .navigation img,
+.dark-mode .nav-main img,
 .dark-mode footer img {
   filter: drop-shadow(0px 0px 6px rgba(255, 255, 255, 0.4));
 }
 
-.dark-mode .navigation a:hover {
+.dark-mode .nav-main a:hover {
   background: #38bdf8;
   color: #0f172a;
   box-shadow: 0 3px 12px rgba(56, 189, 248, 0.6);
@@ -30,15 +35,15 @@
   border-color: #555;
 }
 
-.dark-mode .block .main h2 {
+.dark-mode .section-block .main h2 {
   color: white;
 }
 
-.dark-mode .h3-contact h3 {
+.dark-mode .h3-contact-title h3 {
   color: white;
 }
 
-.dark-mode .container-contacto {
+.dark-mode .container-contact {
   background-color: #151b23;
 }
 
@@ -47,12 +52,16 @@
   color: #aaa;
 }
 
+/* variante de subdiv */
 .dark-mode-subdiv {
   background-color: #343f4eff !important;
   color: #fff !important;
 }
 
-.switch-container {
+/* ============================
+   2) TOGGLE / SWITCH (claro/oscuro)
+   ============================ */
+.toggle-switch-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -88,35 +97,27 @@
   transition: transform 0.3s ease;
 }
 
-#theme-switch {
+/* checkbox visual hidden */
+#toggle-theme {
   display: none;
 }
 
-input[type="checkbox"]:checked+.switch:before {
+/* estado checked (checkbox + label.switch) */
+input[type="checkbox"]:checked + .switch:before {
   opacity: 0;
 }
 
-input[type="checkbox"]:checked+.switch:after {
+input[type="checkbox"]:checked + .switch:after {
   opacity: 1;
 }
 
-input[type="checkbox"]:checked+.switch {
+input[type="checkbox"]:checked + .switch {
   background-color: #6e6e6e;
 }
 
-/*fin de la hoja de estilos del boton para claro/oscuro*/
-
-/*Menu lateral*/
-.openSideNav {
-  display: none;
-}
-
-.closebtn {
-  display: none;
-}
-
-/*fin de los estilos del menu lateral*/
-
+/* ============================
+   3) NAVBAR / SIDE NAV / GLOBAL HEADER
+   ============================ */
 body {
   /*font-family: "Gill Sans MT", sans-serif;*/
   font-family: "Inter";
@@ -127,7 +128,7 @@ body {
   color: #000;
 }
 
-.nav_container {
+.nav-wrapper {
   background: linear-gradient(90deg, #0f172a, #1e293b, #0f172a);
   padding: 12px 40px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
@@ -136,48 +137,56 @@ body {
   z-index: 1;
 }
 
-.navigation {
+.nav-main {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.navigation img {
+.nav-main img {
   height: 50px;
 }
 
-.navigation a {
+.nav-main a {
   font-size: 18px;
   font-weight: 500;
   color: #e2e8f0;
-  /* gris claro */
   text-decoration: none;
   padding: 10px 16px;
   border-radius: 8px;
-  /* bordes suaves */
   transition: all 0.3s ease;
 }
 
-.navigation a:hover {
+.nav-main a:hover {
   background: #38bdf8;
-  /* azul cyan brillante */
   color: #0f172a;
   box-shadow: 0 3px 12px rgba(56, 189, 248, 0.4);
-  /* efecto glow */
 }
 
-.nav_links {
+.nav-links {
   display: flex;
   align-items: center;
   gap: 25px;
 }
 
+/* mobile toggles: open/close */
+.btn-open-side-nav {
+  display: none;
+}
+
+.btn-close {
+  display: none;
+}
+
+/* ============================
+   4) MEDIA QUERIES (NAV + GLOBAL responsive rules)
+   ============================ */
 @media screen and (min-width: 1169px) {
-  .navigation {
+  .nav-main {
     margin-top: 0 !important;
   }
 
-  .nav_container {
+  .nav-wrapper {
     padding: 10px 30px !important;
   }
 }
@@ -195,7 +204,7 @@ body {
     transform: scale(1) !important;
   }
 
-  .openSideNav {
+  .btn-open-side-nav {
     display: block;
     font-size: 30px;
     cursor: pointer;
@@ -203,14 +212,15 @@ body {
     margin-left: 15px;
   }
 
-  .closebtn {
+  .btn-close {
     display: block;
     top: 0;
     right: 25px;
     font-size: 36px;
   }
 
-  .nav_container {
+  /* transform nav-wrapper into side nav on small screens */
+  .nav-wrapper {
     display: none;
     height: 100%;
     width: 150px;
@@ -222,11 +232,11 @@ body {
     padding-top: 60px;
   }
 
-  .navigation {
+  .nav-main {
     flex-direction: column;
   }
 
-  .nav_links {
+  .nav-links {
     display: flex;
     flex-direction: column;
     font-size: 25px;
@@ -235,19 +245,20 @@ body {
     gap: 10px;
   }
 
-  .containerSobre {
+  /* Sobre page responsive tweaks moved here */
+  .container-about {
     flex-direction: column !important;
     padding: 40px 80px !important;
   }
 
-  .divSobre {
+  .about-wrapper {
     max-height: 280px;
     overflow: hidden;
     transition: max-height 0.6s ease 0.4s;
     position: relative;
   }
 
-  .divSobre p {
+  .about-wrapper p {
     opacity: 0;
     max-height: 0;
     overflow: hidden;
@@ -256,18 +267,18 @@ body {
       max-height 0.4s ease;
   }
 
-  .divSobre:hover {
+  .about-wrapper:hover {
     max-height: 1000px;
     transition-delay: 0s;
   }
 
-  .divSobre:hover p {
+  .about-wrapper:hover p {
     opacity: 1;
     max-height: 1000px;
     transition-delay: 0.6s;
   }
 
-  .blockSobre {
+  .section-about {
     position: relative;
     top: auto;
     left: auto;
@@ -278,7 +289,7 @@ body {
       transform 0.6s ease 0.6s;
   }
 
-  .divSobre:hover .blockSobre {
+  .about-wrapper:hover .section-about {
     transition-delay: 0s;
   }
 
@@ -293,16 +304,15 @@ body {
   }
 }
 
-/*-------------------------------------------*/
-
-/*Diseño de la pagina de Contacto*/
-/*-------------------------------------------*/
-.hr-contact {
+/* ============================
+   5) CONTACT PAGE (contacto.html + shared contact form styles)
+   ============================ */
+.hr-contact-line {
   width: 350px;
   border: 2px solid black;
 }
 
-.h3-contact h3 {
+.h3-contact-title h3 {
   text-align: center;
   font-weight: 600;
   font-size: 22px;
@@ -310,7 +320,7 @@ body {
   margin: 10px 0;
 }
 
-.highlight-text {
+.text-highlight {
   text-align: center;
   font-size: 26px;
   font-weight: 800;
@@ -320,23 +330,24 @@ body {
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
-.col-contacto {
+.column-contact {
   max-width: 533px;
   height: auto;
   border-radius: 20px;
   /* soft rounded corners */
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  transform 0.3s ease,
-  box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-.contactImg-container {
+.contact-img-container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.container-contacto {
+.container-contact {
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -346,7 +357,7 @@ body {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
-.combined-contact-form {
+.contact-form-combined {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -355,7 +366,7 @@ body {
   padding: 40px 20px;
 }
 
-.form-div {
+.form-group {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -363,7 +374,7 @@ body {
   width: 100%;
 }
 
-.form-message {
+.form-msg {
   display: flex;
   flex-wrap: wrap;
   width: 450px;
@@ -372,17 +383,16 @@ body {
 form label {
   min-width: 80px;
   width: auto;
-  /*check*/
   text-align: left;
 }
 
-.form-div input,
-.form-div textarea {
+.form-group input,
+.form-group textarea {
   flex: 1;
 }
 
-.message-contacto,
-.yourmessage-contacto {
+.contact-message,
+.contact-message-input {
   font-size: 14px;
   font-family: "Inter";
   border-radius: 5px;
@@ -392,7 +402,7 @@ form label {
   box-sizing: border-box;
 }
 
-.yourmessage-contacto {
+.contact-message-input {
   flex: 1;
   min-width: 250px;
   height: 200px;
@@ -401,19 +411,18 @@ form label {
   width: auto;
 }
 
-.form-div p,
-.form-message p {
+.form-group p,
+.form-msg p {
   flex-basis: 100%;
   font-size: 12px;
   min-height: 18px;
   margin: 0 0 0 80px;
 }
 
-.form-button {
+.btn-form {
   display: flex;
   justify-content: center;
   margin-top: 10px;
-  /*margin-bottom: 40px;*/
 }
 
 .message-opinion {
@@ -421,13 +430,14 @@ form label {
   height: 200px;
 }
 
-.message-contacto::placeholder,
-.yourmessage-contacto::placeholder {
+.contact-message::placeholder,
+.contact-message-input::placeholder {
   font-size: 14px;
   font-family: "Inter";
 }
 
-#send_button {
+/* botón enviar contacto */
+#btn-send {
   background: #0079ff;
   color: white;
   border: none;
@@ -439,27 +449,27 @@ form label {
   transition: all 0.3s ease;
 }
 
-#send_button:hover {
+#btn-send:hover {
   background: #005fcc;
   transform: scale(1.02);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-#send_button:disabled {
+#btn-send:disabled {
   background: #ccc;
   cursor: not-allowed;
   transform: none;
   box-shadow: none;
 }
 
-.contactDetails {
+.contact-details {
   text-align: left;
   margin: 0 auto;
   padding-bottom: 20px;
   width: max-content;
 }
 
-.contactDetails p {
+.contact-details p {
   margin-top: 50px;
 }
 
@@ -468,11 +478,10 @@ form label {
   font-style: italic;
 }
 
-/*Diseño mensaje formulario: style="width: 400px; height: 200px;"*/
-
-/*Diseño de la pagina de Equipo*/
-
-.containerEquipo {
+/* ============================
+   6) TEAM / EQUIPO (equipo.html)
+   ============================ */
+.container-team {
   display: grid;
   grid-template-columns: auto auto;
   padding-bottom: 40px;
@@ -481,7 +490,7 @@ form label {
   justify-content: space-around;
 }
 
-.divEquipo {
+.team-wrapper {
   background-color: white;
   padding: 10px;
   margin-top: 20px;
@@ -491,95 +500,76 @@ form label {
   display: flex;
 }
 
-.blockEquipo {
+.section-team {
   display: flex;
   gap: 30px;
 }
 
-/*.blockEquipo:hover {
-  background: #dddde1;
-  color: #202122;
-  transform: scale(1.1);
-  box-shadow: 2px 8px rgba(0, 0, 0, 0.15);
-  border-radius: 50px;
-}*/
-
-.imagenEquipo {
+/* estilos de imagenes del equipo */
+.img-team {
   height: 250px;
   width: 250px;
   border-radius: 50%;
 }
 
 @media only screen and (max-width: 1168px) {
-  .containerEquipo {
+  .container-team {
     grid-template-columns: auto;
   }
 }
 
-#block_equipo_1 {
+/* bloques ocultos (se usan por JS para mostrar contenido) */
+#block-team-1,
+#block-team-2,
+#block-team-3,
+#block-team-4 {
   display: none;
 }
 
-#block_equipo_2 {
-  display: none;
-}
-
-#block_equipo_3 {
-  display: none;
-}
-
-#block_equipo_4 {
-  display: none;
-}
-
-/*Equipo carousel-----------------------------------------*/
-.imagenEquipo_carousel {
+/* Equipo carousel ----------------------------------------- */
+.img-team-carousel {
   height: 150px;
   width: 150px;
   border-radius: 50%;
 }
 
-.carousel_equipo {
+.team-carousel {
   display: flex;
-  margin-left: 100px;
-  margin-right: 100px;
+  margin: 0 auto;
+  width: 610px;
 }
 
+/* listas y carousel (varias reglas combinadas y corregidas) */
 ul {
   width: 100vw;
   height: 300px;
   padding: 20px;
   display: flex;
   gap: 4vw;
-
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  anchor-name: --my-carousel;
+  scroll-marker-group: after;
 }
 
+/* quitar scrollbar webkit */
 ul::-webkit-scrollbar {
   display: none;
 }
 
 li {
   list-style-type: none;
-  /*background-color: #eeeeee;
-  border: 1px solid #dddddd;*/
-  padding: 0px;
-
+  padding: 0;
   flex: 0 0 100%;
-}
-li :hover{
-  cursor: pointer;
-}
-
-
-ul {
-  overflow-x: scroll;
-  scroll-snap-type: x mandatory;
-}
-
-li {
   scroll-snap-align: center;
 }
 
+/* hover en li (se corrigió selector) */
+li:hover {
+  cursor: pointer;
+}
+
+/* scroll-button pseudo-element rules (nota: experimental/non estándar; se mantienen) */
 ul::scroll-button(*) {
   border: 0;
   font-size: 2rem;
@@ -603,19 +593,7 @@ ul::scroll-button(*):disabled {
   cursor: unset;
 }
 
-/*comentado para no complicar el modo oscuro*/
-/*ul::scroll-button(left) {
-  content: "◄";
-}
-
-ul::scroll-button(right) {
-  content: "►";
-}*/
-
-ul {
-  anchor-name: --my-carousel;
-}
-
+/* position anchor for scroll buttons (experimental) */
 ul::scroll-button(*) {
   position: absolute;
   position-anchor: --my-carousel;
@@ -631,16 +609,12 @@ ul::scroll-button(right) {
   bottom: calc(anchor(top) + 13px);
 }
 
-ul {
-  scroll-marker-group: after;
-}
-
+/* scroll-marker and scroll-marker-group (experimental) */
 ul::scroll-marker-group {
   position: absolute;
   position-anchor: --my-carousel;
   top: calc(anchor(bottom) - 70px);
   justify-self: anchor-center;
-
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -659,35 +633,34 @@ li::scroll-marker:target-current {
   background-color: #343f4eff;
 }
 
-/*-------------------------------------------*/
-
-/*Diseño de la pagina de Index*/
-
-.main_title {
+/* ============================
+   7) INDEX / HOME (index.html)
+   ============================ */
+.main-title {
   text-align: center;
   font-weight: bold;
   padding: 40px 20px;
 }
 
-.main_title_other {
+.main-title-alt {
   text-align: center;
   font-weight: bold;
   padding-top: 40px;
   padding-bottom: 0px;
 }
 
-.main_title h1,
-.main_title_other h1 {
+.main-title h1,
+.main-title-alt h1 {
   margin: 0 0 50px;
 }
 
-.main_title h2,
-.main_title_other h2 {
+.main-title h2,
+.main-title-alt h2 {
   margin: 0 0 60px;
   font-weight: normal;
 }
 
-.course_button {
+.btn-course {
   display: inline-block;
   padding: 15px 20px;
   border-radius: 40px;
@@ -697,35 +670,35 @@ li::scroll-marker:target-current {
   text-decoration: none;
 }
 
-.course_button:hover {
+.btn-course:hover {
   background-color: grey;
   color: black;
 }
 
-.row {
+.row-main {
   display: flex;
   text-align: center;
   gap: 50px;
   justify-content: center;
   flex-wrap: wrap;
   overflow: hidden;
-  /*  background-color: #f5faff;*/
   padding: 40px 20px;
 }
 
-.row>h2 {
+.row-main > h2 {
   width: 100%;
   margin-bottom: 0px;
 }
 
-.col,
-.col_sq,
-.col_trust {
+/* columnas usadas en index y en otras secciones */
+.column-main,
+.column-square,
+.column-trust {
   flex: 1 1 250px;
   max-width: 250px;
 }
 
-.col_trust {
+.column-trust {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -735,34 +708,35 @@ li::scroll-marker:target-current {
   box-shadow: 0 6px 18px #000000;
 }
 
-.col p,
-.col_sq p,
-.col_trust p {
+.column-main p,
+.column-square p,
+.column-trust p {
   margin: 0;
   font-size: 20px;
 }
 
-.col img,
-.col_sq img,
-.col_trust img {
+.column-main img,
+.column-square img,
+.column-trust img {
   display: block;
   height: auto;
   margin: 0 auto 15px;
 }
 
-.col img {
+.column-main img {
   width: 100%;
   border-radius: 50%;
 }
 
-.col_sq img {
+.column-square img {
   width: 80%;
 }
 
-.col_trust img {
+.column-trust img {
   width: 20%;
 }
 
+/* footer compartido (index, sobre, equipo, contacto, reseñas, servicios) */
 footer {
   background: linear-gradient(90deg, #0f172a, #1e293b, #0f172a);
   text-align: center;
@@ -783,8 +757,10 @@ footer img {
   margin: 5px auto 0;
 }
 
-/*Diseño de la pagina de Sobre*/
-.imagen-reducida {
+/* ============================
+   8) SOBRE / ABOUT (sobre.html)
+   ============================ */
+.img-thumbnail {
   width: 30%;
   height: auto;
   display: block;
@@ -792,10 +768,7 @@ footer img {
   padding: 20px;
 }
 
-/*-------------------------------------------*/
-/*Diseño de la página de sobre*/
-/*-------------------------------------------*/
-.containerSobre {
+.container-about {
   display: flex;
   padding: 80px 100px;
   flex-direction: row;
@@ -804,7 +777,7 @@ footer img {
   align-items: stretch;
 }
 
-.divSobre {
+.about-wrapper {
   flex: 1;
   padding: 20px;
   margin: 0px;
@@ -818,7 +791,7 @@ footer img {
   align-content: center;
 }
 
-.divSobre:hover {
+.about-wrapper:hover {
   flex: 3.75;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
   border-left: 8px solid transparent;
@@ -826,27 +799,24 @@ footer img {
   border-image-slice: 1;
 }
 
-.divSobre-blue {
+/* color de borde por tipo */
+.about-wrapper-blue {
   border-left: 8px solid #3b82f6;
 }
-
-.divSobre-green {
+.about-wrapper-green {
   border-left: 8px solid #10b981;
 }
-
-.divSobre-gold {
+.about-wrapper-gold {
   border-left: 8px solid #f59e0b;
 }
-
-.divSobre-aqua {
+.about-wrapper-aqua {
   border-left: 8px solid #06b6d4;
 }
-
-.divSobre-red {
+.about-wrapper-red {
   border-left: 8px solid #ef4444;
 }
 
-.blockSobre {
+.section-about {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -858,12 +828,12 @@ footer img {
     transform 0.6s ease;
 }
 
-.blockSobre h3 {
+.section-about h3 {
   margin: 0;
   transition: transform 0.6s ease;
 }
 
-.extraTextSobre {
+.about-extra-text {
   position: relative;
   text-align: justify;
   opacity: 0;
@@ -872,7 +842,8 @@ footer img {
   overflow: hidden;
 }
 
-.images-container {
+/* imagenes e img gallery */
+.img-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -881,7 +852,7 @@ footer img {
   margin-bottom: 50px;
 }
 
-.images-container button {
+.img-container button {
   background: #0079ff;
   display: inline-block;
   padding: 15px 20px;
@@ -906,7 +877,7 @@ footer img {
   width: 80%;
 }
 
-/*estilos del contenedor insertado en js de la galeria sobre.html al pinchar en una imagen*/
+/* lightbox insertado por JS (sobre.html) */
 .lightbox-img {
   display: block;
   width: 100%;
@@ -928,25 +899,23 @@ footer img {
   height: 80%;
 }
 
-/*---------------------------------------------------------*/
-
-.divSobre:hover .blockSobre {
+/* hover behaviour for about */
+.about-wrapper:hover .section-about {
   top: 48px;
   padding: 0;
   text-align: center;
 }
 
-.divSobre:hover .extraTextSobre {
+.about-wrapper:hover .about-extra-text {
   opacity: 1;
   max-height: 280px;
   transition-delay: 0.95s;
 }
 
-/*-------------------------------------------*/
-/*Diseño de la página de servicios*/
-/*-------------------------------------------*/
-
-.containerServices {
+/* ============================
+   9) SERVICIOS (services page)
+   ============================ */
+.container-services {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -956,7 +925,7 @@ footer img {
   margin: 0 auto;
 }
 
-.divServices {
+.services-wrapper {
   background-color: #fff;
   padding: 20px;
   border-radius: 10px;
@@ -969,40 +938,41 @@ footer img {
   transform: translateY(30px);
 }
 
-.divServices.show {
+/* visible/show helper */
+.services-wrapper.show {
   opacity: 1;
   transform: translateY(0);
 }
 
-.divServices:hover {
+.services-wrapper:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-.block {
+.section-block {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 1rem;
 }
 
-.block h2 {
+.section-block h2 {
   font-size: 1.2rem;
   color: #004080;
 }
 
-.icon {
+.icon-main {
   width: 60px;
   height: 60px;
 }
 
-.divEnlaceServ {
+.service-link-wrapper {
   display: flex;
   justify-content: center;
   margin-top: 1rem;
 }
 
-.divEnlaceServ a {
+.service-link-wrapper a {
   background-color: #004080;
   color: #fff;
   padding: 8px 16px;
@@ -1012,12 +982,12 @@ footer img {
   transition: background-color 0.3s ease;
 }
 
-.divEnlaceServ a:hover {
+.service-link-wrapper a:hover {
   background-color: #0066cc;
 }
 
-/* Estilos para los filtros */
-.filter-container {
+/* filtros de la página de servicios */
+.filter-wrapper {
   display: flex;
   justify-content: center;
   gap: 10px;
@@ -1026,32 +996,51 @@ footer img {
   text-align: center;
 }
 
-/*
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
-  .containerServices {
-    grid-template-columns: auto auto;
-  }
+/* botones filtro */
+.btn-filter {
+  background: #f0f0f0;
+  border: 2px solid #004080;
+  padding: 8px 16px;
+  margin: 5px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "Inter", sans-serif;
 }
 
-@media only screen and (max-width: 1024px) and (min-width: 769px) {
-  .containerServices {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-  }
-}*/
+.btn-filter.active,
+.btn-filter:hover {
+  background: #004080;
+  color: white;
+}
 
-/*-------------------------------------------*/
+/* layout util */
+.container {
+  display: grid;
+  grid-template-columns: auto auto;
+}
 
-/*Diseño de la pagina de Reseñas*/
-/*-------------------------------------------*/
-.hr-rev {
+/* show/animation helper (general) */
+.visible {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease-in-out;
+}
+.visible.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================
+   10) RESEÑAS (reseñas.html)
+   ============================ */
+.hr-review {
   width: 350px;
   border: 2px solid black;
   margin-bottom: 30px;
-
 }
 
-.form-div-rev {
+.form-group-review {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -1059,11 +1048,11 @@ footer img {
   width: 100%;
 }
 
-.form-div-rev input {
+.form-group-review input {
   flex: 1;
 }
 
-#name_msg_error-rev {
+#name-error-review {
   color: red;
   font-size: 12px;
   margin-left: 120px;
@@ -1079,7 +1068,7 @@ footer img {
   margin-top: 4px;
 }
 
-.form-message-rev {
+.form-msg-review {
   display: flex;
   flex-wrap: wrap;
   width: 450px;
@@ -1102,13 +1091,13 @@ footer img {
   transform: scale(1.1);
 }
 
-#review-form label {
+#form-review label {
   min-width: 120px;
   width: auto;
   text-align: left;
 }
 
-#send_button-review {
+#btn-send-review {
   background: #0079ff;
   color: white;
   border: none;
@@ -1120,79 +1109,44 @@ footer img {
   transition: all 0.3s ease;
 }
 
-#send_button-review:hover {
+#btn-send-review:hover {
   background: #005fcc;
   transform: scale(1.02);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-#send_button-review:disabled {
+#btn-send-review:disabled {
   background: #ccc;
   cursor: not-allowed;
   transform: none;
   box-shadow: none;
 }
 
-/*subido santos*/
-
-.filter-btn {
-  background: #f0f0f0;
-  border: 2px solid #004080;
-  padding: 8px 16px;
-  margin: 5px;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-family: "Inter", sans-serif;
-}
-
-.filter-btn.active,
-.filter-btn:hover {
-  background: #004080;
-  color: white;
-}
-
-.container {
-  display: grid;
-  grid-template-columns: auto auto;
-}
-
-/* Animaciones de entrada */
-
-.div-show {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.5s ease-in-out;
-}
-
-.div-show.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/*-------------------------------------------*/
-/*-------------------------------------------*/
-/* Media queries para responsive */
+/* ============================
+   11) MEDIA QUERIES (responsive adicionales)
+   ============================ */
 @media only screen and (max-width: 768px) {
-  .containerServices {
+  .container-services {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     padding: 20px;
   }
 
-  .filter-container {
+  .filter-wrapper {
     padding: 0 20px;
   }
 }
 
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
-  .containerServices {
+  .container-services {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
   }
 }
 
-/* Secret */
+/* ============================
+   12) UTILIDADES / SECRET (terminal, fake, misc)
+   ============================ */
 .fake-terminal {
   position: fixed;
   top: 15%;
@@ -1232,12 +1186,10 @@ footer img {
     filter: hue-rotate(0deg);
     transform: none;
   }
-
   50% {
     filter: hue-rotate(80deg);
     transform: translateX(5px);
   }
-
   100% {
     filter: hue-rotate(0deg);
     transform: none;
